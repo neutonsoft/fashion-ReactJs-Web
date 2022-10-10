@@ -13,6 +13,7 @@ import { Link } from "react-router-dom";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import SearchBar from "../../SearchBar/Search";
 import Modal from "@mui/material/Modal";
+import NavBar from "./navbar";
 
 const Header = () => {
   const { isAuthenticated, user } = useSelector((state) => state.user);
@@ -29,9 +30,7 @@ const Header = () => {
 
   return (
     <header className="bg-primary-white shadow-md bg-white  items-center fixed top-0 py-2.5 h-1/1 w-full z-10">
-      {/* <!-- navbar container --> */}
       <div className="w-full sm:w-9/12 px-1 sm:px-1 m-auto flex justify-between items-center py-2 relative">
-        {/* <!-- logo & search container --> */}
         <div className="flex items-center  flex-1">
           <Link className="h-7 mr-1 sm:mr-4" to="/">
             <img
@@ -43,14 +42,12 @@ const Header = () => {
           </Link>
           <SearchBar />
         </div>
-        {/* <!-- logo & search container --> */}
 
-        {/* <!-- right navs --> */}
+        <div className="menu-right pull-right">
+          <NavBar />
+        </div>
+
         <div className="flex items-center justify-between ml-1 sm:ml-0 gap-0.5 sm:gap-7 relative">
-          {/* <Link to="/search" className="flex items-center text-gray font-medium gap-2 relative">
-            <SearchIcon />
-          </Link> */}
-
           <span
             className="userDropDown flex items-center text-black font-medium gap-1 cursor-pointer"
             onClick={() => openSearch()}
