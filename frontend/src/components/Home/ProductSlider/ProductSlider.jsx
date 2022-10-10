@@ -1,41 +1,77 @@
+import React from "react";
+import { Container, Row, Col } from "reactstrap";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import Slider from "react-slick";
 import { getRandomProducts } from "../../../utils/functions";
-import { settings } from "../DealSlider/DealSlider";
+// import { settings } from "../DealSlider/DealSlider";
 import Product from "./Product";
 
+const settings = {
+  infinite: false,
+  speed: 300,
+  slidesToShow: 4,
+  slidesToScroll: 4,
+  autoplay: true,
+  arrows: false,
+  autoplaySpeed: 3000,
+  responsive: [
+    {
+      breakpoint: 1366,
+      settings: {
+        slidesToShow: 4,
+        slidesToScroll: 4,
+      },
+    },
+    {
+      breakpoint: 1200,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3,
+      },
+    },
+    {
+      breakpoint: 991,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2,
+      },
+    },
+  ],
+};
 const ProductSlider = ({ title, tagline }) => {
   const { loading, products } = useSelector((state) => state.products);
-
   return (
-    <section className="bg-primary-white w-full shadow overflow-hidden max-h-320">
-      {/* <!-- header --> */}
-      <div className="flex px-6 py-4 justify-between items-center">
-        <div className="title flex flex-col gap-0.5">
-          <h1 className="text-xl font-medium">{title}</h1>
-          <p className="text-sm text-gray-400">{tagline}</p>
+    <>
+      <section className={"section-b-space p-t-0 ratio_asos px-2"}>
+        <div className={"title1 section-t-space mb-10"}>
+          <h4>{title}</h4>
+          <h2 className={"title-inner1"}>{tagline}</h2>
+          <Link
+            to="/products"
+            className="bg-primary-blue text-xs font-medium text-white px-5 py-2.5 rounded-sm shadow-lg uppercase"
+          >
+            view all
+          </Link>
         </div>
-        <Link
-          to="/products"
-          className="bg-primary-blue text-xs font-medium text-white px-5 py-2.5 rounded-sm shadow-lg uppercase"
-        >
-          view all
-        </Link>
-      </div>
-      <hr />
-      {loading ? null : (
-        <Slider
-          {...settings}
-          className="flex  items-center justify-between p-1 "
-        >
-          {products &&
-            getRandomProducts(products, 12).map((product) => (
-              <Product {...product} key={product._id} />
-            ))}
-        </Slider>
-      )}
-    </section>
+        <Container>
+          <Row>
+            <Col>
+              {loading ? null : (
+                <Slider {...settings} className="product-m no-arrow">
+                  {products &&
+                    products.map((product, i) => (
+                      <div key={i}>
+                        <Product {...product} />
+                      </div>
+                    ))}
+                </Slider>
+              )}
+            </Col>
+          </Row>
+        </Container>
+      </section>
+    </>
   );
 };
 

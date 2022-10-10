@@ -7,6 +7,7 @@ import {
   addToWishlist,
   removeFromWishlist,
 } from "../../../actions/wishlistAction";
+import React, { useState } from "react";
 import { getDiscount } from "../../../utils/functions";
 const Product = (props) => {
   const { _id, name, images, ratings, numOfReviews, price, cuttedPrice } =
@@ -14,6 +15,7 @@ const Product = (props) => {
 
   const dispatch = useDispatch();
   const { enqueueSnackbar } = useSnackbar();
+  const [image, setImage] = useState("");
 
   const { wishlistItems } = useSelector((state) => state.wishlist);
 
@@ -29,69 +31,113 @@ const Product = (props) => {
     }
   };
 
+  const onClickHandle = (img) => {
+    setImage(img);
+  };
+  // const variantChangeByColor = (imgId, product_images) => {
+  //   product_images.map((data) => {
+  //     if (data.image_id == imgId) {
+  //       setImage(data.src);
+  //     }
+  //   });
+  // };
   return (
-    <div
-      className="flex flex-col items-center shadow-md bg-primary-white, 
-         rounded-sm overflow-hidden my-10 mr-10 px-2 py-6 relative h-96 "
-    >
-      <Link
+    <>
+      {/* <Link
         to={`/product/${_id}`}
-        className="flex flex-col items-center text-center group"
-      >
-        <div className="product-box">
-          <div className="img-wrapper">
-            <div className="front" o>
-              <a href="#!">
-                <Media
-                  src={images[0].url}
-                  className="img-fluid blur-up lazyload"
-                  alt=""
-                />
-              </a>
-            </div>
-            <div className="cart-info cart-wrap">
-              <button
-                data-toggle="modal"
-                data-target="#addtocart"
-                title="Add to cart"
-                onClick={addToWishlistHandler}
-              >
-                <i className="fa fa-shopping-cart"></i>
-              </button>
-              <a href={null} title="Add to Wishlist">
-                <i className="fa fa-heart" aria-hidden="true"></i>
-              </a>
-              <a
-                href={null}
-                data-toggle="modal"
-                data-target="#quick-view"
-                title="Quick View"
-              >
-                <i className="fa fa-search" aria-hidden="true"></i>
-              </a>
-              <a href={null} title="Compare">
-                <i className="fa fa-refresh" aria-hidden="true"></i>
-              </a>
-            </div>
+        // className="flex flex-col items-center text-center group"
+      > */}
+      <div className="product-box product-wrap">
+        <div className="img-wrapper">
+          <div className="front">
+            <Media
+              style={{
+                minHeight: "330px",
+              }}
+              src={`${image ? image : images[0].url}`}
+              className="img-fluid "
+              alt=""
+            />
           </div>
+          {images[1] ? (
+            <div className="back">
+              <Media
+                style={{
+                  minHeight: "330px",
+                }}
+                src={`${image ? image : images[1].url}`}
+                className="img-fluid m-auto"
+                alt=""
+              />
+            </div>
+          ) : (
+            <></>
+          )}
+          <div className="cart-info cart-wrap">
+            <button
+              data-toggle="modal"
+              data-target="#addtocart"
+              title="Add to cart"
+              onClick={addToWishlistHandler}
+            >
+              <i className="fa fa-shopping-cart"></i>
+            </button>
+            <a href={null} title="Add to Wishlist">
+              <i className="fa fa-heart" aria-hidden="true"></i>
+            </a>
+            <a
+              href={null}
+              data-toggle="modal"
+              data-target="#quick-view"
+              title="Quick View"
+            >
+              <i className="fa fa-search" aria-hidden="true"></i>
+            </a>
+            <a href={null} title="Compare">
+              <i className="fa fa-refresh" aria-hidden="true"></i>
+            </a>
+          </div>
+          {images.length > 1 ? (
+            <ul className="product-thumb-list">
+              {images.map((img, i) => (
+                <li
+                  className={`grid_thumb_img ${
+                    img.src === image ? "active" : ""
+                  }`}
+                  key={i}
+                >
+                  <a href={null} title="Add to Wishlist">
+                    <Media
+                      src={`${img.src}`}
+                      alt="wishlist"
+                      onClick={() => onClickHandle(img.src)}
+                    />
+                  </a>
+                </li>
+              ))}
+            </ul>
+          ) : (
+            ""
+          )}
         </div>
-        <div className="product-detail">
-          <a href="#!">
-            <h6> {name.length > 50 ? `${name.substring(0, 50)}...` : name}</h6>
-          </a>
-          <h4>
-            {price.toFixed(2)}
-            <del>
-              <span className="money">{price.toFixed(2)}</span>
-            </del>
-          </h4>
-        </div>
-        <h2 className="text-sm mt-4 group-hover:text-primary-blue">
-          {name.length > 50 ? `${name.substring(0, 50)}...` : name}
-        </h2>
-      </Link>
+      </div>
+      <div className="product-detail">
+        <a href="#!">
+          <h6> {name.length > 50 ? `${name.substring(0, 50)}...` : name}</h6>
+        </a>
+        {/* <h4>
+          {price.toFixed(2)}
+          <del>
+            <span className="money">{price.toFixed(2)}</span>
+          </del>
+        </h4> */}
+      </div>
+      {/* <h2 className="text-sm mt-4 group-hover:text-primary-blue">
+        {name.length > 50 ? `${name.substring(0, 50)}...` : name}
+      </h2> */}
+      {/* </Link> */}
 
-      <div className="flex flex-col gap-2 items-center">
+      <div className="flex flex-col gap-2 items-start">
         <span className="text-sm text-gray-500 font-medium flex gap-2 items-center">
           <span className="text-xs px-1.5 py-0.5 bg-primary-green rounded-sm text-white flex items-center gap-0.5">
             {ratings.toFixed(1)} <StarIcon sx={{ fontSize: "14px" }} />
@@ -130,7 +176,7 @@ const Product = (props) => {
           </Row>
         </ModalBody>
       </Modal>
-    </div>
+    </>
   );
 };
 

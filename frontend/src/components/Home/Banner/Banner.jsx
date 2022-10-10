@@ -1,8 +1,8 @@
 import Slider from "react-slick";
 import React, { Fragment } from "react";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import "./Banner.css";
+// import "slick-carousel/slick/slick.css";
+// import "slick-carousel/slick/slick-theme.css";
+// import "./Banner.css";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import gadgetSale from "../../../assets/images/Banners/gadget-sale.jpg";
@@ -37,9 +37,9 @@ const Banner = () => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    prevArrow: <PreviousBtn />,
-    nextArrow: <NextBtn />,
-    arrows: false,
+    // prevArrow: <PreviousBtn />,
+    // nextArrow: <NextBtn />,
+    // arrows: false,
   };
 
   const Data = [
