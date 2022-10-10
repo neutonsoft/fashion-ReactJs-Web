@@ -48,12 +48,12 @@ const Header = () => {
         </div>
 
         <div className="flex items-center justify-between ml-1 sm:ml-0 gap-0.5 sm:gap-7 relative">
-          <span
+          {/* <span
             className="userDropDown flex items-center text-black font-medium gap-1 cursor-pointer"
             onClick={() => openSearch()}
           >
             <SearchIcon />
-          </span>
+          </span> */}
 
           {isAuthenticated === false ? (
             <Link

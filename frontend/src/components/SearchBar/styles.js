@@ -8,9 +8,9 @@ export const Container = styled.div`
   height: 50px;
   box-sizing: border-box;
   border-radius: 50px;
-  border: 4px solid #393e46;
+  border: 1px solid #393e46;
   padding: 5px;
-  background: #222831;
+  background: #ffff;
   transition: all 0.5s;
 
   display: flex;
@@ -24,7 +24,7 @@ export const Container = styled.div`
       width: 50%;
       -webkit-box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.2);
       box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.2);
-      border: 4px solid #00adb5;
+      border: 2px solid #00adb5;
 
       @media (min-width: 768px) {
         width: 80%;
