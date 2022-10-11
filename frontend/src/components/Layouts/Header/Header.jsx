@@ -29,7 +29,7 @@ const Header = () => {
   };
 
   return (
-    <header className="bg-primary-white shadow-md bg-white  items-center fixed top-0 h-1/6 w-full z-10">
+    <header className="bg-primary-white shadow-md bg-white  items-center fixed top-0  w-full z-10">
       <div className="w-full sm:w-9/12 px-1 sm:px-1 m-auto flex justify-between items-center py-2 relative">
         <div className="flex items-center  flex-1">
           <Link className="h-7 mr-1 sm:mr-4" to="/">

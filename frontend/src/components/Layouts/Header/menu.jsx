@@ -1,6 +1,47 @@
 export const MENUITEMS = [
   {
     title: "Home",
+    type: "link",
+    path: "/",
+    children: [],
+  },
+  {
+    title: "Products",
+    type: "link",
+    path: "/products",
+    children: [],
+  },
+  {
+    title: "Pages",
+    type: "sub",
+    children: [
+      { path: "/page/account/contact", title: "contact", type: "link" },
+      { path: "/page/about-us", title: "about-us", type: "link" },
+    ],
+  },
+  {
+    title: "Blogs",
+    type: "sub",
+    children: [
+      // {
+      //   path: "/blogs/blog_left_sidebar",
+      //   title: "blog left sidebar",
+      //   type: "link",
+      // },
+      // {
+      //   path: "/blogs/blog_right_sidebar",
+      //   title: "blog right sidebar",
+      //   type: "link",
+      // },
+      // { path: "/blogs/no_sidebar", title: "no sidebar", type: "link" },
+      { path: "/blogs/blog_detail", title: "blog detail", type: "link" },
+    ],
+  },
+];
+
+export const MENUITEMS_OLD = [
+  {
+    title: "Home",
     type: "sub",
     children: [
       {
