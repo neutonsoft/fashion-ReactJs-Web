@@ -7,20 +7,36 @@ import {
   addToWishlist,
   removeFromWishlist,
 } from "../../../actions/wishlistAction";
+import {
+  addItemsToCart,
+  removeItemsFromCart,
+} from "../../../actions/cartAction";
 import React, { useState } from "react";
 import { getDiscount } from "../../../utils/functions";
 const Product = (props) => {
-  const { _id, name, images, ratings, numOfReviews, price, cuttedPrice } =
-    props;
+  const {
+    _id,
+    name,
+    images,
+    ratings,
+    numOfReviews,
+    price,
+    cuttedPrice,
+    description,
+  } = props;
 
   const dispatch = useDispatch();
   const { enqueueSnackbar } = useSnackbar();
   const [image, setImage] = useState("");
 
+  const [modal, setModal] = useState(false);
   const { wishlistItems } = useSelector((state) => state.wishlist);
+  const { cartItems } = useSelector((state) => state.cart);
 
   const itemInWishlist = wishlistItems.some((i) => i.product === _id);
+  const itemInCart = cartItems.some((i) => i.product === _id);
 
+  const toggle = () => setModal(!modal);
   const addToWishlistHandler = () => {
     if (itemInWishlist) {
       dispatch(removeFromWishlist(_id));
@@ -28,6 +44,15 @@ const Product = (props) => {
     } else {
       dispatch(addToWishlist(_id));
       enqueueSnackbar("Added To Wishlist", { variant: "success" });
+    }
+  };
+  const addToCartHandler = () => {
+    if (itemInCart) {
+      dispatch(removeItemsFromCart(_id));
+      enqueueSnackbar("Remove From Cart", { variant: "success" });
+    } else {
+      dispatch(addItemsToCart(_id));
+      enqueueSnackbar("Added To Cart", { variant: "success" });
     }
   };
 
@@ -43,59 +68,59 @@ const Product = (props) => {
   // };
   return (
     <>
-      {/* <Link
-        to={`/product/${_id}`}
-        // className="flex flex-col items-center text-center group"
-      > */}
       <div className="product-box product-wrap">
         <div className="img-wrapper">
-          <div className="front">
-            <Media
-              style={{
-                minHeight: "330px",
-              }}
-              src={`${image ? image : images[0].url}`}
-              className="img-fluid "
-              alt=""
-            />
-          </div>
-          {images[1] ? (
-            <div className="back">
+          <Link
+            to={`/product/${_id}`}
+            // className="flex flex-col items-center text-center group"
+          >
+            <div className="front">
               <Media
                 style={{
                   minHeight: "330px",
                 }}
-                src={`${image ? image : images[1].url}`}
-                className="img-fluid m-auto"
+                src={`${image ? image : images[0].url}`}
+                className="img-fluid "
                 alt=""
               />
             </div>
-          ) : (
-            <></>
-          )}
+            {images[1] ? (
+              <div className="back">
+                <Media
+                  style={{
+                    minHeight: "330px",
+                  }}
+                  src={`${image ? image : images[1].url}`}
+                  className="img-fluid m-auto"
+                  alt=""
+                />
+              </div>
+            ) : (
+              <></>
+            )}
+          </Link>
           <div className="cart-info cart-wrap">
             <button
               data-toggle="modal"
               data-target="#addtocart"
               title="Add to cart"
-              onClick={addToWishlistHandler}
+              onClick={addToCartHandler}
             >
               <i className="fa fa-shopping-cart"></i>
             </button>
-            <a href={null} title="Add to Wishlist">
-              <i className="fa fa-heart" aria-hidden="true"></i>
-            </a>
             <a
               href={null}
-              data-toggle="modal"
-              data-target="#quick-view"
-              title="Quick View"
+              title="Add to Wishlist"
+              onClick={addToWishlistHandler}
             >
+              <i className="fa fa-heart" aria-hidden="true"></i>
+            </a>
+            <a href={null} title="Quick View" onClick={toggle} className="z-10">
               <i className="fa fa-search" aria-hidden="true"></i>
             </a>
-            <a href={null} title="Compare">
-              <i className="fa fa-refresh" aria-hidden="true"></i>
-            </a>
+            {/* <a href={null} title="Compare">
+                <i className="fa fa-refresh" aria-hidden="true"></i>
+              </a> */}
           </div>
           {images.length > 1 ? (
             <ul className="product-thumb-list">
@@ -135,7 +160,6 @@ const Product = (props) => {
       {/* <h2 className="text-sm mt-4 group-hover:text-primary-blue">
         {name.length > 50 ? `${name.substring(0, 50)}...` : name}
       </h2> */}
-      {/* </Link> */}
 
       <div className="flex flex-col gap-2 items-start">
         <span className="text-sm text-gray-500 font-medium flex gap-2 items-center">
@@ -155,21 +179,143 @@ const Product = (props) => {
           </span>
         </div>
       </div>
-      <Modal size="lg" centered>
+      <Modal isOpen={modal} toggle={toggle} size="lg" centered>
         <ModalHeader>Quick View</ModalHeader>
         <ModalBody>
           <Row className="compare-modal">
-            <Col lg="12">
-              <div className="media">
-                <Media src={images[0].url} alt="" className="img-fluid" />
-                <div className="media-body align-self-center text-center">
-                  <h5>
-                    <i className="fa fa-check"></i>Item{" "}
-                    <span>
-                      {name.length > 50 ? `${name.substring(0, 50)}...` : name}{" "}
-                    </span>
-                    <span> successfully added to your Compare list</span>
-                  </h5>
+            <Col lg="6" xs="12">
+              <div className="quick-view-img">
+                <Media
+                  src={`${image ? image : images[0].url}`}
+                  alt=""
+                  className="img-fluid"
+                />
+              </div>
+            </Col>
+            <Col lg="6" className="rtl-text">
+              <div className="product-right">
+                <h2> {name} </h2>
+                <div className="flex items-center gap-1.5 text-md font-medium">
+                  <span>₹{price.toLocaleString()}</span>
+                  <span className="text-gray-500 line-through text-xs">
+                    ₹{cuttedPrice.toLocaleString()}
+                  </span>
+                  <span className="text-xs text-primary-green">
+                    {getDiscount(price, cuttedPrice)}%&nbsp;off
+                  </span>
+                </div>
+                {/* {product.variants ? (
+                  <ul className="color-variant">
+                    {uniqueTags ? (
+                      <ul className="color-variant">
+                        {product.type === "jewellery" ||
+                        product.type === "nursery" ||
+                        product.type === "beauty" ||
+                        product.type === "electronics" ||
+                        product.type === "goggles" ||
+                        product.type === "watch" ||
+                        product.type === "pets" ? (
+                          ""
+                        ) : (
+                          <>
+                            {uniqueTags.map((vari, i) => {
+                              return (
+                                <li
+                                  className={vari.color}
+                                  key={i}
+                                  title={vari.color}
+                                  onClick={() =>
+                                    variantChangeByColor(
+                                      vari.image_id,
+                                      product.images
+                                    )
+                                  }
+                                ></li>
+                              );
+                            })}
+                          </>
+                        )}
+                      </ul>
+                    ) : (
+                      ""
+                    )}
+                  </ul>
+                ) : (
+                  ""
+                )} */}
+                <div className="border-product">
+                  <h6 className="product-title">product details</h6>
+                  <p>{description}</p>
+                </div>
+                {/* <div className="product-description border-product">
+                  {product.size ? (
+                    <div className="size-box">
+                      <ul>
+                        {product.size.map((size, i) => {
+                          return (
+                            <li key={i}>
+                              <a href={null}>{size}</a>
+                            </li>
+                          );
+                        })}
+                      </ul>
+                    </div>
+                  ) : (
+                    ""
+                  )}
+                  <h6 className="product-title">quantity</h6>
+                  <div className="qty-box">
+                    <div className="input-group">
+                      <span className="input-group-prepend">
+                        <button
+                          type="button"
+                          className="btn quantity-left-minus"
+                          onClick={minusQty}
+                          data-type="minus"
+                          data-field=""
+                        >
+                          <i className="fa fa-angle-left"></i>
+                        </button>
+                      </span>
+                      <input
+                        type="text"
+                        name="quantity"
+                        value={quantity}
+                        onChange={changeQty}
+                        className="form-control input-number"
+                      />
+                      <span className="input-group-prepend">
+                        <button
+                          type="button"
+                          className="btn quantity-right-plus"
+                          onClick={() => plusQty(product)}
+                          data-type="plus"
+                          data-field=""
+                        >
+                          <i className="fa fa-angle-right"></i>
+                        </button>
+                      </span>
+                    </div>
+                  </div>
+                </div> */}
+                <div className="product-buttons">
+                  <button className="btn btn-solid" onClick={addToCartHandler}>
+                    add to cart
+                  </button>
+                  <button
+                    className="btn btn-solid"
+                    // onClick={clickProductDetail}
+                  >
+                    <Link
+                      style={{
+                        color: "#ffff",
+                      }}
+                      to={`/product/${_id}`}
+                      // className="flex flex-col items-center text-center group"
+                    >
+                      View detail
+                    </Link>
+                  </button>
                 </div>
               </div>
             </Col>

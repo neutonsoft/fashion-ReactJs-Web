@@ -27,7 +27,9 @@ const Searchbar = () => {
         type="text"
         placeholder="Search for products, brands and more"
       />
-      {/* <button type="submit" className="text-primary-blue"><SearchIcon /></button> */}
+      <button type="submit" className="text-primary-blue">
+        <SearchIcon />
+      </button>
     </form>
   );
 };

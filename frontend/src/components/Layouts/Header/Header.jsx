@@ -3,7 +3,7 @@ import ExpandLessIcon from "@mui/icons-material/ExpandLess";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import SearchIcon from "@mui/icons-material/Search";
 
-import Searchbar from "./Searchbar";
+import SearchOverlay from "./SearchOverlay";
 import logo from "../../../assets/images/logo.png";
 import PrimaryDropDownMenu from "./PrimaryDropDownMenu";
 import SecondaryDropDownMenu from "./SecondaryDropDownMenu";
@@ -29,7 +29,7 @@ const Header = () => {
   };
 
   return (
-    <header className="bg-primary-white shadow-md bg-white  items-center fixed top-0 py-2.5 h-1/1 w-full z-10">
+    <header className="bg-primary-white shadow-md bg-white  items-center fixed top-0 h-1/6 w-full z-10">
       <div className="w-full sm:w-9/12 px-1 sm:px-1 m-auto flex justify-between items-center py-2 relative">
         <div className="flex items-center  flex-1">
           <Link className="h-7 mr-1 sm:mr-4" to="/">
@@ -40,7 +40,7 @@ const Header = () => {
               alt="Flipkart Logo"
             />
           </Link>
-          <SearchBar />
+          {/* <SearchBar /> */}
         </div>
 
         <div className="menu-right pull-right">
@@ -48,20 +48,41 @@ const Header = () => {
         </div>
 
         <div className="flex items-center justify-between ml-1 sm:ml-0 gap-0.5 sm:gap-7 relative">
-          {/* <span
+          <span
             className="userDropDown flex items-center text-black font-medium gap-1 cursor-pointer"
             onClick={() => openSearch()}
           >
             <SearchIcon />
-          </span> */}
+          </span>
 
           {isAuthenticated === false ? (
-            <Link
-              to="/login"
-              className="px-3 sm:px-9 py-0.5 text-primary-blue bg-black border font-medium rounded-sm cursor-pointer"
-            >
-              Login
-            </Link>
+            <ul className="header-dropdown">
+              <li className="onhover-dropdown mobile-account">
+                <i className="fa fa-user" aria-hidden="true"></i> My Account
+                <ul className="onhover-show-div">
+                  <li>
+                    <Link
+                      to="/login"
+                      style={{
+                        color: "#222222",
+                      }}
+                    >
+                      Login
+                    </Link>
+                  </li>
+                  {/* <li>
+                    <Link href={`/page/account/register`}>
+                      <a>Register</a>
+                    </Link>
+                  </li>
+                  <li
+                  // onClick={() => firebaseLogout()}
+                  >
+                    <a>Logout</a>
+                  </li> */}
+                </ul>
+              </li>
+            </ul>
           ) : (
             <span
               className="userDropDown flex items-center text-black font-medium gap-1 cursor-pointer"
@@ -123,7 +144,7 @@ const Header = () => {
         {/* <!-- right navs --> */}
       </div>
       {/* <!-- navbar container --> */}
-      {/* <SearchOverlay /> */}
+      <SearchOverlay />
     </header>
   );
 };

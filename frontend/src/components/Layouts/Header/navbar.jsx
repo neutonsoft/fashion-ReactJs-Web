@@ -147,7 +147,14 @@ const NavBar = () => {
                   key={i}
                   className={` ${menuItem.megaMenu ? "mega-menu" : ""}`}
                 >
-                  <a className="nav-link" onClick={(e) => openMblNav(e)}>
+                  <a
+                    className="nav-link"
+                    style={{
+                      paddingBottom: "15px",
+                      paddingTop: "15px",
+                    }}
+                    onClick={(e) => openMblNav(e)}
+                  >
                     {" "}
                     {t(menuItem.title)}
                     <span className="sub-arrow"></span>

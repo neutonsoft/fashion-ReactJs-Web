@@ -41,6 +41,7 @@ const settings = {
 };
 const ProductSlider = ({ title, tagline }) => {
   const { loading, products } = useSelector((state) => state.products);
+  console.log(products, "products");
   return (
     <>
       <section className={"section-b-space p-t-0 ratio_asos px-2"}>
