@@ -18,25 +18,26 @@ export const MENUITEMS = [
     children: [],
   },
   { path: "/about-us", title: "About", type: "link", children: [] },
+  { path: "/blogs", title: "Blogs", type: "link", children: [] },
 
-  {
-    title: "Blogs",
-    type: "sub",
-    children: [
-      // {
-      //   path: "/blogs/blog_left_sidebar",
-      //   title: "blog left sidebar",
-      //   type: "link",
-      // },
-      // {
-      //   path: "/blogs/blog_right_sidebar",
-      //   title: "blog right sidebar",
-      //   type: "link",
-      // },
-      // { path: "/blogs/no_sidebar", title: "no sidebar", type: "link" },
-      { path: "/blogs/blog_detail", title: "blog detail", type: "link" },
-    ],
-  },
+  // {
+  //   title: "Blogs",
+  //   type: "sub",
+  //   children: [
+  //     // {
+  //     //   path: "/blogs/blog_left_sidebar",
+  //     //   title: "blog left sidebar",
+  //     //   type: "link",
+  //     // },
+  //     // {
+  //     //   path: "/blogs/blog_right_sidebar",
+  //     //   title: "blog right sidebar",
+  //     //   type: "link",
+  //     // },
+  //     // { path: "/blogs/no_sidebar", title: "no sidebar", type: "link" },
+  //     { path: "/blogs/blog_detail", title: "blog detail", type: "link" },
+  //   ],
+  // },
 ];
 
 export const MENUITEMS_OLD = [
