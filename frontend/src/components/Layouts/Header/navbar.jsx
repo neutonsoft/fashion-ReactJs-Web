@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import Link from "next/link";
+import { Link } from "react-router-dom";
+
 import { MENUITEMS } from "./menu";
 import { Container, Row } from "reactstrap";
 import { useTranslation } from "react-i18next";
@@ -186,15 +187,8 @@ const NavBar = () => {
                               ""
                             )}
                             {childrenItem.type === "link" ? (
-                              <Link href={`${childrenItem.path}`}>
-                                <a>
-                                  {childrenItem.title}
-                                  {childrenItem.tag === "new" ? (
-                                    <span className="new-tag">new</span>
-                                  ) : (
-                                    ""
-                                  )}
-                                </a>
+                              <Link to={`${childrenItem.path}`}>
+                                {childrenItem.title}
                               </Link>
                             ) : (
                               ""
@@ -209,17 +203,11 @@ const NavBar = () => {
                                   (childrenSubItem, key) => (
                                     <li key={key}>
                                       {childrenSubItem.type === "link" ? (
-                                        <Link href={childrenSubItem.path}>
-                                          <a className="sub-menu-title">
-                                            {childrenSubItem.title}
-                                            {childrenSubItem.tag === "new" ? (
-                                              <span className="new-tag">
-                                                new
-                                              </span>
-                                            ) : (
-                                              ""
-                                            )}
-                                          </a>
+                                        <Link
+                                          className="sub-menu-title"
+                                          to={childrenSubItem.path}
+                                        >
+                                          {childrenSubItem.title}
                                         </Link>
                                       ) : (
                                         ""
@@ -272,9 +260,7 @@ const NavBar = () => {
                                                 return (
                                                   <li key={i}>
                                                     <Link
-                                                      href={
-                                                        subMegaMenuItem.path
-                                                      }
+                                                      to={subMegaMenuItem.path}
                                                     >
                                                       <>
                                                         <i
@@ -292,9 +278,7 @@ const NavBar = () => {
                                                 return (
                                                   <li key={i}>
                                                     <Link
-                                                      href={
-                                                        subMegaMenuItem.path
-                                                      }
+                                                      to={subMegaMenuItem.path}
                                                     >
                                                       {subMegaMenuItem.title}
                                                     </Link>
