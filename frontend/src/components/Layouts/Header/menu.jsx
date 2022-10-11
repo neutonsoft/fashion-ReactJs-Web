@@ -12,13 +12,13 @@ export const MENUITEMS = [
     children: [],
   },
   {
-    title: "Pages",
-    type: "sub",
-    children: [
-      { path: "/page/account/contact", title: "contact", type: "link" },
-      { path: "/page/about-us", title: "about-us", type: "link" },
-    ],
+    path: "/contact",
+    title: "Contact-us",
+    type: "link",
+    children: [],
   },
+  { path: "/about-us", title: "About", type: "link", children: [] },
+
   {
     title: "Blogs",
     type: "sub",
