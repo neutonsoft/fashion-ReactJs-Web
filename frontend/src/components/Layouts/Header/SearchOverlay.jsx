@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Button,
   Col,
@@ -8,11 +8,26 @@ import {
   Input,
   Row,
 } from "reactstrap";
+import { useNavigate } from "react-router-dom";
 
 const closeSearch = () => {
   document.getElementById("search-overlay").style.display = "none";
 };
 const SearchOverlay = () => {
+  const [keyword, setKeyword] = useState("");
+  const navigate = useNavigate();
+  const handleSubmit = () => {
+    // setIsHovered(true)
+    if (keyword.toLowerCase().trim()) {
+      console.log("submit");
+      navigate(`/products/${keyword}`);
+      closeSearch();
+    } else {
+      console.log("submit2");
+      navigate("/products");
+      closeSearch();
+    }
+  };
   return (
     <div id="search-overlay" className="search-overlay">
       <div>
@@ -27,12 +42,17 @@ const SearchOverlay = () => {
                   <FormGroup>
                     <Input
                       type="text"
+                      value={keyword}
+                      onChange={(e) => setKeyword(e.target.value)}
                       className="form-control"
                       id="exampleInputPassword1"
                       placeholder="Search a Product"
                     />
                   </FormGroup>
-                  <Button type="submit" className="btn btn-primary">
+                  <Button
+                    className="btn btn-primary"
+                    onClick={() => handleSubmit()}
+                  >
                     <i className="fa fa-search"></i>
                   </Button>
                 </Form>

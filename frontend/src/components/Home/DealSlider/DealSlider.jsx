@@ -44,15 +44,17 @@ const DealSlider = ({ title }) => {
   return (
     <section className="bg-white w-full shadow overflow-hidden">
       {/* <!-- header --> */}
-      <div className="flex px-6 py-3 justify-between items-center">
-        <h1 className="text-xl font-medium">{title}</h1>
+      <div className={"title1 section-t-space mb-10"}>
+        {/* <h4>{title}</h4> */}
+        <h2 className={"title-inner1"}>{title}</h2>
         <Link
           to="/products"
-          className="bg-primary-blue text-xs font-medium text-white px-5 py-2.5 rounded-sm shadow-lg"
+          className="bg-primary-blue text-xs font-medium text-white px-5 py-2.5 rounded-sm shadow-lg uppercase"
         >
-          VIEW ALL
+          view all
         </Link>
       </div>
+
       <hr />
       {/* <!-- header --> */}
 

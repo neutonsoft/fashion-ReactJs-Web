@@ -8,6 +8,9 @@ import {
   removeFromWishlist,
 } from "../../../actions/wishlistAction";
 import img1 from "../../../assets/images/new/2.jpg";
+import img2 from "../../../assets/images/new/12.jpg";
+import img3 from "../../../assets/images/new/14.jpg";
+import img4 from "../../../assets/images/new/16.jpg";
 import {
   addItemsToCart,
   removeItemsFromCart,
@@ -63,7 +66,7 @@ const Product = (props) => {
   // const variantChangeByColor = (imgId, product_images) => {
   //   product_images.map((data) => {
   //     if (data.image_id == imgId) {
-  //       setImage(data.src);
+  //       setImage(data.url);
   //     }
   //   });
   // };
@@ -133,15 +136,18 @@ const Product = (props) => {
               {images.map((img, i) => (
                 <li
                   className={`grid_thumb_img ${
-                    img.src === image ? "active" : ""
+                    img.url === image ? "active" : ""
                   }`}
                   key={i}
                 >
-                  <a href={null} title="Add to Wishlist">
+                  <a href={null}>
                     <Media
-                      src={`${img.src}`}
+                      style={{
+                        zIndex: 10,
+                      }}
+                      src={`${img.url}`}
                       alt="wishlist"
-                      onClick={() => onClickHandle(img.src)}
+                      onClick={() => onClickHandle(img.url)}
                     />
                   </a>
                 </li>
@@ -263,7 +269,7 @@ const Product = (props) => {
                                   onClick={() =>
                                     variantChangeByColor(
                                       vari.image_id,
-                                      product.images
+                                      product.Images
                                     )
                                   }
                                 ></li>

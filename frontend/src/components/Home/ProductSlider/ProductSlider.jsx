@@ -6,6 +6,10 @@ import Slider from "react-slick";
 import { getRandomProducts } from "../../../utils/functions";
 // import { settings } from "../DealSlider/DealSlider";
 import Product from "./Product";
+import img1 from "../../../assets/images/new/2.jpg";
+import img2 from "../../../assets/images/new/12.jpg";
+import img3 from "../../../assets/images/new/14.jpg";
+import img4 from "../../../assets/images/new/16.jpg";
 
 const settings = {
   infinite: false,
