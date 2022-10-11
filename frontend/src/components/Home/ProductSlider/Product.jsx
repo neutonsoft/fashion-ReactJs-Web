@@ -7,6 +7,7 @@ import {
   addToWishlist,
   removeFromWishlist,
 } from "../../../actions/wishlistAction";
+import img1 from "../../../assets/images/new/2.jpg";
 import {
   addItemsToCart,
   removeItemsFromCart,
@@ -66,6 +67,11 @@ const Product = (props) => {
   //     }
   //   });
   // };
+  let RatingStars = [];
+  let rating = 5;
+  for (var i = 0; i < rating; i++) {
+    RatingStars.push(<i className="fa fa-star" key={i}></i>);
+  }
   return (
     <>
       <div className="product-box product-wrap">
@@ -77,7 +83,7 @@ const Product = (props) => {
             <div className="front">
               <Media
                 style={{
-                  minHeight: "330px",
+                  minHeight: "437px",
                 }}
                 src={`${image ? image : images[0].url}`}
                 className="img-fluid "
@@ -88,7 +94,7 @@ const Product = (props) => {
               <div className="back">
                 <Media
                   style={{
-                    minHeight: "330px",
+                    minHeight: "437px",
                   }}
                   src={`${image ? image : images[1].url}`}
                   className="img-fluid m-auto"
@@ -147,9 +153,27 @@ const Product = (props) => {
         </div>
       </div>
       <div className="product-detail">
-        <a href="#!">
-          <h6> {name.length > 50 ? `${name.substring(0, 50)}...` : name}</h6>
-        </a>
+        <div
+          style={{
+            marginTop: "15px",
+          }}
+          className="rating"
+        >
+          {RatingStars}
+        </div>
+        <h6
+          style={{
+            lineHeight: 1,
+            marginBottom: 0,
+            paddingTop: "2px",
+            paddingBottom: "5px",
+            transition: "all .5s ease",
+            fontSize: "16px",
+          }}
+        >
+          {" "}
+          {name.length > 50 ? `${name.substring(0, 50)}...` : name}
+        </h6>
         {/* <h4>
           {price.toFixed(2)}
           <del>
@@ -162,14 +186,26 @@ const Product = (props) => {
       </h2> */}
 
       <div className="flex flex-col gap-2 items-start">
-        <span className="text-sm text-gray-500 font-medium flex gap-2 items-center">
+        {/* <span className="text-sm text-gray-500 font-medium flex gap-2 items-center">
           <span className="text-xs px-1.5 py-0.5 bg-primary-green rounded-sm text-white flex items-center gap-0.5">
             {ratings.toFixed(1)} <StarIcon sx={{ fontSize: "14px" }} />
           </span>
           <span>({numOfReviews.toLocaleString()})</span>
-        </span>
-
-        <div className="flex items-center gap-1.5 text-md font-medium">
+        </span> */}
+        <h4
+          style={{
+            fontSize: "18px",
+            color: "#222",
+            fontWeight: "700",
+            marginBottom: 0,
+          }}
+        >
+          ₹{price.toLocaleString()}
+          <del>
+            <span className="money">₹{cuttedPrice.toLocaleString()}</span>
+          </del>
+        </h4>
+        {/* <div className="flex items-center gap-1.5 text-md font-medium">
           <span>₹{price.toLocaleString()}</span>
           <span className="text-gray-500 line-through text-xs">
             ₹{cuttedPrice.toLocaleString()}
@@ -177,7 +213,7 @@ const Product = (props) => {
           <span className="text-xs text-primary-green">
             {getDiscount(price, cuttedPrice)}%&nbsp;off
           </span>
-        </div>
+        </div> */}
       </div>
       <Modal isOpen={modal} toggle={toggle} size="lg" centered>
         <ModalHeader>Quick View</ModalHeader>
