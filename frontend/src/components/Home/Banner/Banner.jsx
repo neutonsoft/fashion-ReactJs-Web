@@ -7,10 +7,10 @@ import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import gadgetSale from "../../../assets/images/Banners/gadget-sale.jpg";
 import kitchenSale from "../../../assets/images/Banners/kitchen-sale.jpg";
-import poco from "../../../assets/images/Banners/poco-m4-pro.webp";
-import realme from "../../../assets/images/Banners/realme-9-pro.webp";
+import poco from "../../../assets/images/Banners/minimalist.jpg";
+import realme from "../../../assets/images/Banners/bluePink.jpg";
 import fashionSale from "../../../assets/images/Banners/fashionsale.jpg";
-import oppo from "../../../assets/images/Banners/oppo-reno7.webp";
+import oppo from "../../../assets/images/Banners/black.jpg";
 import MasterBanner from "./MasterBanner/MasterBanner";
 export const PreviousBtn = ({ className, onClick }) => {
   return (

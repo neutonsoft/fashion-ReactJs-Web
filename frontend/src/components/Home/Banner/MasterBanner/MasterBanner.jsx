@@ -8,6 +8,7 @@ const MasterBanner = ({ img, title, desc, link, classes, btn, btnClass }) => {
         className={`home  ${classes ? classes : "text-center"}`}
         style={{
           backgroundImage: `url(${img})`,
+         height:'90%'
         }}
       >
         <Container>

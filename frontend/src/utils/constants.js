@@ -1,11 +1,19 @@
 // Categories Used In Entire App
 export const categories = [
-    "Electronics",
-    "Mobiles",
-    "Laptops",
-    "Fashion",
-    "Appliances",
-    "Home",
+    "Saree",
+    "Pant Set",
+    "Skirt Set",
+    "Jumpsuit",
+    "Jacket Set",
+    "Dress",
+    "Gown",
+    "Sharara Set",
+    "Anarkali",
+    "Kurta Set",
+    "Lehengas",
+    "Bridal",
+    "Fusion",
+    "Tunic"
 ];
 
 // Product Sliders Offers
