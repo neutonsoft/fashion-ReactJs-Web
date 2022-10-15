@@ -5,7 +5,7 @@ const PriceSidebar = ({ cartItems }) => {
 
             {/* <!-- nav tiles --> */}
             <div className="flex flex-col bg-white rounded-sm shadow">
-                <h1 className="px-6 py-3 border-b font-medium text-gray-500">PRICE DETAILS</h1>
+                <h1 className="px-6 py-3 border-b text-lg text-gray-500">PRICE DETAILS</h1>
 
                 <div className="flex flex-col gap-4 p-6 pb-3">
                     <p className="flex justify-between">Price ({cartItems.length} item) <span>₹{cartItems.reduce((sum, item) => sum + (item.cuttedPrice * item.quantity), 0).toLocaleString()}</span></p>

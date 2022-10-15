@@ -279,7 +279,7 @@ const NewProduct = () => {
                         </div>
                     </div>
 
-                    <h2 className="font-medium">Brand Details</h2>
+                    <h2 className="text-lg">Brand Details</h2>
                     <div className="flex justify-between gap-4 items-start">
                         <TextField
                             label="Brand"
@@ -310,7 +310,7 @@ const NewProduct = () => {
                 </div>
 
                 <div className="flex flex-col gap-2 m-2 sm:w-1/2">
-                    <h2 className="font-medium">Specifications</h2>
+                    <h2 className="text-lg">Specifications</h2>
 
                     <div className="flex justify-evenly gap-2 items-center">
                         <TextField value={specsInput.title} onChange={handleSpecsChange} name="title" label="Name" placeholder="Model No" variant="outlined" size="small" />
@@ -321,7 +321,7 @@ const NewProduct = () => {
                     <div className="flex flex-col gap-1.5">
                         {specs.map((spec, i) => (
                             <div className="flex justify-between items-center text-sm rounded bg-blue-50 py-1 px-2">
-                                <p className="text-gray-500 font-medium">{spec.title}</p>
+                                <p className="text-gray-500 text-lg	">{spec.title}</p>
                                 <p>{spec.description}</p>
                                 <span onClick={() => deleteSpec(i)} className="text-red-600 hover:bg-red-200 bg-red-100 p-1 rounded-full cursor-pointer">
                                     <DeleteIcon />
@@ -330,7 +330,7 @@ const NewProduct = () => {
                         ))}
                     </div>
 
-                    <h2 className="font-medium">Product Images</h2>
+                    <h2 className="text-lg">Product Images</h2>
                     <div className="flex gap-2 overflow-x-auto h-32 border rounded">
                         {imagesPreview.map((image, i) => (
                             <img draggable="false" src={image} alt="Product" key={i} className="w-full h-full object-contain" />

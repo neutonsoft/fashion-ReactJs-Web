@@ -23,21 +23,10 @@ const footerLinks = [
         redirect: "https://www.flipkartcareers.com",
       },
       {
-        name: "Flipkart Stories",
+        name: "Stories",
         redirect: "https://stories.flipkart.com",
       },
-      {
-        name: "Press",
-        redirect: "https://stories.flipkart.com/category/top-stories/news",
-      },
-      {
-        name: "Flipkart Wholesale",
-        redirect: "https://www.flipkartwholesale.com",
-      },
-      {
-        name: "Corporate Information",
-        redirect: "https://www.flipkart.com/corporate-information",
-      },
+    
     ],
   },
   {
@@ -130,7 +119,7 @@ const Footer = () => {
                   className="w-full sm:w-1/5 flex flex-col gap-2 my-3 sm:my-6 ml-5"
                   key={i}
                 >
-                  <h2 className="text-black text-xl mb-2 uppercase">
+                  <h2 className="text-black text-sm mb-2 uppercase">
                     {el.title}
                   </h2>
                   {el.links.map((item, i) => (
@@ -138,7 +127,7 @@ const Footer = () => {
                       href={item.redirect}
                       target="_blank"
                       rel="noreferrer"
-                      className="hover:underline text-primary-grey text-base"
+                      className="hover:underline text-primary-grey text-xs"
                       key={i}
                     >
                       {item.name}
@@ -151,8 +140,8 @@ const Footer = () => {
             <div className="border-gray-600 h-36 w-1 border-l mr-5 mt-6 hidden sm:block"></div>
             <div className="w-full sm:w-6/12 my-6 mx-5 sm:mx-0 flex flex-col sm:flex-row gap-2 sm:gap-0 justify-between">
               <div className="w-full sm:w-1/2">
-                <h2 className="text-black text-xl">Mail Us:</h2>
-                <p className="mt-2 leading-5 text-primary-grey text-base">
+                <h2 className="text-black text-sm">Mail Us:</h2>
+                <p className="mt-2 leading-5 text-primary-grey text-xs">
                   Flipkart Internet Private Limited,
                   <br />
                   Buildings Alyssa, Begonia &<br />
@@ -167,10 +156,10 @@ const Footer = () => {
               </div>
 
               <div className="w-full sm:w-1/2">
-                <h2 className="text-black text-xl">
+                <h2 className="text-black text-sm">
                   Registered Office Address:
                 </h2>
-                <p className="mt-2 leading-5 text-primary-grey text-base">
+                <p className="mt-2 leading-5 text-primary-grey text-xs">
                   Flipkart Internet Private Limited,
                   <br />
                   Buildings Alyssa, Begonia &<br />

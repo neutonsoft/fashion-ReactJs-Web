@@ -148,16 +148,21 @@ const NavBar = () => {
                   {menuItem.children.length === 0 ? (
                     <li
                       key={i}
-                      className={` ${menuItem.megaMenu ? "mega-menu" : ""}`}
+                      className={` ${menuItem.megaMenu ? "mega-menu" : ""},`}
                     >
                       <Link
+                     
                         style={{
                           paddingTop: "15px",
                           paddingBottom: "15px",
+                          
                         }}
                         to={`${menuItem.path}`}
                       >
-                        {menuItem.title}
+                        
+                         {menuItem.title}
+                
+                       
                       </Link>
                     </li>
                   ) : (

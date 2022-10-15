@@ -13,7 +13,7 @@ export const MENUITEMS = [
   },
   {
     path: "/contact",
-    title: "Contact-us",
+    title: "Contact us",
     type: "link",
     children: [],
   },
