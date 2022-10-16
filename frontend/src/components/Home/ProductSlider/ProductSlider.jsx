@@ -50,8 +50,8 @@ const ProductSlider = ({ title, tagline }) => {
     <>
       <section className={"section-b-space p-t-0 ratio_asos px-2"}>
         <div className={"title1 section-t-space mb-10"}>
-          <h2 className="text-black text-lg mb-2 uppercase" >{title}</h2>
-          <h2 className="text-black text-xl	 mb-2 uppercase title-inner1" >{tagline}</h2>
+          <h4>{title}</h4>
+          <h2 className="title-inner1">{tagline}</h2>
           <Link
             to="/products"
             className="bg-primary-blue text-xl font-medium text-white px-5 py-2.5 rounded-sm shadow-lg uppercase "

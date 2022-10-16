@@ -40,16 +40,16 @@ export const settings = {
   ],
 };
 
-const DealSlider = ({ title }) => {
+const DealSlider = ({ title, tagline }) => {
   return (
     <section className="bg-white w-full shadow overflow-hidden">
       {/* <!-- header --> */}
       <div className={"title1 section-t-space mb-10"}>
-        {/* <h4>{title}</h4> */}
-        <h2 className={"title-inner1"}>{title}</h2>
+        <h4>{title}</h4>
+        <h2 className="title-inner1">{tagline}</h2>
         <Link
           to="/products"
-          className="bg-primary-blue text-xs font-medium text-white px-5 py-2.5 rounded-sm shadow-lg uppercase"
+          className="bg-primary-blue text-xl font-medium text-white px-5 py-2.5 rounded-sm shadow-lg uppercase "
         >
           view all
         </Link>

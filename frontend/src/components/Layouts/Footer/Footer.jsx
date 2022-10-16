@@ -26,7 +26,6 @@ const footerLinks = [
         name: "Stories",
         redirect: "https://stories.flipkart.com",
       },
-    
     ],
   },
   {
@@ -112,7 +111,7 @@ const Footer = () => {
     <>
       {!adminRoute && (
         <>
-          <footer className="mt-20 w-full py-1 sm:py-4 px-4 sm:px-12 bg-gray-50 text-white text-xs border-b border-gray-600 flex flex-col sm:flex-row overflow-hidden">
+          <footer className=" w-full py-1 sm:py-4 px-4 sm:px-12 bg-gray-50 text-white text-xs border-b border-gray-600 flex flex-col sm:flex-row overflow-hidden">
             <div className="w-full sm:w-6/12 flex flex-col sm:flex-row">
               {footerLinks.map((el, i) => (
                 <div
