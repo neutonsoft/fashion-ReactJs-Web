@@ -106,13 +106,6 @@ const Header = () => {
                       </span>
                     )}
 
-                    {togglePrimaryDropDown && (
-                      <PrimaryDropDownMenu
-                        setTogglePrimaryDropDown={setTogglePrimaryDropDown}
-                        user={user}
-                      />
-                    )}
-
                     {/* <span className="moreDropDown hidden sm:flex items-center text-white font-medium gap-1 cursor-pointer" onClick={() => setToggleSecondaryDropDown(!toggleSecondaryDropDown)}>More
             <span>{toggleSecondaryDropDown ? <ExpandLessIcon sx={{ fontSize: "16px" }} /> : <ExpandMoreIcon sx={{ fontSize: "16px" }} />}</span>
           </span> */}
@@ -153,7 +146,13 @@ const Header = () => {
             </Col>
           </Row>
         </Container>
-      </header>
+      </header>{" "}
+      {togglePrimaryDropDown && (
+        <PrimaryDropDownMenu
+          setTogglePrimaryDropDown={setTogglePrimaryDropDown}
+          user={user}
+        />
+      )}
       <SearchOverlay />
     </div>
   );
