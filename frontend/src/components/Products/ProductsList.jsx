@@ -114,7 +114,7 @@ const ProductsList = ({ openSidebar, noSidebar }) => {
           ) : (
             ""
           )}
-          <div className="grid grid-cols-1 sm:grid-cols-4 w-full place-content-start overflow-hidden pb-4 border-b">
+          <div className="flex flex-wrap  grid-cols-1 sm:grid-cols-4 w-full place-content-start overflow-hidden pb-4 border-b">
             {products?.map((product) => (
               <Product {...product} key={product._id} />
             ))}

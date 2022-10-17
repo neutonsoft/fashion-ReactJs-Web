@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import { Collapse } from "reactstrap";
 
 import { useParams, useLocation } from "react-router-dom";
-const Ratings = ({ setRating }) => {
+const Ratings = ({ ratings, setRating }) => {
   const [isRatingOpen, setIsRatingOpen] = useState(false);
   const toggleCategory = () => setIsRatingOpen(!isRatingOpen);
   const [url, setUrl] = useState();
@@ -22,7 +22,15 @@ const Ratings = ({ setRating }) => {
               <ul className="category-list">
                 {[4, 3, 2, 1].map((el, i) => (
                   <li>
-                    <a href={null} onClick={() => setRating(el)}>
+                    <a
+                      style={{
+                        textDecoration: el == ratings ? "underline" : "",
+                        textDecorationColor:
+                          el == ratings ? "red" : "transparent",
+                      }}
+                      href={null}
+                      onClick={() => setRating(el)}
+                    >
                       {el}
                     </a>
                   </li>

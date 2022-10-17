@@ -30,8 +30,6 @@ const DetailsWithPrice = ({ item, stickyClass, changeColorVar }) => {
   // const quantity = context.quantity;
   const navigate = useNavigate();
 
-  const uniqueColor = [];
-  const uniqueSize = [];
   const productId = params.id;
   const { cartItems } = useSelector((state) => state.cart);
 
@@ -61,48 +59,25 @@ const DetailsWithPrice = ({ item, stickyClass, changeColorVar }) => {
           <span>{product.cuttedPrice}%&nbsp;off</span>
         </h4>
         <h3>₹{product.price - (product.price * product.cuttedPrice) / 100}</h3>
-        {/* {product.variants.map((vari) => {
-          var findItem = uniqueColor.find((x) => x.color === vari.color);
-          if (!findItem) uniqueColor.push(vari);
-          var findItemSize = uniqueSize.find((x) => x === vari.size);
-          if (!findItemSize) uniqueSize.push(vari.size);
-        })} */}
-        {changeColorVar === undefined ? (
-          <>
-            {uniqueColor ? (
-              <ul className="color-variant">
-                {uniqueColor.map((vari, i) => {
-                  return (
-                    <li className={vari.color} key={i} title={vari.color}></li>
-                  );
-                })}
-              </ul>
-            ) : (
-              ""
-            )}
-          </>
+
+        {product?.colors ? (
+          <ul className="color-variant">
+            {product.colors.map((vari, i) => {
+              return (
+                <li
+                  className={vari.color}
+                  key={i}
+                  title={vari.color}
+                  onClick={() => changeColorVar(i)}
+                ></li>
+              );
+            })}
+          </ul>
         ) : (
-          <>
-            {uniqueColor ? (
-              <ul className="color-variant">
-                {uniqueColor.map((vari, i) => {
-                  return (
-                    <li
-                      className={vari.color}
-                      key={i}
-                      title={vari.color}
-                      onClick={() => changeColorVar(i)}
-                    ></li>
-                  );
-                })}
-              </ul>
-            ) : (
-              ""
-            )}
-          </>
+          ""
         )}
         <div className="product-description border-product">
-          {product.variants ? (
+          {product?.sizes ? (
             <div>
               <h6 className="product-title size-text">
                 select size
@@ -125,7 +100,7 @@ const DetailsWithPrice = ({ item, stickyClass, changeColorVar }) => {
               </Modal>
               <div className="size-box">
                 <ul>
-                  {uniqueSize.map((data, i) => {
+                  {product?.sizes.map((data, i) => {
                     return (
                       <li key={i}>
                         <a href={null}>{data}</a>

@@ -7,11 +7,14 @@ const Size = ({ selectedSize, setSelectedSize }) => {
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
   const handleSizes = (size, index) => {
-    if (selectedSize.includes(size)) {
-      let newSizes = selectedSize;
-      newSizes.splice(index, 1);
-      setSelectedSize(newSizes);
-    } else setSelectedSize([...selectedSize, size]);
+    console.log(selectedSize, "selectedSize");
+
+    var index = selectedSize.indexOf(size);
+    if (index > -1) {
+      setSelectedSize((prev) => prev.filter((e) => e !== size));
+    } else {
+      setSelectedSize((prev) => [...prev, size]);
+    }
   };
 
   return (

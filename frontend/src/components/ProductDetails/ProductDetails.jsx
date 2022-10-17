@@ -242,7 +242,7 @@ const ProductDetails = () => {
                         </Col>
                       </Row>
                     </Container>
-                    <ProductTab />
+                    <ProductTab product={product} />
                   </Col>
                 </Row>
               </Container>

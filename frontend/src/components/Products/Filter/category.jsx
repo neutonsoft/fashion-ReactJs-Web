@@ -3,7 +3,7 @@ import { Collapse } from "reactstrap";
 
 import { useParams } from "react-router-dom";
 import { categories } from "../../../utils/constants";
-const Category = ({ setCategory }) => {
+const Category = ({ category, setCategory }) => {
   const [isCategoryOpen, setIsCategoryOpen] = useState(false);
   const toggleCategory = () => setIsCategoryOpen(!isCategoryOpen);
   const [url, setUrl] = useState();
@@ -22,7 +22,15 @@ const Category = ({ setCategory }) => {
               <ul className="category-list">
                 {categories.map((el, i) => (
                   <li>
-                    <a href={null} onClick={() => setCategory(el)}>
+                    <a
+                      style={{
+                        textDecoration: el == category ? "underline" : "",
+                        textDecorationColor:
+                          el == category ? "red" : "transparent",
+                      }}
+                      href={null}
+                      onClick={() => setCategory(el)}
+                    >
                       {el}
                     </a>
                   </li>

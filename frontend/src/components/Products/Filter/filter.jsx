@@ -34,6 +34,7 @@ const FilterPage = ({ sidebarView, closeSidebar }) => {
     location.search ? location.search.split("=")[1] : ""
   );
   const [price, setPrice] = useState([0, 200000]);
+  const [priceMove, setPriceMove] = useState(false);
   const [ratings, setRating] = useState(0);
   const [selectedSize, setSelectedSize] = useState([]);
   const [selectedColor, setSelectedColor] = useState("");
@@ -44,7 +45,7 @@ const FilterPage = ({ sidebarView, closeSidebar }) => {
       dispatch(clearErrors());
     }
     dispatch(getProducts(keyword, category, price, ratings));
-  }, [dispatch, keyword, category, price, ratings, error, enqueueSnackbar]);
+  }, [dispatch, keyword, category, priceMove, ratings, error, enqueueSnackbar]);
 
   return (
     <>
@@ -64,11 +65,19 @@ const FilterPage = ({ sidebarView, closeSidebar }) => {
               <i className="fa fa-angle-left" aria-hidden="true"></i> back
             </span>
           </div>
-          <Category setCategory={setCategory} />
-          <Ratings setRating={setRating} setSelectedSize={setSelectedSize} />
-          <Color selectedColor={selectedColor} />
+          <Category category={category} setCategory={setCategory} />
+          <Ratings ratings={ratings} setRating={setRating} />
+          <Color
+            selectedColor={selectedColor}
+            setSelectedColor={setSelectedColor}
+          />
           <Size selectedSize={selectedSize} setSelectedSize={setSelectedSize} />
-          <Price price={price} setPrice={setPrice} />
+          <Price
+            price={price}
+            setPrice={setPrice}
+            priceMove={priceMove}
+            setPriceMove={setPriceMove}
+          />
         </div>
         {/* <!-- silde-bar colleps block end here -->*/}
         {/* <NewProduct /> */}

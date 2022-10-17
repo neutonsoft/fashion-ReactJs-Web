@@ -3,7 +3,7 @@ import { Range, getTrackBackground } from "react-range";
 import { useRouter } from "next/router";
 import Slider from "@mui/material/Slider";
 
-const Price = ({ price, setPrice }) => {
+const Price = ({ price, setPrice, priceMove, setPriceMove }) => {
   const router = useRouter();
   const [url, setUrl] = useState();
   useEffect(() => {
@@ -23,6 +23,7 @@ const Price = ({ price, setPrice }) => {
             <Slider
               value={price}
               onChange={priceHandler}
+              onChangeCommitted={() => setPriceMove(!priceMove)}
               valueLabelDisplay="auto"
               getAriaLabel={() => "Price range slider"}
               min={0}
