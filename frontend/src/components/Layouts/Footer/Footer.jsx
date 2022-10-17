@@ -137,7 +137,7 @@ const Footer = () => {
             </div>
 
             <div className="border-gray-600 h-36 w-1 border-l mr-5 mt-6 hidden sm:block"></div>
-            <div className="w-full sm:w-6/12 my-6 mx-5 sm:mx-0 flex flex-col sm:flex-row gap-2 sm:gap-0 justify-between">
+            <div className="w-full sm:w-6/12 my-6  mx-6 flex flex-col sm:flex-row gap-2 sm:gap-0 justify-between">
               <div className="w-full sm:w-1/2">
                 <h2 className="text-black text-sm">Mail Us:</h2>
                 <p className="mt-2 leading-5 text-primary-grey text-xs">
@@ -181,54 +181,58 @@ const Footer = () => {
           </footer>
           {/* <!-- footer ends --> */}
 
-          <div className="px-16 py-6 w-full bg-gray-500 hidden sm:flex justify-between items-center text-sm text-white">
-            <a
-              href="https://seller.flipkart.com/sell-online"
-              target="_blank"
-              rel="noreferrer"
-              className="flex items-center gap-2 text-white"
-            >
-              <span className="text-yellow-400">
-                <WorkIcon sx={{ fontSize: "20px" }} />
-              </span>{" "}
-              Sell On Flipkart
-            </a>
-            <a
-              href="https://brands.flipkart.com"
-              target="_blank"
-              rel="noreferrer"
-              className="flex items-center gap-2 text-white"
-            >
-              <span className="text-yellow-400">
-                <StarsIcon sx={{ fontSize: "20px" }} />
-              </span>{" "}
-              Advertise
-            </a>
-            <a
-              href="https://www.flipkart.com/the-gift-card-store"
-              rel="noreferrer"
-              target="_blank"
-              className="flex items-center gap-2 text-white"
-            >
-              <span className="text-yellow-400">
-                <CardGiftcardIcon sx={{ fontSize: "20px" }} />
-              </span>{" "}
-              Gift Cards
-            </a>
-            <a
-              href="https://www.flipkart.com/helpcentre"
-              target="_blank"
-              rel="noreferrer"
-              className="flex items-center gap-2 text-white"
-            >
-              <span className="text-yellow-400">
-                <HelpIcon sx={{ fontSize: "20px" }} />
-              </span>{" "}
-              Help Center
-            </a>
+          <div className="px-16 py-6 w-full bg-gray-500  flex justify-between items-center flex-wrap text-sm text-white">
+            <div className="xs:w-full sm:w-full md:w-full lg:w-3/4  sm:flex justify-between items-center  text-sm text-white">
+              <a
+                href="https://seller.flipkart.com/sell-online"
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center gap-2 text-white"
+              >
+                <span className="text-yellow-400">
+                  <WorkIcon sx={{ fontSize: "20px" }} />
+                </span>{" "}
+                Sell On Flipkart
+              </a>
+              <a
+                href="https://brands.flipkart.com"
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center gap-2 text-white"
+              >
+                <span className="text-yellow-400">
+                  <StarsIcon sx={{ fontSize: "20px" }} />
+                </span>{" "}
+                Advertise
+              </a>
+              <a
+                href="https://www.flipkart.com/the-gift-card-store"
+                rel="noreferrer"
+                target="_blank"
+                className="flex items-center gap-2 text-white"
+              >
+                <span className="text-yellow-400">
+                  <CardGiftcardIcon sx={{ fontSize: "20px" }} />
+                </span>{" "}
+                Gift Cards
+              </a>
+              <a
+                href="https://www.flipkart.com/helpcentre"
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center gap-2 text-white"
+              >
+                <span className="text-yellow-400">
+                  <HelpIcon sx={{ fontSize: "20px" }} />
+                </span>{" "}
+                Help Center
+              </a>
 
-            <span>&copy; 2007-{new Date().getFullYear()} Flipkart.com</span>
-            <img draggable="false" src={paymentMethods} alt="Card Payment" />
+              <span>&copy; 2007-{new Date().getFullYear()} Flipkart.com</span>
+            </div>
+            <div className="xs:w-full sm:w-full md:w-full lg:w-1/4  sm:flex justify-center items-center  text-sm text-white">
+              <img draggable="false" src={paymentMethods} alt="Card Payment" />
+            </div>
           </div>
         </>
       )}
