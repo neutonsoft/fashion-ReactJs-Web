@@ -16,7 +16,7 @@ const Products = () => {
   };
   return (
     <>
-      <MetaData title="All Products | Flipkart" />
+      <MetaData title="All Products | Tito" />
       <main className="w-full mt-14 sm:mt-0 bg-gray-50">
         <section className="section-b-space ratio_asos">
           <div className="collection-wrapper">
