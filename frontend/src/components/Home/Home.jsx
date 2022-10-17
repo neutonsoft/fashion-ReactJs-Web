@@ -34,16 +34,17 @@ const Home = () => {
         {!loading && (
           <ProductSlider
             title={"SPECIAL PRODUCTS"}
-            tagline={"Based on Your Activity"}
+            tagline={"NEW ARRIVALS"}
           />
         )}
-        <DealSlider title={"Top Brands"} tagline={"Best Price"} />
         {!loading && (
           <ProductSlider
             title={"You May Also Like..."}
-            tagline={"Based on Your Interest"}
+            tagline={"SHOP BY CATEGORY"}
           />
         )}
+        <ProductSlider title={"Top Brands"} tagline={"Best Price"} />
+
         {/* <DealSlider title={"Top Offers On"} /> */}
         {/* {!loading && <ProductSlider title={"Don't Miss These!"} tagline={"Inspired by your order"} />} */}
       </main>

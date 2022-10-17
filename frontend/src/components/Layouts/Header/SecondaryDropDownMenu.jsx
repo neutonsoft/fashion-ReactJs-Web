@@ -10,27 +10,27 @@ const SecondaryDropDownMenu = () => {
         {
             title: "Notification Preferences",
             icon: <NotificationsIcon sx={{ fontSize: "18px" }} />,
-            redirect: "https://www.flipkart.com/communication-preferences/push",
+            redirect: "https://www.Tito.com/communication-preferences/push",
         },
         {
-            title: "Sell on Flipkart",
+            title: "Sell on Tito",
             icon: <BusinessCenterIcon sx={{ fontSize: "18px" }} />,
-            redirect: "https://seller.flipkart.com/sell-online",
+            redirect: "https://seller.Tito.com/sell-online",
         },
         {
             title: "24x7 Customer Care",
             icon: <LiveHelpIcon sx={{ fontSize: "18px" }} />,
-            redirect: "https://www.flipkart.com/helpcentre",
+            redirect: "https://www.Tito.com/helpcentre",
         },
         {
             title: "Advertise",
             icon: <TrendingUpIcon sx={{ fontSize: "18px" }} />,
-            redirect: "https://advertising.flipkart.com",
+            redirect: "https://advertising.Tito.com",
         },
         {
             title: "Download App",
             icon: <DownloadIcon sx={{ fontSize: "18px" }} />,
-            redirect: "https://www.flipkart.com/mobile-apps",
+            redirect: "https://www.Tito.com/mobile-apps",
         },
     ]
 

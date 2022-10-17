@@ -12,19 +12,19 @@ const footerLinks = [
     links: [
       {
         name: "Contact Us",
-        redirect: "https://www.flipkart.com/helpcentre",
+        redirect: "https://www.Tito.com/helpcentre",
       },
       {
         name: "About Us",
-        redirect: "https://www.flipkart.com/about-us",
+        redirect: "https://www.Tito.com/about-us",
       },
       {
         name: "Careers",
-        redirect: "https://www.flipkartcareers.com",
+        redirect: "https://www.Titocareers.com",
       },
       {
         name: "Stories",
-        redirect: "https://stories.flipkart.com",
+        redirect: "https://stories.Tito.com",
       },
     ],
   },
@@ -33,21 +33,21 @@ const footerLinks = [
     links: [
       {
         name: "Payments",
-        redirect: "https://www.flipkart.com/pages/payments",
+        redirect: "https://www.Tito.com/pages/payments",
       },
       {
         name: "Shipping",
-        redirect: "https://www.flipkart.com/pages/shipping",
+        redirect: "https://www.Tito.com/pages/shipping",
       },
       {
         name: "Cancellation & Returns",
         redirect:
-          "https://www.flipkart.com/helpcentre?catalog=55c9c6edb000002e002c1701&view=CATALOG",
+          "https://www.Tito.com/helpcentre?catalog=55c9c6edb000002e002c1701&view=CATALOG",
       },
       {
         name: "FAQ",
         redirect:
-          "https://www.flipkart.com/helpcentre?catalog=55c9c8e2b0000023002c1702&view=CATALOG",
+          "https://www.Tito.com/helpcentre?catalog=55c9c8e2b0000023002c1702&view=CATALOG",
       },
     ],
   },
@@ -56,27 +56,27 @@ const footerLinks = [
     links: [
       {
         name: "Return Policy",
-        redirect: "https://www.flipkart.com/pages/returnpolicy",
+        redirect: "https://www.Tito.com/pages/returnpolicy",
       },
       {
         name: "Terms Of Use",
-        redirect: "https://www.flipkart.com/pages/terms",
+        redirect: "https://www.Tito.com/pages/terms",
       },
       {
         name: "Security",
-        redirect: "https://www.flipkart.com/pages/paymentsecurity",
+        redirect: "https://www.Tito.com/pages/paymentsecurity",
       },
       {
         name: "Privacy",
-        redirect: "https://www.flipkart.com/pages/privacypolicy",
+        redirect: "https://www.Tito.com/pages/privacypolicy",
       },
       {
         name: "Sitemap",
-        redirect: "https://www.flipkart.com/sitemap",
+        redirect: "https://www.Tito.com/sitemap",
       },
       {
         name: "EPR Compliance",
-        redirect: "https://www.flipkart.com/pages/ewaste-compliance-tnc",
+        redirect: "https://www.Tito.com/pages/ewaste-compliance-tnc",
       },
     ],
   },
@@ -85,15 +85,15 @@ const footerLinks = [
     links: [
       {
         name: "Facebook",
-        redirect: "https://www.facebook.com/flipkart",
+        redirect: "https://www.facebook.com/Tito",
       },
       {
         name: "Twitter",
-        redirect: "https://twitter.com/flipkart",
+        redirect: "https://twitter.com/Tito",
       },
       {
         name: "YouTube",
-        redirect: "https://www.youtube.com/flipkart",
+        redirect: "https://www.youtube.com/Tito",
       },
     ],
   },
@@ -141,7 +141,7 @@ const Footer = () => {
               <div className="w-full sm:w-1/2">
                 <h2 className="text-black text-sm">Mail Us:</h2>
                 <p className="mt-2 leading-5 text-primary-grey text-xs">
-                  Flipkart Internet Private Limited,
+                  Tito Internet Private Limited,
                   <br />
                   Buildings Alyssa, Begonia &<br />
                   Clove Embassy Tech Village,
@@ -159,7 +159,7 @@ const Footer = () => {
                   Registered Office Address:
                 </h2>
                 <p className="mt-2 leading-5 text-primary-grey text-xs">
-                  Flipkart Internet Private Limited,
+                  Tito Internet Private Limited,
                   <br />
                   Buildings Alyssa, Begonia &<br />
                   Clove Embassy Tech Village,
@@ -184,7 +184,7 @@ const Footer = () => {
           <div className="px-16 py-6 w-full bg-gray-500  flex justify-between items-center flex-wrap text-sm text-white">
             <div className="xs:w-full sm:w-full md:w-full lg:w-3/4  sm:flex justify-between items-center  text-sm text-white">
               <a
-                href="https://seller.flipkart.com/sell-online"
+                href="https://seller.Tito.com/sell-online"
                 target="_blank"
                 rel="noreferrer"
                 className="flex items-center gap-2 text-white"
@@ -192,10 +192,10 @@ const Footer = () => {
                 <span className="text-yellow-400">
                   <WorkIcon sx={{ fontSize: "20px" }} />
                 </span>{" "}
-                Sell On Flipkart
+                Sell On Tito
               </a>
               <a
-                href="https://brands.flipkart.com"
+                href="https://brands.Tito.com"
                 target="_blank"
                 rel="noreferrer"
                 className="flex items-center gap-2 text-white"
@@ -206,7 +206,7 @@ const Footer = () => {
                 Advertise
               </a>
               <a
-                href="https://www.flipkart.com/the-gift-card-store"
+                href="https://www.Tito.com/the-gift-card-store"
                 rel="noreferrer"
                 target="_blank"
                 className="flex items-center gap-2 text-white"
@@ -217,7 +217,7 @@ const Footer = () => {
                 Gift Cards
               </a>
               <a
-                href="https://www.flipkart.com/helpcentre"
+                href="https://www.Tito.com/helpcentre"
                 target="_blank"
                 rel="noreferrer"
                 className="flex items-center gap-2 text-white"
@@ -228,7 +228,7 @@ const Footer = () => {
                 Help Center
               </a>
 
-              <span>&copy; 2007-{new Date().getFullYear()} Flipkart.com</span>
+              <span>&copy; 2007-{new Date().getFullYear()} Tito.com</span>
             </div>
             <div className="xs:w-full sm:w-full md:w-full lg:w-1/4  sm:flex justify-center items-center  text-sm text-white">
               <img draggable="false" src={paymentMethods} alt="Card Payment" />

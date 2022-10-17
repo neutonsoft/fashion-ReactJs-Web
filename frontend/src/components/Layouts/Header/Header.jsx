@@ -5,7 +5,7 @@ import SearchIcon from "@mui/icons-material/Search";
 
 import { Media, Container, Row, Col } from "reactstrap";
 import SearchOverlay from "./SearchOverlay";
-import logo from "../../../assets/images/logo.png";
+import logo from "../../../assets/images/logo-black.png";
 import PrimaryDropDownMenu from "./PrimaryDropDownMenu";
 import SecondaryDropDownMenu from "./SecondaryDropDownMenu";
 import { useState } from "react";
