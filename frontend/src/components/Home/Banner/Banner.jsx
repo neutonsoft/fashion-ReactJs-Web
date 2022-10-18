@@ -88,7 +88,7 @@ const Banner = () => {
   ];
   return (
     <Fragment>
-      <section className="p-0 bg-red-50">
+      <section className="first-banner p-0 bg-red-50">
         <Slider {...settings} className="slide-1 home-slider">
           {Data.map((data, i) => {
             return (

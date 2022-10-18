@@ -63,7 +63,7 @@ const PrimaryDropDownMenu = ({ setTogglePrimaryDropDown, user }) => {
   ];
 
   return (
-    <div className="absolute w-60 right-12 ml-2 top-28 bg-white shadow-2xl rounded flex-col text-sm z-10">
+    <div className="onhover-show-div">
       {user.role === "admin" && (
         <Link
           className="pl-3 py-3.5 border-b flex gap-3 items-center hover:bg-gray-50 rounded-t"

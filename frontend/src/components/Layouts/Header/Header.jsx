@@ -32,7 +32,7 @@ const Header = () => {
 
   return (
     <div>
-      <header className="sticky">
+      <header className="sticky fixed">
         <div className="mobile-fix-option"></div>
         <TopBarDark />
         <Container>
@@ -90,7 +90,7 @@ const Header = () => {
                       </ul>
                     ) : (
                       <span
-                        className="userDropDown flex items-center text-black font-medium gap-1 cursor-pointer"
+                        className="onhover-dropdown userDropDown flex items-center text-black font-medium gap-1 cursor-pointer"
                         onClick={() =>
                           setTogglePrimaryDropDown(!togglePrimaryDropDown)
                         }
@@ -103,6 +103,10 @@ const Header = () => {
                             <ExpandMoreIcon sx={{ fontSize: "16px" }} />
                           )}
                         </span>
+                        <PrimaryDropDownMenu
+                          setTogglePrimaryDropDown={setTogglePrimaryDropDown}
+                          user={user}
+                        />
                       </span>
                     )}
 
@@ -147,12 +151,12 @@ const Header = () => {
           </Row>
         </Container>
       </header>{" "}
-      {togglePrimaryDropDown && (
+      {/* {togglePrimaryDropDown && (
         <PrimaryDropDownMenu
           setTogglePrimaryDropDown={setTogglePrimaryDropDown}
           user={user}
         />
-      )}
+      )} */}
       <SearchOverlay />
     </div>
   );
