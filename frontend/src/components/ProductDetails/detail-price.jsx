@@ -77,7 +77,7 @@ const DetailsWithPrice = ({ item, stickyClass, changeColorVar }) => {
           ""
         )}
         <div className="product-description border-product">
-          {product?.sizes ? (
+          {true ? (
             <div>
               <h6 className="product-title size-text">
                 select size
@@ -87,22 +87,24 @@ const DetailsWithPrice = ({ item, stickyClass, changeColorVar }) => {
                     data-toggle="modal"
                     data-target="#sizemodal"
                     onClick={toggle}
+                    className="cursor-pointer"
                   >
                     size chart
                   </a>
                 </span>
               </h6>
               <Modal isOpen={modal} toggle={toggle} centered>
-                <ModalHeader toggle={toggle}>Sheer Straight Kurta</ModalHeader>
+                {/* <ModalHeader toggle={toggle}>Sheer Straight Kurta</ModalHeader> */}
+                <ModalHeader toggle={toggle}></ModalHeader>
                 <ModalBody>
-                  <Media src={sizeChart.src} alt="size" className="img-fluid" />
+                  <Media src={sizeChart} alt="size" className="img-fluid" />
                 </ModalBody>
               </Modal>
               <div className="size-box">
                 <ul>
-                  {product?.sizes.map((data, i) => {
+                  {["xs", "sm", "md", "lg"].map((data, i) => {
                     return (
-                      <li key={i}>
+                      <li className="rounded bg-gray-200 p-3 m-1" key={i}>
                         <a href={null}>{data}</a>
                       </li>
                     );

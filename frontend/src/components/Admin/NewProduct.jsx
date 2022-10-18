@@ -305,11 +305,12 @@ const NewProduct = () => {
               ))}
             </TextField>
             <FormControl sx={{ m: 1, width: 300 }}>
-              <InputLabel id="demo-multiple-name-label">Size</InputLabel>
+              <InputLabel id="demo-multiple-name-label">Size *</InputLabel>
               <Select
                 labelId="demo-multiple-name-label"
                 id="demo-multiple-name"
                 multiple
+                required
                 value={size}
                 onChange={(e) => setSize(e.target.value)}
                 input={<OutlinedInput label="Name" />}

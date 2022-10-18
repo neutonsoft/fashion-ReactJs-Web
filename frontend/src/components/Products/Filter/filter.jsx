@@ -47,6 +47,12 @@ const FilterPage = ({ sidebarView, closeSidebar }) => {
     dispatch(getProducts(keyword, category, price, ratings));
   }, [dispatch, keyword, category, priceMove, ratings, error, enqueueSnackbar]);
 
+  const clearFilters = () => {
+    setPrice([0, 200000]);
+    setCategory("");
+    setSelectedColor("");
+    setSelectedSize([]);
+  };
   return (
     <>
       <Col
@@ -65,8 +71,17 @@ const FilterPage = ({ sidebarView, closeSidebar }) => {
               <i className="fa fa-angle-left" aria-hidden="true"></i> back
             </span>
           </div>
+          <div className="flex items-center justify-between gap-5 px-4 py-2 border-b">
+            <h3 className="text-lg font-medium text-black">Filters</h3>
+            <h3
+              className="bg-gray-300 rounded p-1 text-black text-lg cursor-pointer font-medium"
+              onClick={() => clearFilters()}
+            >
+              Clear All
+            </h3>
+          </div>
           <Category category={category} setCategory={setCategory} />
-          <Ratings ratings={ratings} setRating={setRating} />
+          {/* <Ratings ratings={ratings} setRating={setRating} /> */}
           <Color
             selectedColor={selectedColor}
             setSelectedColor={setSelectedColor}

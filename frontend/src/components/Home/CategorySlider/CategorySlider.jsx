@@ -17,8 +17,8 @@ const settings = {
   slidesToShow: 4,
   slidesToScroll: 4,
   autoplay: true,
-  arrows: false,
-  dots: true,
+  arrows: true,
+  dots: false,
   autoplaySpeed: 3000,
   responsive: [
     {
@@ -64,7 +64,7 @@ const ProductSlider = ({ title, tagline }) => {
           <Row>
             <Col>
               {loading ? null : (
-                <Slider {...settings} className="product-m no-arrow">
+                <Slider {...settings} className="product-m slide-1 home-slider">
                   {products &&
                     products.map((product, i) => (
                       <div key={i}>

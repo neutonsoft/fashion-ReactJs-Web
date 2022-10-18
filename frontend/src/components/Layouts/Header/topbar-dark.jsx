@@ -3,7 +3,7 @@ import { Container, Row, Col } from "reactstrap";
 import Link from "next/link";
 // import { firebase_app } from "../../../config/base";
 import { useRouter } from "next/router";
-
+import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 const TopBarDark = ({ fluid }) => {
   const router = useRouter();
   // const firebaseLogout = () => {
@@ -25,7 +25,7 @@ const TopBarDark = ({ fluid }) => {
               </ul>
             </div>
           </Col>
-          <Col lg="6" className="text-end">
+          <Col lg="6" className="header-contact text-end">
             {/* <ul className="header-dropdown">
               <li className="mobile-wishlist">
                 <Link href="/page/account/wishlist">
@@ -53,6 +53,13 @@ const TopBarDark = ({ fluid }) => {
                 </ul>
               </li>
             </ul> */}
+            <a href="https://web.whatsapp.com/" target={"_blank"}>
+              <WhatsAppIcon
+                sx={{
+                  color: "green",
+                }}
+              />
+            </a>
           </Col>
         </Row>
       </Container>

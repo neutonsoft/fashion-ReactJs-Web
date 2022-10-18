@@ -80,7 +80,7 @@ const Product = (props) => {
       <div className="product-box product-wrap">
         <div className="img-wrapper">
           <Link
-            to={`/product/${_id}`}
+            to={`/products?category=${category}`}
             // className="flex flex-col items-center text-center group"
           >
             <div className="front">
@@ -156,7 +156,7 @@ const Product = (props) => {
           ) : (
             ""
           )}
-          <div className="absolute bottom-3 w-full flex flex-col gap-2 items-center mt-2">
+          <div className="backdrop-brightness-50 absolute bottom-0 w-full flex flex-col gap-2 items-center py-3">
             <h4
               style={{
                 fontSize: "18px",

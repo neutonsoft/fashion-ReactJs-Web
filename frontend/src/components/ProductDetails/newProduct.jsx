@@ -39,15 +39,15 @@ const NewProduct = ({ product }) => {
                       />
                     </a>
                     <div className="media-body align-self-center">
-                      <div className="rating">
+                      {/* <div className="rating">
                         <i className="fa fa-star"></i>{" "}
                         <i className="fa fa-star"></i>{" "}
                         <i className="fa fa-star"></i>{" "}
                         <i className="fa fa-star"></i>{" "}
                         <i className="fa fa-star"></i>
-                      </div>
+                      </div> */}
                       <a href={null}>
-                        <h6>{product.title}</h6>
+                        <h6>{product.name}</h6>
                       </a>
                       <h4>₹{product.price}</h4>
                     </div>
