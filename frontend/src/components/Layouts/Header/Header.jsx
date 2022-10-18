@@ -96,13 +96,13 @@ const Header = () => {
                         }
                       >
                         {user.name && user.name.split(" ", 1)}
-                        <span>
+                        {/* <span>
                           {togglePrimaryDropDown ? (
                             <ExpandLessIcon sx={{ fontSize: "16px" }} />
                           ) : (
                             <ExpandMoreIcon sx={{ fontSize: "16px" }} />
                           )}
-                        </span>
+                        </span> */}
                         <PrimaryDropDownMenu
                           setTogglePrimaryDropDown={setTogglePrimaryDropDown}
                           user={user}

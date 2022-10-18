@@ -18,16 +18,8 @@ import {
 import React, { useState } from "react";
 import { getDiscount } from "../../../utils/functions";
 const Product = (props) => {
-  const {
-    _id,
-    name,
-    images,
-    ratings,
-    numOfReviews,
-    price,
-    cuttedPrice,
-    description,
-  } = props;
+  const { _id, name, images, numOfReviews, price, cuttedPrice, description } =
+    props;
 
   const dispatch = useDispatch();
   const { enqueueSnackbar } = useSnackbar();
@@ -159,14 +151,14 @@ const Product = (props) => {
         </div>
       </div>
       <div className="product-detail">
-        <div
+        {/* <div
           style={{
             marginTop: "15px",
           }}
           className="rating"
         >
           {RatingStars}
-        </div>
+        </div> */}
         <h6
           style={{
             lineHeight: 1,

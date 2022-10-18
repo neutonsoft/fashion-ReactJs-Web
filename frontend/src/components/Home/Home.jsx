@@ -26,16 +26,13 @@ const Home = () => {
     <>
       <MetaData title="Online Shopping Site for Lifestyle!" />
       {/* <Categories /> */}
-      <main className="flex flex-col gap-3  mt-16 sm:mt-2">
+      <main className="flex flex-col gap-3  mt-20 sm:mt-2 bg-gray-50">
         <Banner />
 
         <br />
         {/* <DealSlider title={"Discounts for You"} /> */}
         {!loading && (
-          <ProductSlider
-            title={"SPECIAL PRODUCTS"}
-            tagline={"NEW ARRIVALS"}
-          />
+          <ProductSlider title={"SPECIAL PRODUCTS"} tagline={"NEW ARRIVALS"} />
         )}
         {!loading && (
           <ProductSlider

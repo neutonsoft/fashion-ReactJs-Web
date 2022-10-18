@@ -154,14 +154,14 @@ const Product = ({
         </div>
       </div>
       <div className="product-detail ml-2">
-        <div
+        {/* <div
           style={{
             marginTop: "15px",
           }}
           className="rating"
         >
           {RatingStars}
-        </div>
+        </div> */}
         <h6
           style={{
             lineHeight: 1,
