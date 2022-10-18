@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import Categories from "../Layouts/Categories";
 import Banner from "./Banner/Banner";
 import ProductSlider from "./ProductSlider/ProductSlider";
+import CategorySlider from "./CategorySlider/CategorySlider";
 import DealSlider from "./DealSlider/DealSlider";
 import { useDispatch, useSelector } from "react-redux";
 import { clearErrors, getSliderProducts } from "../../actions/productAction";
@@ -35,7 +36,7 @@ const Home = () => {
           <ProductSlider title={"SPECIAL PRODUCTS"} tagline={"NEW ARRIVALS"} />
         )}
         {!loading && (
-          <ProductSlider
+          <CategorySlider
             title={"You May Also Like..."}
             tagline={"SHOP BY CATEGORY"}
           />
