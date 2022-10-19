@@ -63,7 +63,7 @@ const UpdateProduct = () => {
     title: "",
     description: "",
   });
-
+  console.log(product, "product");
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState(0);
@@ -79,8 +79,8 @@ const UpdateProduct = () => {
   const [logo, setLogo] = useState("");
   const [logoPreview, setLogoPreview] = useState("");
   const [size, setSize] = useState([]);
-  const [color, setColor] = useState("");
-
+  const [color, setColor] = useState([]);
+  console.log(color, size, "*****");
   const handleSpecsChange = (e) => {
     setSpecsInput({ ...specsInput, [e.target.name]: e.target.value });
   };
@@ -162,9 +162,17 @@ const UpdateProduct = () => {
     formData.set("cuttedPrice", cuttedPrice);
     formData.set("category", category);
     formData.set("stock", stock);
-    formData.set("quantity", quantity);
     formData.set("brandname", brand);
     formData.set("logo", logo);
+    formData.set("quantity", quantity);
+
+    color.forEach((h) => {
+      formData.append("color", h);
+    });
+
+    size.forEach((h) => {
+      formData.append("size", h);
+    });
 
     images.forEach((image) => {
       formData.append("images", image);
@@ -193,12 +201,14 @@ const UpdateProduct = () => {
       setCuttedPrice(product.cuttedPrice);
       setCategory(product.category);
       setStock(product.stock);
-      setQuantity(product.warranty);
       setBrand(product.brand.name);
       setHighlights(product.highlights);
       setSpecs(product.specifications);
       setOldImages(product.images);
       setLogoPreview(product.brand.logo.url);
+      setQuantity(product.quantity);
+      setColor(product.color);
+      setSize(product.size);
     }
     if (error) {
       enqueueSnackbar(error, { variant: "error" });
@@ -333,34 +343,50 @@ const UpdateProduct = () => {
             />
           </div>
           <div className="flex justify-between gap-4">
-            <TextField
-              label="Color"
-              select
-              fullWidth
-              variant="outlined"
-              size="small"
-              required
-              value={color}
-              onChange={(e) => setColor(e.target.value)}
-            >
-              {colors.map((el, i) => (
-                <MenuItem value={el} key={i}>
-                  {el}
-                </MenuItem>
-              ))}
-            </TextField>
+            <FormControl sx={{ m: 1, width: 300 }}>
+              <InputLabel id="demo-multiple-name-label1">Color *</InputLabel>
+              <Select
+                labelId="demo-multiple-name-label1"
+                id="demo-multiple-name1"
+                multiple
+                required
+                defaultValue={color}
+                value={color}
+                onChange={(e) =>
+                  setColor(
+                    typeof e.target.value === "string"
+                      ? e.target.value.split(",")
+                      : e.target.value
+                  )
+                }
+                input={<OutlinedInput label="Name" />}
+              >
+                {colors.map((el, i) => (
+                  <MenuItem value={el} key={el}>
+                    {el}
+                  </MenuItem>
+                ))}
+              </Select>
+            </FormControl>
             <FormControl sx={{ m: 1, width: 300 }}>
               <InputLabel id="demo-multiple-name-label">Size</InputLabel>
               <Select
                 labelId="demo-multiple-name-label"
                 id="demo-multiple-name"
                 multiple
+                defaultValue={size}
                 value={size}
-                onChange={(e) => setSize(e.target.value)}
+                onChange={(e) =>
+                  setSize(
+                    typeof e.target.value === "string"
+                      ? e.target.value.split(",")
+                      : e.target.value
+                  )
+                }
                 input={<OutlinedInput label="Name" />}
               >
                 {sizes.map((el, i) => (
-                  <MenuItem value={el} key={i}>
+                  <MenuItem value={el} key={el}>
                     {el}
                   </MenuItem>
                 ))}

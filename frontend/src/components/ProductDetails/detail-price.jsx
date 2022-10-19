@@ -14,13 +14,14 @@ import { Modal, ModalBody, ModalHeader, Media, Input } from "reactstrap";
 // import CountdownComponent from "../../../components/common/widgets/countdownComponent";
 // import MasterSocial from "./master_social";
 
-const DetailsWithPrice = ({ item, stickyClass, changeColorVar }) => {
+const DetailsWithPrice = ({ item, stickyClass }) => {
   const params = useParams();
   const dispatch = useDispatch();
   const { enqueueSnackbar } = useSnackbar();
   const [modal, setModal] = useState(false);
-  const [quantity, setQuantity] = useState(2);
-  const [selectedSize, setSelectedSize] = useState([]);
+  const [quantity, setQuantity] = useState(0);
+  const [selectedColor, setColor] = useState("");
+  const [selectedSize, setSelectedSize] = useState("");
   const toggle = () => setModal(!modal);
   const product = item;
   const navigate = useNavigate();
@@ -31,14 +32,50 @@ const DetailsWithPrice = ({ item, stickyClass, changeColorVar }) => {
   const itemInCart = cartItems.some((i) => i.product === productId);
 
   const addToCartHandler = () => {
+    if (selectedColor === "") {
+      enqueueSnackbar("Add Color", { variant: "warning" });
+      return;
+    }
+    if (selectedSize === "") {
+      enqueueSnackbar("Add size", { variant: "warning" });
+      return;
+    }
+    if (quantity === 0) {
+      enqueueSnackbar("Add quantity", { variant: "warning" });
+      return;
+    }
     dispatch(addItemsToCart(productId));
     enqueueSnackbar("Product Added To Cart", { variant: "success" });
   };
 
   const goToCart = () => {
+    if (selectedColor === "") {
+      enqueueSnackbar("Add Color", { variant: "warning" });
+      return;
+    }
+    if (selectedSize === "") {
+      enqueueSnackbar("Add size", { variant: "warning" });
+      return;
+    }
+    if (quantity === 0) {
+      enqueueSnackbar("Add quantity", { variant: "warning" });
+      return;
+    }
     navigate("/cart");
   };
   const buyNow = () => {
+    if (selectedColor === "") {
+      enqueueSnackbar("Add Color", { variant: "warning" });
+      return;
+    }
+    if (selectedSize === "") {
+      enqueueSnackbar("Add size", { variant: "warning" });
+      return;
+    }
+    if (quantity === 0) {
+      enqueueSnackbar("Add quantity", { variant: "warning" });
+      return;
+    }
     addToCartHandler();
     navigate("/shipping");
   };
@@ -62,25 +99,29 @@ const DetailsWithPrice = ({ item, stickyClass, changeColorVar }) => {
           <span>{product.cuttedPrice}%&nbsp;off</span>
         </h4>
         <h3>₹{product.price - (product.price * product.cuttedPrice) / 100}</h3>
-
-        {product?.colors ? (
-          <ul className="color-variant">
-            {product.colors.map((vari, i) => {
-              return (
-                <li
-                  className={vari.color}
-                  key={i}
-                  title={vari.color}
-                  onClick={() => changeColorVar(i)}
-                ></li>
-              );
-            })}
-          </ul>
-        ) : (
-          ""
-        )}
+        <div className="collection-collapse-block-content">
+          <div className="color-selector">
+            <h6 className="product-title size-text">select size</h6>
+            {product?.color && product?.color.length ? (
+              <ul>
+                {product.color.map((x, i) => {
+                  return (
+                    <li
+                      className={`${x} ${selectedColor === x ? "active" : ""}`}
+                      key={i}
+                      title={x}
+                      onClick={() => setColor(x)}
+                    ></li>
+                  );
+                })}
+              </ul>
+            ) : (
+              ""
+            )}
+          </div>
+        </div>
         <div className="product-description border-product">
-          {true ? (
+          {product?.size && product?.size.length ? (
             <div>
               <h6 className="product-title size-text">
                 select size
@@ -105,17 +146,17 @@ const DetailsWithPrice = ({ item, stickyClass, changeColorVar }) => {
               </Modal>
               <div className="size-box">
                 <ul>
-                  {["XS", "S", "M", "L", "XL", "XXL"].map((size, index) => (
+                  {product.size.map((size, index) => (
                     <div
                       key={index}
                       className="form-check custom-checkbox collection-filter-checkbox"
                     >
                       <Input
-                        checked={selectedSize.includes(size)}
-                        onChange={() => {
-                          handleSizes(size, index);
+                        checked={selectedSize === size}
+                        onChange={(e) => {
+                          setSelectedSize(e.target.value);
                         }}
-                        type="checkbox"
+                        type="radio"
                         className="custom-control-input"
                         id={size}
                       />
@@ -131,7 +172,7 @@ const DetailsWithPrice = ({ item, stickyClass, changeColorVar }) => {
           ) : (
             ""
           )}
-          <span className="instock-cls">{product?.stock}</span>
+          {/* <span className="instock-cls">{product?.stock}</span> */}
           <h6 className="product-title">quantity</h6>
           <div className="qty-box">
             <div className="input-group">
@@ -139,7 +180,9 @@ const DetailsWithPrice = ({ item, stickyClass, changeColorVar }) => {
                 <button
                   type="button"
                   className="btn quantity-left-minus"
-                  onClick={() => setQuantity((prev) => prev - 1)}
+                  onClick={() => {
+                    quantity > 0 && setQuantity((prev) => prev - 1);
+                  }}
                   data-type="minus"
                   data-field=""
                 >
@@ -157,7 +200,10 @@ const DetailsWithPrice = ({ item, stickyClass, changeColorVar }) => {
                 <button
                   type="button"
                   className="btn quantity-right-plus"
-                  onClick={() => setQuantity((prev) => prev + 1)}
+                  onClick={() => {
+                    quantity < product.quantity &&
+                      setQuantity((prev) => prev + 1);
+                  }}
                   data-type="plus"
                   data-field=""
                 >

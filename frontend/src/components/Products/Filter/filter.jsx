@@ -44,8 +44,19 @@ const FilterPage = ({ sidebarView, closeSidebar }) => {
       enqueueSnackbar(error, { variant: "error" });
       dispatch(clearErrors());
     }
-    dispatch(getProducts(keyword, category, price, ratings));
-  }, [dispatch, keyword, category, priceMove, ratings, error, enqueueSnackbar]);
+    dispatch(
+      getProducts(keyword, category, price, selectedColor, selectedSize)
+    );
+  }, [
+    dispatch,
+    keyword,
+    category,
+    priceMove,
+    selectedSize,
+    selectedColor,
+    error,
+    enqueueSnackbar,
+  ]);
 
   const clearFilters = () => {
     setPrice([0, 200000]);
