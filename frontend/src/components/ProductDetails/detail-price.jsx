@@ -19,15 +19,10 @@ const DetailsWithPrice = ({ item, stickyClass, changeColorVar }) => {
   const dispatch = useDispatch();
   const { enqueueSnackbar } = useSnackbar();
   const [modal, setModal] = useState(false);
-  // const CurContect = useContext(CurrencyContext);
-  // const symbol = CurContect.state.symbol;
+  const [quantity, setQuantity] = useState(2);
+  const [selectedSize, setSelectedSize] = useState([]);
   const toggle = () => setModal(!modal);
   const product = item;
-  // const context = useContext(CartContext);
-  // const stock = context.stock;
-  // const plusQty = context.plusQty;
-  // const minusQty = context.minusQty;
-  // const quantity = context.quantity;
   const navigate = useNavigate();
 
   const productId = params.id;
@@ -35,9 +30,6 @@ const DetailsWithPrice = ({ item, stickyClass, changeColorVar }) => {
 
   const itemInCart = cartItems.some((i) => i.product === productId);
 
-  const changeQty = (e) => {
-    // setQuantity(parseInt(e.target.value));
-  };
   const addToCartHandler = () => {
     dispatch(addItemsToCart(productId));
     enqueueSnackbar("Product Added To Cart", { variant: "success" });
@@ -49,6 +41,17 @@ const DetailsWithPrice = ({ item, stickyClass, changeColorVar }) => {
   const buyNow = () => {
     addToCartHandler();
     navigate("/shipping");
+  };
+
+  const handleSizes = (size, index) => {
+    console.log(selectedSize, "selectedSize");
+
+    var index = selectedSize.indexOf(size);
+    if (index > -1) {
+      setSelectedSize((prev) => prev.filter((e) => e !== size));
+    } else {
+      setSelectedSize((prev) => [...prev, size]);
+    }
   };
   return (
     <>
@@ -102,13 +105,26 @@ const DetailsWithPrice = ({ item, stickyClass, changeColorVar }) => {
               </Modal>
               <div className="size-box">
                 <ul>
-                  {["xs", "sm", "md", "lg"].map((data, i) => {
-                    return (
-                      <li className="rounded bg-gray-200 p-3 m-1" key={i}>
-                        <a href={null}>{data}</a>
-                      </li>
-                    );
-                  })}
+                  {["XS", "S", "M", "L", "XL", "XXL"].map((size, index) => (
+                    <div
+                      key={index}
+                      className="form-check custom-checkbox collection-filter-checkbox"
+                    >
+                      <Input
+                        checked={selectedSize.includes(size)}
+                        onChange={() => {
+                          handleSizes(size, index);
+                        }}
+                        type="checkbox"
+                        className="custom-control-input"
+                        id={size}
+                      />
+
+                      <label className="custom-control-label" htmlFor={size}>
+                        {size}
+                      </label>
+                    </div>
+                  ))}
                 </ul>
               </div>
             </div>
@@ -123,7 +139,7 @@ const DetailsWithPrice = ({ item, stickyClass, changeColorVar }) => {
                 <button
                   type="button"
                   className="btn quantity-left-minus"
-                  // onClick={minusQty}
+                  onClick={() => setQuantity((prev) => prev - 1)}
                   data-type="minus"
                   data-field=""
                 >
@@ -131,17 +147,17 @@ const DetailsWithPrice = ({ item, stickyClass, changeColorVar }) => {
                 </button>
               </span>
               <Input
-                type="text"
+                type="number"
                 name="quantity"
-                value={"3"}
-                onChange={changeQty}
+                value={quantity}
+                onChange={(e) => setQuantity(e.target.value)}
                 className="form-control input-number"
               />
               <span className="input-group-prepend">
                 <button
                   type="button"
                   className="btn quantity-right-plus"
-                  // onClick={() => plusQty(product)}
+                  onClick={() => setQuantity((prev) => prev + 1)}
                   data-type="plus"
                   data-field=""
                 >

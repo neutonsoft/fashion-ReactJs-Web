@@ -24,7 +24,7 @@ import InputLabel from "@mui/material/InputLabel";
 import FormControl from "@mui/material/FormControl";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
 
-const sizes = ["s", "m", "l", "xs"];
+const sizes = ["XS", "S", "M", "L", "XL", "XXL"];
 
 const colors = [
   "yellow",
