@@ -107,18 +107,18 @@ const ProductDetails = () => {
     }
   };
 
-  const reviewSubmitHandler = () => {
-    if (rating === 0 || !comment.trim()) {
-      enqueueSnackbar("Empty Review", { variant: "error" });
-      return;
-    }
-    const formData = new FormData();
-    formData.set("rating", rating);
-    formData.set("comment", comment);
-    formData.set("productId", productId);
-    dispatch(newReview(formData));
-    setOpen(false);
-  };
+  // const reviewSubmitHandler = () => {
+  //   if (rating === 0 || !comment.trim()) {
+  //     enqueueSnackbar("Empty Review", { variant: "error" });
+  //     return;
+  //   }
+  //   const formData = new FormData();
+  //   formData.set("rating", rating);
+  //   formData.set("comment", comment);
+  //   formData.set("productId", productId);
+  //   dispatch(newReview(formData));
+  //   setOpen(false);
+  // };
 
   const addToCartHandler = () => {
     dispatch(addItemsToCart(productId));
@@ -242,7 +242,6 @@ const ProductDetails = () => {
                         </Col>
                       </Row>
                     </Container>
-                    <ProductTab product={product} />
                   </Col>
                 </Row>
               </Container>
