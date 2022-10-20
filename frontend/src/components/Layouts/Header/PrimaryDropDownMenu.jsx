@@ -45,11 +45,11 @@ const PrimaryDropDownMenu = ({ setTogglePrimaryDropDown, user }) => {
     //     icon: <ChatIcon sx={{ fontSize: "18px" }} />,
     //     redirect: "/",
     // },
-    {
-      title: "Coupons",
-      icon: <ConfirmationNumberIcon sx={{ fontSize: "18px" }} />,
-      redirect: "/",
-    },
+    // {
+    //   title: "Coupons",
+    //   icon: <ConfirmationNumberIcon sx={{ fontSize: "18px" }} />,
+    //   redirect: "/",
+    // },
     // {
     //     title: "Gift Cards",
     //     icon: <AccountBalanceWalletIcon sx={{ fontSize: "18px" }} />,

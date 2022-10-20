@@ -33,7 +33,15 @@ const ProductTab = ({ product }) => {
                     className={activeTab === "2" ? "active" : ""}
                     onClick={() => setActiveTab("2")}
                   >
-                    Details
+                    Specifications
+                  </NavLink>
+                </NavItem>
+                <NavItem className="nav nav-tabs" id="myTab" role="tablist">
+                  <NavLink
+                    className={activeTab === "3" ? "active" : ""}
+                    onClick={() => setActiveTab("3")}
+                  >
+                    Highlights
                   </NavLink>
                 </NavItem>
               </Nav>
@@ -42,7 +50,26 @@ const ProductTab = ({ product }) => {
                   <p className="mb-0 pb-0">{product?.description}</p>
                 </TabPane>
                 <TabPane tabId="2">
-                  <p className="mb-0 pb-0">{product?.details}</p>
+                  {product?.specifications &&
+                    product?.specifications.length &&
+                    product.specifications.map((x, i) => (
+                      <fragment key={i}>
+                        <p>
+                          title:<span>{x.title}</span>
+                        </p>
+                        <p>
+                          description:<span>{x.description}</span>
+                        </p>
+                      </fragment>
+                    ))}
+                </TabPane>
+
+                <TabPane tabId="3">
+                  <p className="mb-0 pb-0">
+                    {product?.highlights &&
+                      product?.highlights.length &&
+                      product?.highlights.join(",")}
+                  </p>
                 </TabPane>
               </TabContent>
             </Row>
