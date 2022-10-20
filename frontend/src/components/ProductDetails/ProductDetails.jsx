@@ -49,7 +49,18 @@ const ProductDetails = () => {
   const navigate = useNavigate();
 
   // reviews toggle
+
+  const { product, loading, error } = useSelector(
+    (state) => state.productDetails
+  );
+  const { success, error: reviewError } = useSelector(
+    (state) => state.newReview
+  );
+  const { cartItems } = useSelector((state) => state.cart);
+  const { wishlistItems } = useSelector((state) => state.wishlist);
+
   const [open, setOpen] = useState(false);
+  const [active, setActive] = useState(null);
   const [viewAll, setViewAll] = useState(false);
   const [rating, setRating] = useState(0);
   const [comment, setComment] = useState("");
@@ -72,15 +83,6 @@ const ProductDetails = () => {
     dots: false,
     focusOnSelect: true,
   };
-  const { product, loading, error } = useSelector(
-    (state) => state.productDetails
-  );
-  console.log(product, "product");
-  const { success, error: reviewError } = useSelector(
-    (state) => state.newReview
-  );
-  const { cartItems } = useSelector((state) => state.cart);
-  const { wishlistItems } = useSelector((state) => state.wishlist);
 
   const settings = {
     autoplay: true,
@@ -168,8 +170,22 @@ const ProductDetails = () => {
     });
   }, [product]);
 
-  const { nav1, nav2 } = state;
+  useEffect(() => {
+    if (Object.keys(product).length) {
+      if (product.images.length) setActive(product.images[0]);
+    }
+  }, [product]);
 
+  // useEffect(() => {
+  //   let track = document.getElementsByClassName("slick-track")[0];
+  //   console.log(track.childNodes[0], "track");
+  //   let node = null
+  //   track.childNodes.forEach((x) =>{
+  //    if(x.classList.includes("slick-current")) node=x}
+  //   );
+  //   console.log(node, "node");
+  // }, []);
+  const { nav1, nav2 } = state;
   const filterClick = () => {
     document.getElementById("filter").style.left = "-15px";
   };
@@ -177,7 +193,6 @@ const ProductDetails = () => {
   const changeColorVar = (img_id) => {
     slider2.current.slickGoTo(img_id);
   };
-  console.log(slider1.current, "slider1.current");
   return (
     <>
       {loading ? (
@@ -201,7 +216,7 @@ const ProductDetails = () => {
                     <Container fluid={true}>
                       <Row>
                         <Col lg="6" className="product-thumbnail">
-                          <Slider
+                          {/* <Slider
                             {...products}
                             asNavFor={nav2}
                             ref={(slider) => (slider1.current = slider)}
@@ -213,7 +228,10 @@ const ProductDetails = () => {
                                   <ImageZoom image={vari} />
                                 </div>
                               ))}
-                          </Slider>
+                          </Slider> */}
+                          <div>
+                            <ImageZoom image={active} />
+                          </div>
                           <Slider
                             className="slider-nav"
                             {...productsnav}
@@ -222,12 +240,15 @@ const ProductDetails = () => {
                           >
                             {Object.keys(product).length && product.images
                               ? product.images.map((vari, index) => (
-                                  <div key={index}>
+                                  <div
+                                    onClick={() => setActive(vari)}
+                                    key={index}
+                                  >
                                     <Media
                                       src={`${vari?.url}`}
                                       key={index}
                                       alt={"alt"}
-                                      className="img-fluid"
+                                      className="img-fluid z-10"
                                     />
                                   </div>
                                 ))
