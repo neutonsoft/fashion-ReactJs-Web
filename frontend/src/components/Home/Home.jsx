@@ -35,13 +35,19 @@ const Home = () => {
         {!loading && (
           <ProductSlider title={"SPECIAL PRODUCTS"} tagline={"NEW ARRIVALS"} />
         )}
+         {!loading && (
+          <ProductSlider title={"Best Seller"} tagline={"BestSellers"} />
+        )}
+         {!loading && (
+          <CategorySlider title={"Top Shop"} tagline={"Shop By Occasions"} />
+        )}
         {!loading && (
           <CategorySlider
             title={"You May Also Like..."}
             tagline={"SHOP BY CATEGORY"}
           />
         )}
-        <ProductSlider title={"Top Brands"} tagline={"Best Price"} />
+        <ProductSlider title={"Top Brands"} tagline={"Collections"} />
 
         {/* <DealSlider title={"Top Offers On"} /> */}
         {/* {!loading && <ProductSlider title={"Don't Miss These!"} tagline={"Inspired by your order"} />} */}

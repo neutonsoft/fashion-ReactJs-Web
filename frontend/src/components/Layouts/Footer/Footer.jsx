@@ -156,24 +156,28 @@ const Footer = () => {
 
               <div className="w-full sm:w-1/2">
                 <h2 className="text-black text-sm">
-                  Registered Office Address:
+                  Connect With Us:
                 </h2>
                 <p className="mt-2 leading-5 text-primary-grey text-xs">
-                  Tito Internet Private Limited,
+                  Karigari,
                   <br />
-                  Buildings Alyssa, Begonia &<br />
-                  Clove Embassy Tech Village,
+                  Chanania Tower Infront of Dalmia vidhya mandir &<br />
+                  Chirawa,
+
                   <br />
-                  Outer Ring Road, Devarabeesanahalli Village,
+                  Rajasthan, 333026, India
                   <br />
-                  Bengaluru, 560103,
                   <br />
-                  Karnataka, India <br />
-                  CIN : U51109KA2012PTC066107
+                  For Collaboration: suruchiparakh@gmail.com
+                  <br />
+                  Sales & PR: ankitachaudhary.ac@gmail.com
+                  <br />
+                  For Enquiry: enquiry@ankitachaudhary.com
+                  <br />
                   <br />
                   Telephone:{" "}
-                  <a className="text-primary-blue" href="tel:18002029898">
-                    1800 202 9898
+                  <a className="text-primary-blue" href="tel:+91 95093 27406">
+                    +91 95093 27406
                   </a>
                 </p>
               </div>

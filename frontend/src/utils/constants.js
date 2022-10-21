@@ -13,7 +13,16 @@ export const categories = [
     "Lehengas",
     "Bridal",
     "Fusion",
-    "Tunic"
+    "Tunic",
+
+
+    // "Haldi",
+    // "Leisure",
+    // "Bridesmaid",
+    // "Festive",
+    // "Cocktail & Party",
+    // "Mehendi",
+    // "Sangeet"
 ];
 
 // Product Sliders Offers
