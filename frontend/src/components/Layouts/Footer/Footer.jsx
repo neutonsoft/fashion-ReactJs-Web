@@ -112,10 +112,10 @@ const Footer = () => {
       {!adminRoute && (
         <>
           <footer className=" w-full py-1 sm:py-4 px-4 sm:px-12 bg-gray-50 text-white text-xs border-b border-gray-600 flex flex-col sm:flex-row overflow-hidden">
-            <div className="w-full sm:w-6/12 flex flex-col sm:flex-row">
+            <div className="w-full sm:w-full flex flex-col sm:flex-row sm:justify-between sm:my-4">
               {footerLinks.map((el, i) => (
                 <div
-                  className="w-full sm:w-1/5 flex flex-col gap-2 my-3 sm:my-6 ml-5"
+                  className="w-full  flex flex-col gap-2 my-3 sm:my-6 ml-5"
                   key={i}
                 >
                   <h2 className="text-black text-sm mb-2 uppercase">
@@ -134,11 +134,35 @@ const Footer = () => {
                   ))}
                 </div>
               ))}
+              <div className="w-full ">
+                <h2 className="text-black text-sm">Connect With Us:</h2>
+                <p className="mt-2 leading-5 text-primary-grey text-xs">
+                  Karigari,
+                  <br />
+                  Chanania Tower Infront of Dalmia vidhya mandir &<br />
+                  Chirawa,
+                  <br />
+                  Rajasthan, 333026, India
+                  <br />
+                  <br />
+                  For Collaboration: suruchiparakh@gmail.com
+                  <br />
+                  Sales & PR: ankitachaudhary.ac@gmail.com
+                  <br />
+                  For Enquiry: enquiry@ankitachaudhary.com
+                  <br />
+                  <br />
+                  Telephone:{" "}
+                  <a className="text-primary-blue" href="tel:+91 95093 27406">
+                    +91 95093 27406
+                  </a>
+                </p>
+              </div>
             </div>
 
-            <div className="border-gray-600 h-36 w-1 border-l mr-5 mt-6 hidden sm:block"></div>
+            {/* <div className="border-gray-600 h-36 w-1 border-l mr-5 mt-6 hidden sm:block"></div>
             <div className="w-full sm:w-6/12 my-6  mx-6 flex flex-col sm:flex-row gap-2 sm:gap-0 justify-between">
-              {/* <div className="w-full sm:w-1/2">
+              <div className="w-full sm:w-1/2">
                 <h2 className="text-black text-sm">Mail Us:</h2>
                 <p className="mt-2 leading-5 text-primary-grey text-xs">
                   Tito Internet Private Limited,
@@ -152,7 +176,7 @@ const Footer = () => {
                   <br />
                   Karnataka, India
                 </p>
-              </div> */}
+              </div>
 
               <div className="w-full sm:w-1/2">
                 <h2 className="text-black text-sm">
@@ -181,7 +205,7 @@ const Footer = () => {
                   </a>
                 </p>
               </div>
-            </div>
+            </div> */}
           </footer>
           {/* <!-- footer ends --> */}
 

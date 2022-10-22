@@ -33,10 +33,10 @@ const DetailsWithPrice = ({ item, stickyClass }) => {
   const itemInCart = cartItems.some((i) => i.product === productId);
 
   const addToCartHandler = () => {
-    if (selectedColor === "") {
-      enqueueSnackbar("Add Color", { variant: "warning" });
-      return;
-    }
+    // if (selectedColor === "") {
+    //   enqueueSnackbar("Add Color", { variant: "warning" });
+    //   return;
+    // }
     if (selectedSize === "") {
       enqueueSnackbar("Add size", { variant: "warning" });
       return;
@@ -50,10 +50,10 @@ const DetailsWithPrice = ({ item, stickyClass }) => {
   };
 
   const goToCart = () => {
-    if (selectedColor === "") {
-      enqueueSnackbar("Add Color", { variant: "warning" });
-      return;
-    }
+    // if (selectedColor === "") {
+    //   enqueueSnackbar("Add Color", { variant: "warning" });
+    //   return;
+    // }
     if (selectedSize === "") {
       enqueueSnackbar("Add size", { variant: "warning" });
       return;
@@ -65,10 +65,10 @@ const DetailsWithPrice = ({ item, stickyClass }) => {
     navigate("/cart");
   };
   const buyNow = () => {
-    if (selectedColor === "") {
-      enqueueSnackbar("Add Color", { variant: "warning" });
-      return;
-    }
+    // if (selectedColor === "") {
+    //   enqueueSnackbar("Add Color", { variant: "warning" });
+    //   return;
+    // }
     if (selectedSize === "") {
       enqueueSnackbar("Add size", { variant: "warning" });
       return;
@@ -100,7 +100,7 @@ const DetailsWithPrice = ({ item, stickyClass }) => {
           <span>{product.cuttedPrice}%&nbsp;off</span>
         </h4>
         <h3>₹{product.price - (product.price * product.cuttedPrice) / 100}</h3>
-        <div className="collection-collapse-block-content">
+        {/* <div className="collection-collapse-block-content">
           <div className="color-selector">
             <h6 className="product-title size-text">select size</h6>
             {product?.color && product?.color.length ? (
@@ -120,7 +120,7 @@ const DetailsWithPrice = ({ item, stickyClass }) => {
               ""
             )}
           </div>
-        </div>
+        </div> */}
         <div className="product-description border-product">
           {product?.size && product?.size.length ? (
             <div>

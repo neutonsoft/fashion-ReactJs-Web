@@ -12,32 +12,130 @@ export const MENUITEMS = [
     children: [],
   },
   {
+    title: "Shop by occasion",
+    type: "sub",
+    children: [
+      {
+        path: "/products?category=Haldi",
+        title: "Haldi",
+        type: "link",
+      },
+      {
+        path: "/products?category=Leisure",
+        title: "Leisure",
+        type: "link",
+      },
+      {
+        path: "/products?category=Bridesmaid",
+        title: "Bridesmaid",
+        type: "link",
+      },
+      {
+        path: "/products?category=Festive",
+        title: "Festive",
+        type: "link",
+      },
+      {
+        path: "/products?category=Cocktail&Party",
+        title: "Cocktail & Party",
+        type: "link",
+      },
+      {
+        path: "/products?category=Mehendi",
+        title: "Mehendi",
+        type: "link",
+      },
+      {
+        path: "/products?category=Sangeet",
+        title: "Sangeet",
+        type: "link",
+      },
+    ],
+  },
+  {
+    title: "categories",
+    type: "sub",
+    children: [
+      {
+        path: "/products?category=Saree",
+        title: "Saree",
+        type: "link",
+      },
+      {
+        path: "/products?category=PantSet",
+        title: "Pant Set",
+        type: "link",
+      },
+      {
+        path: "/products?category=SkirtSet",
+        title: "Skirt Set",
+        type: "link",
+      },
+      {
+        path: "/products?category=Jumpsuit",
+        title: "Jumpsuit",
+        type: "link",
+      },
+      {
+        path: "/products?category=JacketSet",
+        title: "Jacket Set",
+        type: "link",
+      },
+      {
+        path: "/products?category=Dress",
+        title: "Dress",
+        type: "link",
+      },
+      {
+        path: "/products?category=Gown",
+        title: "Gown",
+        type: "link",
+      },
+      {
+        path: "/products?category=ShararaSet",
+        title: "Sharara Set",
+        type: "link",
+      },
+      {
+        path: "/products?category=Anarkali",
+        title: "Anarkali",
+        type: "link",
+      },
+      {
+        path: "/products?category=KurtaSet",
+        title: "Kurta Set",
+        type: "link",
+      },
+      {
+        path: "/products?category=Lehengas",
+        title: "Lehengas",
+        type: "link",
+      },
+      {
+        path: "/products?category=Bridal",
+        title: "Bridal",
+        type: "link",
+      },
+      {
+        path: "/products?category=Fusion",
+        title: "Fusion",
+        type: "link",
+      },
+      {
+        path: "/products?category=Tunic",
+        title: "Tunic",
+        type: "link",
+      },
+    ],
+  },
+  {
     path: "/contact",
     title: "Contact us",
     type: "link",
     children: [],
   },
-  { path: "/about-us", title: "About", type: "link", children: [] },
-  { path: "/blogs", title: "Blogs", type: "link", children: [] },
-
-  // {
-  //   title: "Blogs",
-  //   type: "sub",
-  //   children: [
-  //     // {
-  //     //   path: "/blogs/blog_left_sidebar",
-  //     //   title: "blog left sidebar",
-  //     //   type: "link",
-  //     // },
-  //     // {
-  //     //   path: "/blogs/blog_right_sidebar",
-  //     //   title: "blog right sidebar",
-  //     //   type: "link",
-  //     // },
-  //     // { path: "/blogs/no_sidebar", title: "no sidebar", type: "link" },
-  //     { path: "/blogs/blog_detail", title: "blog detail", type: "link" },
-  //   ],
-  // },
+  { path: "/about", title: "About", type: "link", children: [] },
+  { path: "/contact", title: "Contact us", type: "link", children: [] },
 ];
 
 export const MENUITEMS_OLD = [
