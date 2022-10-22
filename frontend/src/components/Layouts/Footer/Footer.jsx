@@ -138,7 +138,7 @@ const Footer = () => {
 
             <div className="border-gray-600 h-36 w-1 border-l mr-5 mt-6 hidden sm:block"></div>
             <div className="w-full sm:w-6/12 my-6  mx-6 flex flex-col sm:flex-row gap-2 sm:gap-0 justify-between">
-              <div className="w-full sm:w-1/2">
+              {/* <div className="w-full sm:w-1/2">
                 <h2 className="text-black text-sm">Mail Us:</h2>
                 <p className="mt-2 leading-5 text-primary-grey text-xs">
                   Tito Internet Private Limited,
@@ -152,7 +152,7 @@ const Footer = () => {
                   <br />
                   Karnataka, India
                 </p>
-              </div>
+              </div> */}
 
               <div className="w-full sm:w-1/2">
                 <h2 className="text-black text-sm">
