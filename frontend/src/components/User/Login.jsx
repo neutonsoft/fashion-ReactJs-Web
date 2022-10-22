@@ -84,7 +84,7 @@ const Login = () => {
                   {/* <!-- button container --> */}
                   <div className="flex flex-col gap-2.5 mt-2 mb-32">
                     <p className="text-xs text-primary-grey text-left">
-                      By continuing, you agree to Tito's{" "}
+                      By continuing, you agree to SuruchiParakh's{" "}
                       <a
                         href="https://www.Tito.com/pages/terms"
                         className="text-primary-blue"

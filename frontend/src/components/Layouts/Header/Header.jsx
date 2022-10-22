@@ -5,7 +5,7 @@ import SearchIcon from "@mui/icons-material/Search";
 
 import { Media, Container, Row, Col } from "reactstrap";
 import SearchOverlay from "./SearchOverlay";
-import logo from "../../../assets/images/logo-black.png";
+import logo from "../../../assets/images/logo2.jpeg";
 import PrimaryDropDownMenu from "./PrimaryDropDownMenu";
 import SecondaryDropDownMenu from "./SecondaryDropDownMenu";
 import { useState } from "react";
@@ -43,7 +43,7 @@ const Header = () => {
                   <Link className="h-12 mr-1 sm:mr-4" to={"/"}>
                     <img
                       draggable="false"
-                      className="h-full w-full object-contain"
+                      className="h-12 .w-2/5 object-contain"
                       src={logo}
                       alt="Ankita Chananaia"
                     />
