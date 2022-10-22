@@ -20,7 +20,7 @@ const TopBarDark = ({ fluid }) => {
                 <li>Welcome to Our online Shopping</li>
                 <li>
                   <i className="fa fa-phone text-white" aria-hidden="true"></i>
-                  Call Us: 123 - 456 - 7890
+                  Call Us: +91 95093 27406
                 </li>
               </ul>
             </div>
