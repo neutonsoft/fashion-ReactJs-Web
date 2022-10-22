@@ -17,7 +17,7 @@ const Products = () => {
   return (
     <>
       <MetaData title="All Products | Tito" />
-      <main className="w-full   bg-gray-50 mt-20">
+      <main className="w-full   bg-gray-50 mt-32">
         <section className="section-b-space ratio_asos">
           <div className="collection-wrapper">
             <Container>

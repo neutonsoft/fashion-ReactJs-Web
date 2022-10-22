@@ -1,20 +1,17 @@
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import ExpandLessIcon from "@mui/icons-material/ExpandLess";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import SearchIcon from "@mui/icons-material/Search";
-
-import { Media, Container, Row, Col } from "reactstrap";
-import SearchOverlay from "./SearchOverlay";
-import logo from "../../../assets/images/logo2.jpeg";
-import PrimaryDropDownMenu from "./PrimaryDropDownMenu";
-import SecondaryDropDownMenu from "./SecondaryDropDownMenu";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import FavoriteIcon from "@mui/icons-material/Favorite";
-import SearchBar from "../../SearchBar/Search";
-import Modal from "@mui/material/Modal";
+import { Col, Container, Row } from "reactstrap";
+import logo from "../../../assets/images/logo2.jpeg";
 import NavBar from "./navbar";
+import PrimaryDropDownMenu from "./PrimaryDropDownMenu";
+import SearchOverlay from "./SearchOverlay";
 import TopBarDark from "./topbar-dark";
 
 const Header = () => {
@@ -36,127 +33,136 @@ const Header = () => {
         <div className="mobile-fix-option"></div>
         <TopBarDark />
         <Container>
-          <Row>
-            <Col>
-              <div className="main-menu">
-                <div className="mt-2 mb-2 flex justify-center">
-                  <Link className="h-12 mr-1 sm:mr-4" to={"/"}>
-                    <img
-                      draggable="false"
-                      className="h-12 .w-2/5 object-contain"
-                      src={logo}
-                      alt="Ankita Chananaia"
+          <Row className="flex content-between">
+            <Col xs="3"></Col>
+            <Col xs="6">
+              {" "}
+              <div className="mt-2 mb-2 flex justify-center">
+                <Link className="h-12 " to={"/"}>
+                  <img
+                    draggable="false"
+                    className="h-12 .w-2/5 object-contain"
+                    src={logo}
+                    alt="Ankita Chananaia"
+                  />
+                </Link>
+              </div>
+            </Col>
+            <Col xs="3">
+              <div className="flex items-center content-center h-full  gap-0.5 sm:gap-7 relative">
+                <a href="https://web.whatsapp.com/" target={"_blank"}>
+                  <WhatsAppIcon
+                    sx={{
+                      color: "green",
+                      fontSize: "30px",
+                    }}
+                  />
+                </a>
+                <a
+                  className="userDropDown flex items-center text-black font-medium gap-1 cursor-pointer"
+                  onClick={() => openSearch()}
+                >
+                  <SearchIcon
+                    sx={{
+                      color: "#C3AF74",
+                      fontSize: "30px",
+                    }}
+                  />
+                </a>
+                <Link
+                  to="/wishlist"
+                  className="flex items-center text-gray font-medium gap-2 relative"
+                >
+                  <span>
+                    <FavoriteIcon
+                      sx={{
+                        color: "#C3AF74",
+                        fontSize: "30px",
+                      }}
                     />
-                  </Link>
-                </div>
-                <div className="menu-right pull-right">
-                  <NavBar />
-                  <div className="flex items-center justify-between ml-1 sm:ml-0 gap-0.5 sm:gap-7 relative">
-                    <span
-                      className="userDropDown flex items-center text-black font-medium gap-1 cursor-pointer"
-                      onClick={() => openSearch()}
-                    >
-                      <SearchIcon />
-                    </span>
-
-                    {isAuthenticated === false ? (
-                      <ul className="header-dropdown">
-                        <li className="onhover-dropdown mobile-account">
-                          <i className="fa fa-user" aria-hidden="true"></i> My
-                          Account
-                          <ul className="onhover-show-div">
-                            <li>
-                              <Link
-                                to="/login"
-                                style={{
-                                  color: "#222222",
-                                }}
-                              >
-                                Login
-                              </Link>
-                            </li>
-                            {/* <li>
-                    <Link href={`/page/account/register`}>
-                      <a>Register</a>
-                    </Link>
-                  </li>
-                  <li
-                  // onClick={() => firebaseLogout()}
-                  >
-                    <a>Logout</a>
-                  </li> */}
-                          </ul>
+                  </span>
+                  {wishlistItems.length > 0 && (
+                    <div className="w-5 h-5 p-2 bg-red-500 text-xs text-white rounded-full absolute -top-2 left-3 flex justify-center items-center border">
+                      {wishlistItems.length}
+                    </div>
+                  )}
+                </Link>
+                <Link
+                  to="/cart"
+                  className="flex items-center text-gray font-medium gap-2 relative"
+                >
+                  <a>
+                    <ShoppingCartIcon
+                      sx={{
+                        color: "#C3AF74",
+                        fontSize: "30px",
+                      }}
+                    />
+                  </a>
+                  {cartItems.length > 0 && (
+                    <div className="w-5 h-5 p-2 bg-red-500 text-xs text-white  rounded-full absolute -top-2 left-3 flex justify-center items-center border">
+                      {cartItems.length}
+                    </div>
+                  )}
+                  {/* Cart */}
+                </Link>
+                {isAuthenticated === false ? (
+                  <ul className="header-dropdown">
+                    <li className="onhover-dropdown mobile-account ">
+                      <AccountCircleIcon
+                        sx={{
+                          color: "#C3AF74",
+                          fontSize: "30px",
+                        }}
+                      />{" "}
+                      <ul className="onhover-show-div">
+                        <li>
+                          <Link
+                            to="/login"
+                            style={{
+                              color: "#222222",
+                            }}
+                          >
+                            Login
+                          </Link>
                         </li>
                       </ul>
-                    ) : (
-                      <span
-                        className="onhover-dropdown userDropDown flex items-center text-black font-medium gap-1 cursor-pointer"
-                        onClick={() =>
-                          setTogglePrimaryDropDown(!togglePrimaryDropDown)
-                        }
-                      >
-                        {user.name && user.name.split(" ", 1)}
-                        {/* <span>
-                          {togglePrimaryDropDown ? (
-                            <ExpandLessIcon sx={{ fontSize: "16px" }} />
-                          ) : (
-                            <ExpandMoreIcon sx={{ fontSize: "16px" }} />
-                          )}
-                        </span> */}
-                        <PrimaryDropDownMenu
-                          setTogglePrimaryDropDown={setTogglePrimaryDropDown}
-                          user={user}
-                        />
-                      </span>
-                    )}
-
-                    {/* <span className="moreDropDown hidden sm:flex items-center text-white font-medium gap-1 cursor-pointer" onClick={() => setToggleSecondaryDropDown(!toggleSecondaryDropDown)}>More
-            <span>{toggleSecondaryDropDown ? <ExpandLessIcon sx={{ fontSize: "16px" }} /> : <ExpandMoreIcon sx={{ fontSize: "16px" }} />}</span>
-          </span> */}
-
-                    {/* {toggleSecondaryDropDown && <SecondaryDropDownMenu />} */}
-
-                    <Link
-                      to="/wishlist"
-                      className="flex items-center text-gray font-medium gap-2 relative"
-                    >
-                      <span>
-                        <FavoriteIcon />
-                      </span>
-                      {wishlistItems.length > 0 && (
-                        <div className="w-5 h-5 p-2 bg-red-500 text-xs text-white rounded-full absolute -top-2 left-3 flex justify-center items-center border">
-                          {wishlistItems.length}
-                        </div>
-                      )}
-                    </Link>
-
-                    <Link
-                      to="/cart"
-                      className="flex items-center text-gray font-medium gap-2 relative"
-                    >
-                      <span>
-                        <ShoppingCartIcon />
-                      </span>
-                      {cartItems.length > 0 && (
-                        <div className="w-5 h-5 p-2 bg-red-500 text-xs text-white  rounded-full absolute -top-2 left-3 flex justify-center items-center border">
-                          {cartItems.length}
-                        </div>
-                      )}
-                      {/* Cart */}
-                    </Link>
-                  </div>
+                    </li>
+                  </ul>
+                ) : (
+                  <a
+                    className="onhover-dropdown userDropDown flex items-center text-gray-600 font-bold  gap-1 cursor-pointer"
+                    onClick={() =>
+                      setTogglePrimaryDropDown(!togglePrimaryDropDown)
+                    }
+                  >
+                    <AccountCircleIcon
+                      sx={{
+                        color: "#C3AF74",
+                        fontSize: "30px",
+                      }}
+                    />
+                    {user.name && user.name.split(" ", 1)}
+                    <PrimaryDropDownMenu
+                      setTogglePrimaryDropDown={setTogglePrimaryDropDown}
+                      user={user}
+                    />
+                  </a>
+                )}
+              </div>
+            </Col>
+          </Row>
+          <Row>
+            <Col xs="12">
+              <div className="main-menu w-full">
+                <div className="menu-right pull-right">
+                  <NavBar />
                 </div>
               </div>
             </Col>
           </Row>
         </Container>
       </header>{" "}
-      {/* {togglePrimaryDropDown && (
-        <PrimaryDropDownMenu
-          setTogglePrimaryDropDown={setTogglePrimaryDropDown}
-          user={user}
-        />
-      )} */}
       <SearchOverlay />
     </div>
   );

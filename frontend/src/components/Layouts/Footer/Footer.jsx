@@ -111,7 +111,12 @@ const Footer = () => {
     <>
       {!adminRoute && (
         <>
-          <footer className=" w-full py-1 sm:py-4 px-4 sm:px-12 bg-gray-50 text-white text-xs border-b border-gray-600 flex flex-col sm:flex-row overflow-hidden">
+          <footer
+            className=" w-full py-1 sm:py-4 px-4 sm:px-12  text-white text-xs border-b border-gray-600 flex flex-col sm:flex-row overflow-hidden"
+            style={{
+              backgroundColor: "#f1f1e5",
+            }}
+          >
             <div className="w-full sm:w-full flex flex-col sm:flex-row sm:justify-between sm:my-4">
               {footerLinks.map((el, i) => (
                 <div

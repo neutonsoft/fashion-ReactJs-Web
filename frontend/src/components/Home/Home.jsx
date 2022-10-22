@@ -27,7 +27,7 @@ const Home = () => {
     <>
       <MetaData title="Online Shopping Site for Lifestyle!" />
       {/* <Categories /> */}
-      <main className="flex flex-col gap-3  mt-20 sm:mt-2 bg-gray-50">
+      <main className="flex flex-col gap-3  mt-32 sm:mt-2 bg-gray-50">
         <Banner />
 
         <br />
@@ -35,10 +35,10 @@ const Home = () => {
         {!loading && (
           <ProductSlider title={"SPECIAL PRODUCTS"} tagline={"NEW ARRIVALS"} />
         )}
-         {!loading && (
+        {!loading && (
           <ProductSlider title={"Best Seller"} tagline={"BestSellers"} />
         )}
-         {!loading && (
+        {!loading && (
           <CategorySlider title={"Top Shop"} tagline={"Shop By Occasions"} />
         )}
         {!loading && (
