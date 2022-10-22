@@ -17,6 +17,12 @@ cloudinary.config({
     api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
+app.use(express.static(path.join(__dirname, "/public")));
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '/public', 'index.html'));
+});
+
 const server = app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`)
 });
