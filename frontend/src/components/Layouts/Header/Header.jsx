@@ -8,7 +8,7 @@ import { useState } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { Col, Container, Row } from "reactstrap";
-import logo from "../../../assets/images/logo2.jpeg";
+import logo from "../../../assets/images/logo/logo2.png";
 import NavBar from "./navbar";
 import PrimaryDropDownMenu from "./PrimaryDropDownMenu";
 import SearchOverlay from "./SearchOverlay";
@@ -28,36 +28,33 @@ const Header = () => {
   };
 
   return (
-    <div>
-      <header className="sticky fixed">
+    <>
+      <header className="sticky-header fixed">
         <div className="mobile-fix-option"></div>
         <TopBarDark />
         <Container>
-          <Row className="flex content-between">
-            <Col xs="3"></Col>
-            <Col xs="6">
-              {" "}
-              <div className="mt-2 mb-2 flex justify-center">
-                <Link className="h-12 " to={"/"}>
+          <Row className="flex justify-between">
+            <Col xs="6" className="flex justify-start">
+              <div className="flex">
+                <Link
+                  className=""
+                  style={{
+                    width: "135px",
+                    height: "70px",
+                  }}
+                  to={"/"}
+                >
                   <img
                     draggable="false"
-                    className="h-12 .w-2/5 object-contain"
+                    className="max-w-full object-contain"
                     src={logo}
                     alt="Ankita Chananaia"
                   />
                 </Link>
               </div>
             </Col>
-            <Col xs="3">
-              <div className="flex items-center content-center h-full  gap-0.5 sm:gap-7 relative">
-                <a href="https://web.whatsapp.com/" target={"_blank"}>
-                  <WhatsAppIcon
-                    sx={{
-                      color: "green",
-                      fontSize: "30px",
-                    }}
-                  />
-                </a>
+            <Col xs="6" className="flex justify-end">
+              <div className="flex items-center justify-center h-full  gap-0.5 sm:gap-7 relative">
                 <a
                   className="userDropDown flex items-center text-black font-medium gap-1 cursor-pointer"
                   onClick={() => openSearch()}
@@ -164,7 +161,8 @@ const Header = () => {
         </Container>
       </header>{" "}
       <SearchOverlay />
-    </div>
+      <div className="sticky-header"></div>
+    </>
   );
 };
 

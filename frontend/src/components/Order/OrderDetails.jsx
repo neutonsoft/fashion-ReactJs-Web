@@ -28,7 +28,7 @@ const OrderDetails = () => {
       <MetaData title="Order Details | Tito" />
 
       <MinCategory />
-      <main className="w-full mt-32 mb-5">
+      <main className="w-full bg-gray-50 py-11">
         {loading ? (
           <Loader />
         ) : (

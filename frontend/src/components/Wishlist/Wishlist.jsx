@@ -12,7 +12,7 @@ const Wishlist = () => {
       <MetaData title="Wishlist | Tito" />
 
       <MinCategory />
-      <main className="w-full   mt-32 mb-5">
+      <main className="w-full bg-gray-50 py-11">
         <div className="flex gap-3.5 sm:w-11/12 sm:mt-4 m-auto mb-7">
           <Sidebar activeTab={"wishlist"} />
 

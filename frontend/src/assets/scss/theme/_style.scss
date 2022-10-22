@@ -21,6 +21,11 @@ body {
     }
   }
 }
+.header-marquee ul:hover {
+  -moz-animation-play-state: paused;
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
+}
 h1 {
   font-size: 60px;
   color: $dark-font;
@@ -403,7 +408,8 @@ del {
 .srv-validation-message {
   color: red;
 }
-.sticky {
+.sticky-header {
+  height: calc(150px + 20px);
   &.fixed {
     position: fixed;
     width: 100%;

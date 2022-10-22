@@ -18,7 +18,7 @@ const Cart = () => {
   return (
     <>
       <MetaData title="Shopping Cart | Tito" />
-      <main className="w-full mt-32 bg-gray-50">
+      <main className="w-full bg-gray-50 py-11">
         <section className="section-b-space ratio_asos">
           {/* <!-- row --> */}
           <div className="flex flex-col sm:flex-row gap-3.5 w-full sm:w-11/12 mt-0 sm:mt-4 m-auto sm:mb-7">

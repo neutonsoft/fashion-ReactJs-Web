@@ -1,4 +1,6 @@
 import React from "react";
+import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+
 import { Col, Container, Row } from "reactstrap";
 // import { firebase_app } from "../../../config/base";
 import { useRouter } from "next/router";
@@ -13,15 +15,29 @@ const TopBarDark = ({ fluid }) => {
       <Container fluid={fluid}>
         <Row>
           <Col lg="12">
-            <div className="header-contact w-full flex justify-center ">
+            <marquee
+              behavior="scroll"
+              direction="left"
+              onmouseover="this.stop();"
+              onmouseout="this.start();"
+              className="header-marquee header-contact w-full flex justify-center "
+            >
               <ul>
                 <li className="text-white">Welcome to Our online Shopping</li>
                 <li className="text-white">
                   <i className="fa fa-phone text-white" aria-hidden="true"></i>
                   Call Us: +91 95093 27406
                 </li>
+                <a href="https://web.whatsapp.com/" target={"_blank"}>
+                  <WhatsAppIcon
+                    sx={{
+                      color: "green",
+                      fontSize: "30px",
+                    }}
+                  />
+                </a>
               </ul>
-            </div>
+            </marquee>
           </Col>
         </Row>
       </Container>

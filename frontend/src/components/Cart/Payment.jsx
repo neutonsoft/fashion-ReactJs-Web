@@ -132,7 +132,7 @@ const Payment = () => {
     <>
       <MetaData title="Tito: Secure Payment | Paytm" />
 
-      <main className="w-full mt-32">
+      <main className="w-full bg-gray-50 py-11">
         {/* <!-- row --> */}
         <div className="flex flex-col sm:flex-row gap-3.5 w-full sm:w-11/12 mt-0 sm:mt-4 m-auto sm:mb-7">
           {/* <!-- cart column --> */}

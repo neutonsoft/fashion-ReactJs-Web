@@ -42,7 +42,7 @@ const Login = () => {
       <MetaData title="Login | Tito" />
 
       {loading && <BackdropLoader />}
-      <main className="w-full  sm:pt-20 mt-32 mb-5">
+      <main className="w-full bg-gray-50 py-11">
         {/* <!-- row --> */}
         <div className="flex sm:w-4/6 sm:mt-4 m-auto mb-7 bg-white shadow-lg">
           {/* <!-- sidebar column  --> */}
