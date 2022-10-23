@@ -6,6 +6,11 @@ import { addItemsToCart } from "../../actions/cartAction";
 import sizeChart from "../../assets/images/size-chart.jpg";
 import ProductTab from "./product-tab";
 
+import Radio from "@mui/material/Radio";
+import RadioGroup from "@mui/material/RadioGroup";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import FormControl from "@mui/material/FormControl";
+import FormLabel from "@mui/material/FormLabel";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import FlashOnIcon from "@mui/icons-material/FlashOn";
 import { getDiscount } from "../../utils/functions";
@@ -91,6 +96,10 @@ const DetailsWithPrice = ({ item, stickyClass }) => {
       setSelectedSize((prev) => [...prev, size]);
     }
   };
+
+  const handleChange = (event) => {
+    setSelectedSize(event.target.value);
+  };
   return (
     <>
       <div className={`product-right ${stickyClass}`}>
@@ -145,7 +154,7 @@ const DetailsWithPrice = ({ item, stickyClass }) => {
                   <Media src={sizeChart} alt="size" className="img-fluid" />
                 </ModalBody>
               </Modal>
-              <div className="size-box">
+              {/* <div className="size-box">
                 <ul>
                   {product.size.map((size, index) => (
                     <div
@@ -168,7 +177,24 @@ const DetailsWithPrice = ({ item, stickyClass }) => {
                     </div>
                   ))}
                 </ul>
-              </div>
+              </div> */}
+
+              <FormControl>
+                <RadioGroup
+                  aria-labelledby="demo-controlled-radio-buttons-group"
+                  name="controlled-radio-buttons-group"
+                  value={selectedSize}
+                  onChange={handleChange}
+                >
+                  {product.size.map((size, index) => (
+                    <FormControlLabel
+                      value={size}
+                      control={<Radio />}
+                      label={size}
+                    />
+                  ))}
+                </RadioGroup>
+              </FormControl>
             </div>
           ) : (
             ""
@@ -191,7 +217,7 @@ const DetailsWithPrice = ({ item, stickyClass }) => {
                 </button>
               </span>
               <Input
-                type="number"
+                type="text"
                 name="quantity"
                 value={quantity}
                 onChange={(e) => setQuantity(e.target.value)}

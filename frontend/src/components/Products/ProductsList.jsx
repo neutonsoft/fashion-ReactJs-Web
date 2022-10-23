@@ -50,7 +50,7 @@ const ProductsList = ({ openSidebar, noSidebar }) => {
     filteredProductsCount,
   } = useSelector((state) => state.products);
   const keyword = params.keyword;
-
+  console.log(location.search, "category");
   const priceHandler = (e, newPrice) => {
     setPrice(newPrice);
   };
@@ -78,6 +78,9 @@ const ProductsList = ({ openSidebar, noSidebar }) => {
     enqueueSnackbar,
   ]);
 
+  useEffect(() => {
+    if (location?.search) setCategory(location.search.split("=")[1]);
+  }, [location]);
   return (
     <div className="flex-1">
       {!loading && products?.length === 0 && (
