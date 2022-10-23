@@ -47,10 +47,7 @@ const DealSlider = ({ title, tagline }) => {
       <div className={"title1 section-t-space mb-10"}>
         <h4>{title}</h4>
         <h2 className="title-inner1">{tagline}</h2>
-        <Link
-          to="/products"
-          className="bg-primary-blue text-xl font-medium text-white px-5 py-2.5 rounded-sm shadow-lg uppercase "
-        >
+        <Link to="/products" className={"button-details"}>
           view all
         </Link>
       </div>

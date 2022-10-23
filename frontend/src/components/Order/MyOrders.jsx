@@ -118,20 +118,20 @@ const MyOrders = () => {
         {/* <!-- row --> */}
         <div className="flex gap-3.5 mt-2 sm:mt-6 sm:mx-3 m-auto mb-7">
           {/* <!-- sidebar column  --> */}
-          <div className="hidden sm:flex flex-col w-1/5 px-1">
+          <div className=" mx-3 hidden sm:flex flex-col w-1/5 px-1">
             {/* <!-- nav tiles --> */}
             <div className="flex flex-col bg-white rounded-sm shadow">
               {/* <!-- filters header --> */}
-              <div className="flex items-center justify-between gap-5 px-4 py-2 border-b">
-                <p className="text-lg font-medium">Filters</p>
-                <span
-                  onClick={clearFilters}
-                  className="text-blue-600 font-medium text-sm uppercase cursor-pointer hover:text-blue-700"
-                >
-                  clear all
-                </span>
-              </div>
 
+              <div className="flex items-center justify-between gap-5 px-4 py-2 border-b">
+                <h3 className="text-lg font-medium text-black">Filters</h3>
+                <h3
+                  className="bg-gray-300 rounded p-1 text-black text-lg cursor-pointer font-medium"
+                  onClick={clearFilters}
+                >
+                  Clear All
+                </h3>
+              </div>
               {/* <!-- order status checkboxes --> */}
               <div className="flex flex-col py-3 text-sm">
                 <span className="font-medium px-4">ORDER STATUS</span>

@@ -15,13 +15,11 @@ const MasterBanner = ({ img, title, desc, link, classes, btn, btnClass }) => {
           <Row>
             <Col>
               <div className="slider-contain">
-                <div>
+                <div className="flex flex-col">
                   <h4 className="text-gray-100">{title}</h4>
                   <h1 className="text-white">{desc}</h1>
-                  <Link to={link}>
-                    <a className={`btn ${btnClass ? btnClass : "btn-solid"}`}>
-                      {btn ? btn : "Shop Now"}{" "}
-                    </a>
+                  <Link to={link} className={"button-details"}>
+                    {btn ? btn : "Shop Now"}{" "}
                   </Link>
                 </div>
               </div>

@@ -21,6 +21,14 @@ body {
     }
   }
 }
+
+.button-details {
+  background-color: #c3af74;
+  color: #fff;
+  border-radius: 10px;
+  padding: 15px;
+  text-transform: uppercase;
+}
 .header-marquee ul:hover {
   -moz-animation-play-state: paused;
   -webkit-animation-play-state: paused;
