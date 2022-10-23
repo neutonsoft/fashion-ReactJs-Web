@@ -21,7 +21,19 @@ body {
     }
   }
 }
-
+.main-nav-row {
+  @media (max-width: 1199px) {
+    display: none;
+  }
+}
+.main-nav-mobile {
+  @media (max-width: 1199px) {
+    display: block;
+  }
+  @media (min-width: 1199px) {
+    display: none;
+  }
+}
 .button-details {
   background-color: #c3af74;
   color: #fff;
@@ -417,7 +429,10 @@ del {
   color: red;
 }
 .sticky-header {
-  height: calc(150px + 20px);
+  height: 170px;
+  @media (max-width: 1199px) {
+    height: 140px;
+  }
   &.fixed {
     position: fixed;
     width: 100%;

@@ -3,15 +3,13 @@ import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 
 import { Col, Container, Row } from "reactstrap";
 // import { firebase_app } from "../../../config/base";
-import { useRouter } from "next/router";
 const TopBarDark = ({ fluid }) => {
-  const router = useRouter();
   // const firebaseLogout = () => {
   //   firebase_app.auth().signOut();
   //   router.push("/page/account/login-auth");
   // };
   return (
-    <div className={"top-header bg-black"}>
+    <div className={" bg-black"}>
       <Container fluid={fluid}>
         <Row>
           <Col lg="12">

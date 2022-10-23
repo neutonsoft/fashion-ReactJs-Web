@@ -1,36 +1,53 @@
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import FavoriteIcon from "@mui/icons-material/Favorite";
 import SearchIcon from "@mui/icons-material/Search";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
-import FavoriteIcon from "@mui/icons-material/Favorite";
-import WhatsAppIcon from "@mui/icons-material/WhatsApp";
-import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
 import { Col, Container, Row } from "reactstrap";
 import logo from "../../../assets/images/logo/logo2.png";
 import NavBar from "./navbar";
+import NavBarMobile from "./navbarMobile";
 import PrimaryDropDownMenu from "./PrimaryDropDownMenu";
 import SearchOverlay from "./SearchOverlay";
+import { Link } from "react-router-dom";
 import TopBarDark from "./topbar-dark";
-
 const Header = () => {
   const { isAuthenticated, user } = useSelector((state) => state.user);
+  const [togglePrimaryDropDown, setTogglePrimaryDropDown] = useState(false);
+  const [toggleSecondaryDropDown, setToggleSecondaryDropDown] = useState(false);
+  const [navClose, setNavClose] = useState({ right: "0px" });
 
   const { cartItems } = useSelector((state) => state.cart);
   const { wishlistItems } = useSelector((state) => state.wishlist);
 
-  const [togglePrimaryDropDown, setTogglePrimaryDropDown] = useState(false);
-  const [toggleSecondaryDropDown, setToggleSecondaryDropDown] = useState(false);
-
   const openSearch = () => {
     document.getElementById("search-overlay").style.display = "block";
   };
+  useEffect(() => {
+    if (window.innerWidth < 750) {
+      setNavClose({ right: "-410px" });
+    }
+    if (window.innerWidth < 1199) {
+      setNavClose({ right: "-300px" });
+    }
+  }, []);
 
+  const openNav = () => {
+    setNavClose({ right: "0px" });
+    //   if (router.asPath == "/layouts/Gym")
+    //     document.querySelector("#topHeader").classList.add("zindex-class");
+  };
+
+  const closeNav = () => {
+    setNavClose({ right: "-410px" });
+    //   if (router.asPath == "/layouts/Gym")
+    //     document.querySelector("#topHeader").classList.remove("zindex-class");
+  };
   return (
     <>
       <header className="sticky-header fixed">
-        <div className="mobile-fix-option"></div>
+        {/* <div className="mobile-fix-option"></div> */}
         <TopBarDark />
         <Container>
           <Row className="flex justify-between">
@@ -146,6 +163,12 @@ const Header = () => {
                     />
                   </a>
                 )}
+                <NavBarMobile
+                  navClose={navClose}
+                  setNavClose={setNavClose}
+                  closeNav={closeNav}
+                  openNav={openNav}
+                />
               </div>
             </Col>
           </Row>
@@ -153,7 +176,12 @@ const Header = () => {
             <Col xs="12">
               <div className="main-menu w-full">
                 <div className="menu-right pull-right">
-                  <NavBar />
+                  <NavBar
+                    navClose={navClose}
+                    setNavClose={setNavClose}
+                    closeNav={closeNav}
+                    openNav={openNav}
+                  />
                 </div>
               </div>
             </Col>

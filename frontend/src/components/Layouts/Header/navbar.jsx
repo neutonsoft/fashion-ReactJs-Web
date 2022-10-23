@@ -4,33 +4,11 @@ import { Link } from "react-router-dom";
 import { MENUITEMS } from "./menu";
 import { Container, Row } from "reactstrap";
 import { useTranslation } from "react-i18next";
-import { useRouter } from "next/router";
+import MenuIcon from "@mui/icons-material/Menu";
 
-const NavBar = () => {
+const NavBar = ({ navClose, setNavClose, closeNav, openNav }) => {
   const { t } = useTranslation();
-  const [navClose, setNavClose] = useState({ right: "0px" });
-  const router = useRouter();
 
-  useEffect(() => {
-    if (window.innerWidth < 750) {
-      setNavClose({ right: "-410px" });
-    }
-    if (window.innerWidth < 1199) {
-      setNavClose({ right: "-300px" });
-    }
-  }, []);
-
-  const openNav = () => {
-    setNavClose({ right: "0px" });
-    if (router.asPath == "/layouts/Gym")
-      document.querySelector("#topHeader").classList.add("zindex-class");
-  };
-
-  const closeNav = () => {
-    setNavClose({ right: "-410px" });
-    if (router.asPath == "/layouts/Gym")
-      document.querySelector("#topHeader").classList.remove("zindex-class");
-  };
   // eslint-disable-next-line
 
   const handleMegaSubmenu = (event) => {
@@ -132,9 +110,9 @@ const NavBar = () => {
     <div>
       <div className="main-navbar">
         <div id="mainnav">
-          <div className="toggle-nav" onClick={openNav.bind(this)}>
+          {/* <div className="toggle-nav" onClick={openNav.bind(this)}>
             <i className="fa fa-bars sidebar-bar"></i>
-          </div>
+          </div> */}
           <ul className="nav-menu" style={navClose}>
             <li className="back-btn" onClick={closeNav.bind(this)}>
               <div className="mobile-back text-end">
@@ -151,18 +129,13 @@ const NavBar = () => {
                       className={` ${menuItem.megaMenu ? "mega-menu" : ""},`}
                     >
                       <Link
-                     
                         style={{
                           paddingTop: "15px",
                           paddingBottom: "15px",
-                          
                         }}
                         to={`${menuItem.path}`}
                       >
-                        
-                         {menuItem.title}
-                
-                       
+                        {menuItem.title}
                       </Link>
                     </li>
                   ) : (
