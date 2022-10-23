@@ -113,7 +113,7 @@ const MyOrders = () => {
     <>
       <MetaData title="My Orders | Tito" />
 
-      <MinCategory />
+      {/* <MinCategory /> */}
       <main className="w-full bg-gray-50 py-11">
         {/* <!-- row --> */}
         <div className="flex gap-3.5 mt-2 sm:mt-6 sm:mx-3 m-auto mb-7">

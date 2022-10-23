@@ -201,7 +201,7 @@ const ProductDetails = () => {
         <>
           <MetaData title={product.name} />
           {/* <MinCategory /> */}
-          <section className="bg-gray-50">
+          <section className="bg-gray-50 mb-20">
             <div className="collection-wrapper">
               <Container>
                 <Row>

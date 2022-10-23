@@ -17,6 +17,8 @@ import Home from "./components/Home/Home";
 import ProductDetails from "./components/ProductDetails/ProductDetails";
 import Products from "./components/Products/Products";
 import Cart from "./components/Cart/Cart";
+import AboutUs from "./components/AboutUs/AboutUs";
+import Contact from "./components/Contact/Contact";
 import Shipping from "./components/Cart/Shipping";
 import OrderConfirm from "./components/Cart/OrderConfirm";
 import Payment from "./components/Cart/Payment";
@@ -94,6 +96,8 @@ function App() {
         <Route path="/cart" element={<Cart />} />
 
         <Route path="/search" element={<SearchBar />} />
+        <Route path="/about-us" element={<AboutUs />} />
+        <Route path="/contact" element={<Contact />} />
 
         {/* order process */}
         <Route
