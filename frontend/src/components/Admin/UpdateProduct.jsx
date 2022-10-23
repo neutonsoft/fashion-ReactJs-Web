@@ -16,7 +16,7 @@ import {
 } from "../../actions/productAction";
 import ImageIcon from "@mui/icons-material/Image";
 import BackdropLoader from "../Layouts/BackdropLoader";
-import { categories } from "../../utils/constants";
+import { categories, occasions, sizes, colors } from "../../utils/constants";
 import MetaData from "../Layouts/MetaData";
 
 import OutlinedInput from "@mui/material/OutlinedInput";
@@ -24,23 +24,6 @@ import InputLabel from "@mui/material/InputLabel";
 import FormControl from "@mui/material/FormControl";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
 
-const sizes = ["XS", "S", "M", "L", "XL", "XXL"];
-
-const colors = [
-  "yellow",
-  "white",
-  "pink",
-  "olive",
-  "navy",
-  "red",
-  "black",
-  "skyblue",
-  "green",
-  "gray",
-  "maroon",
-  "blue",
-  "orange",
-];
 const UpdateProduct = () => {
   const dispatch = useDispatch();
   const { enqueueSnackbar } = useSnackbar();
@@ -63,12 +46,12 @@ const UpdateProduct = () => {
     title: "",
     description: "",
   });
-  console.log(product, "product");
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState(0);
   const [cuttedPrice, setCuttedPrice] = useState(0);
   const [category, setCategory] = useState("");
+  const [occasion, setOccasion] = useState("");
   const [stock, setStock] = useState(0);
   const [quantity, setQuantity] = useState(0);
   const [brand, setBrand] = useState("");
@@ -161,6 +144,7 @@ const UpdateProduct = () => {
     formData.set("price", price);
     formData.set("cuttedPrice", cuttedPrice);
     formData.set("category", category);
+    formData.set("occasion", occasion);
     formData.set("stock", stock);
     formData.set("brandname", brand);
     formData.set("logo", logo);
@@ -200,6 +184,7 @@ const UpdateProduct = () => {
       setPrice(product.price);
       setCuttedPrice(product.cuttedPrice);
       setCategory(product.category);
+      setOccasion(product.occasion);
       setStock(product.stock);
       setBrand(product.brand.name);
       setHighlights(product.highlights);
@@ -313,6 +298,24 @@ const UpdateProduct = () => {
                 </MenuItem>
               ))}
             </TextField>
+            <TextField
+              label="Occasion"
+              select
+              fullWidth
+              variant="outlined"
+              size="small"
+              required
+              value={occasion}
+              onChange={(e) => setOccasion(e.target.value)}
+            >
+              {occasions.map((el, i) => (
+                <MenuItem value={el} key={i}>
+                  {el}
+                </MenuItem>
+              ))}
+            </TextField>
+          </div>
+          <div className="flex justify-between gap-4">
             <TextField
               label="Stock"
               type="number"

@@ -1,22 +1,7 @@
 import React, { useState, useContext } from "react";
 
 import { Collapse } from "reactstrap";
-
-const colors = [
-  "yellow",
-  "white",
-  "pink",
-  "olive",
-  "navy",
-  "red",
-  "black",
-  "skyblue",
-  "green",
-  "gray",
-  "maroon",
-  "blue",
-  "orange",
-];
+import { colors } from "../../../utils/constants";
 
 const Color = ({ selectedColor, setSelectedColor }) => {
   const [isOpen, setIsOpen] = useState(false);

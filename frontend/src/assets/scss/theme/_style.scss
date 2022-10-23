@@ -437,12 +437,12 @@ del {
     }
   }
 }
-.first-banner {
-  margin-top: 165px;
-  @media (max-width: 640px) {
-    margin-top: 47px;
-  }
-}
+// .first-banner {
+//   margin-top: 165px;
+//   @media (max-width: 640px) {
+//     margin-top: 47px;
+//   }
+// }
 @-webkit-keyframes smoothScroll {
   0% {
     -webkit-transform: translateY(-40px);

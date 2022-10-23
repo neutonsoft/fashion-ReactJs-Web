@@ -16,37 +16,37 @@ export const MENUITEMS = [
     type: "sub",
     children: [
       {
-        path: "/products?category=Haldi",
+        path: "/products?occasion=Haldi",
         title: "Haldi",
         type: "link",
       },
       {
-        path: "/products?category=Leisure",
+        path: "/products?occasion=Leisure",
         title: "Leisure",
         type: "link",
       },
       {
-        path: "/products?category=Bridesmaid",
+        path: "/products?occasion=Bridesmaid",
         title: "Bridesmaid",
         type: "link",
       },
       {
-        path: "/products?category=Festive",
+        path: "/products?occasion=Festive",
         title: "Festive",
         type: "link",
       },
       {
-        path: "/products?category=Cocktail&Party",
+        path: "/products?occasion=Cocktail&Party",
         title: "Cocktail & Party",
         type: "link",
       },
       {
-        path: "/products?category=Mehendi",
+        path: "/products?occasion=Mehendi",
         title: "Mehendi",
         type: "link",
       },
       {
-        path: "/products?category=Sangeet",
+        path: "/products?occasion=Sangeet",
         title: "Sangeet",
         type: "link",
       },

@@ -29,9 +29,8 @@ const ProductsList = ({ openSidebar, noSidebar }) => {
   const location = useLocation();
 
   const [price, setPrice] = useState([0, 200000]);
-  const [category, setCategory] = useState(
-    location.search ? location.search.split("=")[1] : ""
-  );
+  const [category, setCategory] = useState("");
+  const [occasion, setOccasion] = useState("");
   const [ratings, setRatings] = useState(0);
 
   // pagination
@@ -66,20 +65,29 @@ const ProductsList = ({ openSidebar, noSidebar }) => {
       enqueueSnackbar(error, { variant: "error" });
       dispatch(clearErrors());
     }
-    dispatch(getProducts(keyword, category, price, ratings, currentPage));
+    dispatch(getProducts({ keyword, category, occasion, price, currentPage }));
   }, [
     dispatch,
     keyword,
     category,
+    occasion,
     price,
-    ratings,
     currentPage,
     error,
     enqueueSnackbar,
   ]);
 
   useEffect(() => {
-    if (location?.search) setCategory(location.search.split("=")[1]);
+    if (location?.search) {
+      if (location.search.includes("category")) {
+        setCategory(location.search.split("=")[1]);
+        setOccasion("");
+      }
+      if (location.search.includes("occasion")) {
+        setOccasion(location.search.split("=")[1]);
+        setCategory("");
+      }
+    }
   }, [location]);
   return (
     <div className="flex-1">

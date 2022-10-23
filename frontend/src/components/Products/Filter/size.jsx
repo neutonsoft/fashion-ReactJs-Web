@@ -1,7 +1,6 @@
 import React, { useState, useContext } from "react";
 import { Collapse, Input } from "reactstrap";
-
-const sizes = ["XS", "S", "M", "L", "XL", "XXL"];
+import { sizes } from "../../../utils/constants";
 
 const Size = ({ selectedSize, setSelectedSize }) => {
   const [isOpen, setIsOpen] = useState(false);

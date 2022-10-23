@@ -27,7 +27,7 @@ const Home = () => {
     <>
       <MetaData title="Online Shopping Site for Lifestyle!" />
       {/* <Categories /> */}
-      <main className="flex flex-col gap-3 bg-gray-50 py-11">
+      <main className="flex flex-col gap-3 bg-gray-50 pb-11">
         <Banner />
 
         <br />

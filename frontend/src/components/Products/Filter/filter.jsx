@@ -7,6 +7,7 @@ import sideBanner from "../../../assets/images/side-banner.png";
 import { useSnackbar } from "notistack";
 import { useDispatch, useSelector } from "react-redux";
 import Category from "./category";
+import Occasion from "./occasion";
 import Color from "./color";
 import Price from "./price";
 import Ratings from "./ratings";
@@ -30,9 +31,9 @@ const FilterPage = ({ sidebarView, closeSidebar }) => {
   const keyword = params.keyword;
 
   const location = useLocation();
-  const [category, setCategory] = useState(
-    location.search ? location.search.split("=")[1] : ""
-  );
+  const [category, setCategory] = useState("");
+  console.log(location, "location");
+  const [occasion, setOccasion] = useState("");
   const [price, setPrice] = useState([0, 200000]);
   const [priceMove, setPriceMove] = useState(false);
   const [ratings, setRating] = useState(0);
@@ -45,12 +46,20 @@ const FilterPage = ({ sidebarView, closeSidebar }) => {
       dispatch(clearErrors());
     }
     dispatch(
-      getProducts(keyword, category, price, selectedColor, selectedSize)
+      getProducts({
+        keyword,
+        category,
+        occasion,
+        price,
+        selectedColor,
+        selectedSize,
+      })
     );
   }, [
     dispatch,
     keyword,
     category,
+    occasion,
     priceMove,
     selectedSize,
     selectedColor,
@@ -58,9 +67,22 @@ const FilterPage = ({ sidebarView, closeSidebar }) => {
     enqueueSnackbar,
   ]);
 
+  useEffect(() => {
+    if (location?.search) {
+      if (location.search.includes("category")) {
+        setCategory(location.search.split("=")[1]);
+        setOccasion("");
+      }
+      if (location.search.includes("occasion")) {
+        setOccasion(location.search.split("=")[1]);
+        setCategory("");
+      }
+    }
+  }, [location]);
   const clearFilters = () => {
     setPrice([0, 200000]);
     setCategory("");
+    setOccasion("");
     setSelectedColor("");
     setSelectedSize([]);
   };
@@ -92,6 +114,7 @@ const FilterPage = ({ sidebarView, closeSidebar }) => {
             </h3>
           </div>
           <Category category={category} setCategory={setCategory} />
+          <Occasion occasion={occasion} setOccasion={setOccasion} />
           {/* <Ratings ratings={ratings} setRating={setRating} /> */}
           <Color
             selectedColor={selectedColor}

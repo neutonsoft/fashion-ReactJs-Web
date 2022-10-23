@@ -24,7 +24,23 @@ export const occasions = [
   "Mehendi",
   "Sangeet",
 ];
+export const sizes = ["XS", "S", "M", "L", "XL", "XXL"];
 
+export const colors = [
+  "yellow",
+  "white",
+  "pink",
+  "olive",
+  "navy",
+  "red",
+  "black",
+  "skyblue",
+  "green",
+  "gray",
+  "maroon",
+  "blue",
+  "orange",
+];
 // Product Sliders Offers
 export const offerProducts = [
   {

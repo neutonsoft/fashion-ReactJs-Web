@@ -35,19 +35,30 @@ import {
 
 // Get All Products --- Filter/Search/Sort
 export const getProducts =
-  (keyword = "", category, price = [0, 200000], color, size, currentPage = 1) =>
+  ({
+    keyword = "",
+    category,
+    occasion,
+    price = [0, 200000],
+    selectedColor,
+    selectedSize,
+    currentPage = 1,
+  }) =>
   async (dispatch) => {
     try {
       dispatch({ type: ALL_PRODUCTS_REQUEST });
 
       let url = `/api/v1/products?keyword=${keyword}&price[gte]=${price[0]}&price[lte]=${price[1]}&page=${currentPage}`;
       if (category) {
-        url = `/api/v1/products?keyword=${keyword}&category=${category}&price[gte]=${price[0]}&price[lte]=${price[1]}&page=${currentPage}`;
+        url = url + `&category=${category}`;
       }
-      if (color) url = url + `&color=${color}`;
-      if (size.length) url = url + `&size=${size.join(",")}`;
+      if (occasion) {
+        url = url + `&occasion=${occasion}`;
+      }
+      if (selectedColor) url = url + `&color=${selectedColor}`;
+      if (selectedSize.length) url = url + `&size=${selectedSize.join(",")}`;
       const { data } = await axios.get(url);
-
+      console.log(data, "data");
       dispatch({
         type: ALL_PRODUCTS_SUCCESS,
         payload: data,
