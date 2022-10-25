@@ -49,7 +49,6 @@ const ProductsList = ({ openSidebar, noSidebar }) => {
     filteredProductsCount,
   } = useSelector((state) => state.products);
   const keyword = params.keyword;
-  console.log(location.search, "category");
   const priceHandler = (e, newPrice) => {
     setPrice(newPrice);
   };
@@ -57,9 +56,13 @@ const ProductsList = ({ openSidebar, noSidebar }) => {
   const clearFilters = () => {
     setPrice([0, 200000]);
     setCategory("");
-    setRatings(0);
+    setOccasion("");
   };
-
+  useEffect(() => {
+    if (location.search.length === 0) {
+      clearFilters();
+    }
+  }, [location]);
   useEffect(() => {
     if (error) {
       enqueueSnackbar(error, { variant: "error" });

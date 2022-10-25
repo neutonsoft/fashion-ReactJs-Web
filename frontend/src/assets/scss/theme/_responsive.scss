@@ -18,6 +18,16 @@ body {
     }
   }
 }
+@media (max-width: 1199px) {
+  .logo-responsive {
+    width: 110px;
+  }
+}
+@media (max-width: 500px) {
+  .logo-responsive {
+    width: 100px;
+  }
+}
 @media (max-width: 1670px) and (min-width: 1200px) {
   .pet-parallax {
     .pet-decor {
@@ -84,9 +94,9 @@ body {
     &.left-header {
       .top-header {
         padding-left: 0;
-        .header-contact {
-          display: none;
-        }
+        // .header-contact {
+        //   display: none;
+        // }
       }
       .sidenav {
         left: -300px;
@@ -908,9 +918,9 @@ body {
   .portfolio-padding {
     padding-bottom: 30px;
   }
-  .top-header .header-contact {
-    display: none;
-  }
+  // .top-header .header-contact {
+  //   display: none;
+  // }
   .form_search {
     display: none;
   }

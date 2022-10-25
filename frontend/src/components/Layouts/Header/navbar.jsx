@@ -91,11 +91,18 @@ const NavBar = ({ navClose, setNavClose, closeNav, openNav }) => {
   };
 
   const openMblNav = (event) => {
+    console.log(event.target.classList, "event.target.classList");
     if (event.target.classList.contains("sub-arrow")) return;
+    console.log(
+      event.target.nextElementSibling.classList,
+      "event.target.nextElementSibling.classList"
+    );
 
     if (event.target.nextElementSibling.classList.contains("opensubmenu"))
       event.target.nextElementSibling.classList.remove("opensubmenu");
     else {
+      console.log("querySelectorAll");
+
       document.querySelectorAll(".nav-submenu").forEach(function (value) {
         value.classList.remove("opensubmenu");
       });
@@ -128,6 +135,18 @@ const NavBar = ({ navClose, setNavClose, closeNav, openNav }) => {
                       key={i}
                       className={` ${menuItem.megaMenu ? "mega-menu" : ""},`}
                     >
+                      {/* {menuItem.title === "Products" ? (
+                        <a
+                          style={{
+                            paddingTop: "15px",
+                            paddingBottom: "15px",
+                          }}
+                          href={`${menuItem.path}`}
+                          target={"_self"}
+                        >
+                          {menuItem.title}
+                        </a>
+                      ) : ( */}
                       <Link
                         style={{
                           paddingTop: "15px",
@@ -137,6 +156,7 @@ const NavBar = ({ navClose, setNavClose, closeNav, openNav }) => {
                       >
                         {menuItem.title}
                       </Link>
+                      {/* )} */}
                     </li>
                   ) : (
                     <li

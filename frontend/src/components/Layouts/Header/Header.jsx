@@ -54,7 +54,7 @@ const Header = () => {
             <Col xs="6" className="flex justify-start">
               <div className="flex">
                 <Link
-                  className=""
+                  className="logo-responsive"
                   style={{
                     width: "135px",
                     height: "70px",

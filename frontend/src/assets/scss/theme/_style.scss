@@ -431,7 +431,7 @@ del {
 .sticky-header {
   height: 170px;
   @media (max-width: 1199px) {
-    height: 140px;
+    height: 150px;
   }
   &.fixed {
     position: fixed;

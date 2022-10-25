@@ -1,28 +1,24 @@
 import React from "react";
-import WhatsAppIcon from "@mui/icons-material/WhatsApp";
-
-import { Col, Container, Row } from "reactstrap";
+import { Container, Row, Col } from "reactstrap";
+import Link from "next/link";
 // import { firebase_app } from "../../../config/base";
+import { useRouter } from "next/router";
+import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 const TopBarDark = ({ fluid }) => {
+  const router = useRouter();
   // const firebaseLogout = () => {
   //   firebase_app.auth().signOut();
   //   router.push("/page/account/login-auth");
   // };
   return (
-    <div className={" bg-black"}>
+    <div className={"top-header bg-black"}>
       <Container fluid={fluid}>
         <Row>
-          <Col lg="12">
-            <marquee
-              behavior="scroll"
-              direction="left"
-              onmouseover="this.stop();"
-              onmouseout="this.start();"
-              className="header-marquee header-contact w-full flex justify-center "
-            >
-              <ul>
-                <li className="text-white">Welcome to Our online Shopping</li>
-                <li className="text-white">
+          <Col xs="12">
+            <div className="header-contact w-full flex justify-center">
+              <ul className="flex justify-center items-center">
+                <li>Welcome to Our online Shopping</li>
+                <li>
                   <i className="fa fa-phone text-white" aria-hidden="true"></i>
                   Call Us: +91 95093 27406
                 </li>
@@ -30,12 +26,11 @@ const TopBarDark = ({ fluid }) => {
                   <WhatsAppIcon
                     sx={{
                       color: "green",
-                      fontSize: "30px",
                     }}
                   />
                 </a>
               </ul>
-            </marquee>
+            </div>
           </Col>
         </Row>
       </Container>
