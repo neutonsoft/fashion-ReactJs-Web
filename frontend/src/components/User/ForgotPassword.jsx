@@ -72,9 +72,9 @@ const ForgotPassword = () => {
                   {/* <!-- button container --> */}
                   <div className="flex flex-col gap-2.5 mt-2 mb-32">
                     <p className="text-xs text-primary-grey text-left">
-                      By continuing, you agree to Tito's{" "}
+                      By continuing, you agree to Titosoftwares's{" "}
                       <a
-                        href="https://www.Tito.com/pages/terms"
+                        href="https://www.Titosoftwares.com/pages/terms"
                         className="text-primary-blue"
                       >
                         {" "}
@@ -82,7 +82,7 @@ const ForgotPassword = () => {
                       </a>{" "}
                       and{" "}
                       <a
-                        href="https://www.Tito.com/pages/privacypolicy"
+                        href="https://www.Titosoftwares.com/pages/privacypolicy"
                         className="text-primary-blue"
                       >
                         {" "}
@@ -105,7 +105,7 @@ const ForgotPassword = () => {
                 to="/register"
                 className="font-medium text-sm text-primary-blue"
               >
-                New to Tito? Create an account
+                New to Titosoftwares? Create an account
               </Link>
             </div>
             {/* <!-- edit info container --> */}

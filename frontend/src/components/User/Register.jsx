@@ -90,7 +90,7 @@ const Register = () => {
 
   return (
     <>
-      <MetaData title="Register | Tito" />
+      <MetaData title="Register | Titosoftwares" />
 
       {loading && <BackdropLoader />}
       <main className="w-full bg-gray-50 py-11">

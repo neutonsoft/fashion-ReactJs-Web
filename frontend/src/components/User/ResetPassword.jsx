@@ -54,7 +54,7 @@ const ResetPassword = () => {
 
   return (
     <>
-      <MetaData title="Password Reset | Tito" />
+      <MetaData title="Password Reset | Titosoftwares" />
 
       {loading && <BackdropLoader />}
       <main class="w-full mt-32 sm:pt-20 sm:mt-0">
@@ -98,9 +98,9 @@ const ResetPassword = () => {
                   {/* <!-- button container --> */}
                   <div class="flex flex-col gap-2.5 mt-2 mb-32">
                     <p class="text-xs text-primary-grey text-left">
-                      By continuing, you agree to Tito's{" "}
+                      By continuing, you agree to Titosoftwares's{" "}
                       <a
-                        href="https://www.Tito.com/pages/terms"
+                        href="https://www.Titosoftwares.com/pages/terms"
                         class="text-primary-blue"
                       >
                         {" "}
@@ -108,7 +108,7 @@ const ResetPassword = () => {
                       </a>{" "}
                       and{" "}
                       <a
-                        href="https://www.Tito.com/pages/privacypolicy"
+                        href="https://www.Titosoftwares.com/pages/privacypolicy"
                         class="text-primary-blue"
                       >
                         {" "}
@@ -131,7 +131,7 @@ const ResetPassword = () => {
                 to="/register"
                 class="font-medium text-sm text-primary-blue"
               >
-                New to Tito? Create an account
+                New to Titosoftwares? Create an account
               </Link>
             </div>
             {/* <!-- edit info container --> */}

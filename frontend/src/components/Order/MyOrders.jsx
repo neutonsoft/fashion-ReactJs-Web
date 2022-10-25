@@ -111,7 +111,7 @@ const MyOrders = () => {
 
   return (
     <>
-      <MetaData title="My Orders | Tito" />
+      <MetaData title="My Orders | Titosoftwares" />
 
       {/* <MinCategory /> */}
       <main className="w-full bg-gray-50 py-11">

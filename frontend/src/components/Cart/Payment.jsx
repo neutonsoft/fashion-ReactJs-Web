@@ -130,7 +130,7 @@ const Payment = () => {
 
   return (
     <>
-      <MetaData title="Tito: Secure Payment | Paytm" />
+      <MetaData title="Titosoftwares: Secure Payment | Paytm" />
 
       <main className="w-full bg-gray-50 py-11">
         {/* <!-- row --> */}

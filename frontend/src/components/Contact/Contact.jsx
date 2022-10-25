@@ -6,27 +6,29 @@ const Data = [
   {
     img: "fa-phone",
     title: "Contact us",
-    desc1: "+91 123 - 456 - 7890",
-    desc2: "+86 163 - 451 - 7894",
+    desc1: "+91 95093 27406",
+    // desc2: "+86 163 - 451 - 7894",
   },
   {
     img: "fa-map-marker",
     title: "ADDRESS",
-    desc1: "ABC Complex,Near xyz, New York",
-    desc2: "USA 123456",
+    desc1: "Karigari",
+    desc2: "Chanania Tower Infront of Dalmia vidhya mandir, Chirawa",
+    desc3: "Rajasthan, 333026, India",
+
   },
   {
     img: "fa-envelope-o",
     title: "ADDRESS",
-    desc1: "Support@Shopcart.com",
-    desc2: "info@shopcart.com",
+    desc1: "ankitachaudhary.ac@gmail.com",
+    desc2: "enquiry@ankitachaudhary.com",
   },
-  {
-    img: "fa-fax",
-    title: "fax",
-    desc1: "Support@Shopcart.com",
-    desc2: "info@shopcart.com",
-  },
+  // {
+  //   img: "fa-fax",
+  //   title: "fax",
+  //   desc1: "Support@Shopcart.com",
+  //   desc2: "info@shopcart.com",
+  // },
 ];
 
 const ContactDetail = ({ img, title, desc1, desc2 }) => {
@@ -46,7 +48,7 @@ const ContactDetail = ({ img, title, desc1, desc2 }) => {
 const Contact = () => {
   return (
     <>
-      <MetaData title="Contact | Tito" />
+      <MetaData title="Contact | Titosoftwares" />
       {/* <MinCategory /> */}
       {/* <section className="contact-page section-b-space"> */}
       <main className="contact-page w-full  py-11">

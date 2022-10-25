@@ -123,13 +123,13 @@ const Sidebar = ({ activeTab, setToggleSidebar }) => {
             rel="noreferrer"
             className="font-medium text-lg hover:text-blue-500"
           >
-            TitoSoftware
+            TitosoftwaresSoftware
           </a>
           <a
             href="mailto:jigarsable21@gmail.com"
             className="text-gray-300 text-sm hover:text-blue-500"
           >
-            sales@titosoftware.com
+            sales@Titosoftwaressoftware.com
           </a>
         </div>
       </div> */}

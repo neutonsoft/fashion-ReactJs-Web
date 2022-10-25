@@ -48,7 +48,7 @@ const UpdateOrder = () => {
 
     return (
         <>
-            <MetaData title="Admin: Update Order | Tito" />
+            <MetaData title="Admin: Update Order | Titosoftwares" />
 
             {loading ? <Loading /> : (
                 <>

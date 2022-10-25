@@ -290,7 +290,7 @@
 //                           <LocalOfferIcon sx={{ fontSize: "20px" }} />
 //                         </span>
 //                         <span className="font-medium ml-2">Bank Offer</span> 15%
-//                         Instant discount on first Tito Pay Later order of
+//                         Instant discount on first Titosoftwares Pay Later order of
 //                         500 and above{" "}
 //                         <Link className="text-primary-blue font-medium" to="/">
 //                           T&C
@@ -383,7 +383,7 @@
 //                   </div>
 //                   {/* <!-- seller details --> */}
 
-//                   {/* <!-- Tito plus banner --> */}
+//                   {/* <!-- Titosoftwares plus banner --> */}
 //                   <div className="sm:w-1/2 mt-4 border">
 //                     <img
 //                       draggable="false"
@@ -392,7 +392,7 @@
 //                       alt=""
 //                     />
 //                   </div>
-//                   {/* <!-- Tito plus banner --> */}
+//                   {/* <!-- Titosoftwares plus banner --> */}
 
 //                   {/* <!-- description details --> */}
 //                   <div className="flex gap-16 mt-4 items-center text-sm font-medium">
