@@ -6,7 +6,7 @@ import aboutus from "../../assets/images/about/about-us.jpg";
 const AboutUs = () => {
   return (
     <>
-      <MetaData title="AboutUs | Tito" />
+      <MetaData title="AboutUs | Titosoftwares" />
 
       {/* <MinCategory /> */}
       <main className="about-page w-full bg-gray-50 py-11">

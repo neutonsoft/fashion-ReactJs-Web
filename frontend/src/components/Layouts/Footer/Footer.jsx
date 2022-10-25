@@ -12,19 +12,19 @@ const footerLinks = [
     links: [
       {
         name: "Contact Us",
-        redirect: "https://www.Tito.com/helpcentre",
+        redirect: "https://www.Titosoftwares.com/helpcentre",
       },
       {
         name: "About Us",
-        redirect: "https://www.Tito.com/about-us",
+        redirect: "https://www.Titosoftwares.com/about-us",
       },
       {
         name: "Careers",
-        redirect: "https://www.Titocareers.com",
+        redirect: "https://www.Titosoftwarescareers.com",
       },
       {
         name: "Stories",
-        redirect: "https://stories.Tito.com",
+        redirect: "https://stories.Titosoftwares.com",
       },
     ],
   },
@@ -33,21 +33,21 @@ const footerLinks = [
     links: [
       {
         name: "Payments",
-        redirect: "https://www.Tito.com/pages/payments",
+        redirect: "https://www.Titosoftwares.com/pages/payments",
       },
       {
         name: "Shipping",
-        redirect: "https://www.Tito.com/pages/shipping",
+        redirect: "https://www.Titosoftwares.com/pages/shipping",
       },
       {
         name: "Cancellation & Returns",
         redirect:
-          "https://www.Tito.com/helpcentre?catalog=55c9c6edb000002e002c1701&view=CATALOG",
+          "https://www.Titosoftwares.com/helpcentre?catalog=55c9c6edb000002e002c1701&view=CATALOG",
       },
       {
         name: "FAQ",
         redirect:
-          "https://www.Tito.com/helpcentre?catalog=55c9c8e2b0000023002c1702&view=CATALOG",
+          "https://www.Titosoftwares.com/helpcentre?catalog=55c9c8e2b0000023002c1702&view=CATALOG",
       },
     ],
   },
@@ -56,27 +56,27 @@ const footerLinks = [
     links: [
       {
         name: "Return Policy",
-        redirect: "https://www.Tito.com/pages/returnpolicy",
+        redirect: "https://www.Titosoftwares.com/pages/returnpolicy",
       },
       {
         name: "Terms Of Use",
-        redirect: "https://www.Tito.com/pages/terms",
+        redirect: "https://www.Titosoftwares.com/pages/terms",
       },
       {
         name: "Security",
-        redirect: "https://www.Tito.com/pages/paymentsecurity",
+        redirect: "https://www.Titosoftwares.com/pages/paymentsecurity",
       },
       {
         name: "Privacy",
-        redirect: "https://www.Tito.com/pages/privacypolicy",
+        redirect: "https://www.Titosoftwares.com/pages/privacypolicy",
       },
       {
         name: "Sitemap",
-        redirect: "https://www.Tito.com/sitemap",
+        redirect: "https://www.Titosoftwares.com/sitemap",
       },
       {
         name: "EPR Compliance",
-        redirect: "https://www.Tito.com/pages/ewaste-compliance-tnc",
+        redirect: "https://www.Titosoftwares.com/pages/ewaste-compliance-tnc",
       },
     ],
   },
@@ -85,15 +85,15 @@ const footerLinks = [
     links: [
       {
         name: "Facebook",
-        redirect: "https://www.facebook.com/Tito",
+        redirect: "https://www.facebook.com/Titosoftwares",
       },
       {
         name: "Twitter",
-        redirect: "https://twitter.com/Tito",
+        redirect: "https://twitter.com/Titosoftwares",
       },
       {
         name: "YouTube",
-        redirect: "https://www.youtube.com/Tito",
+        redirect: "https://www.youtube.com/Titosoftwares",
       },
     ],
   },
@@ -170,7 +170,7 @@ const Footer = () => {
               <div className="w-full sm:w-1/2">
                 <h2 className="text-black text-sm">Mail Us:</h2>
                 <p className="mt-2 leading-5 text-primary-grey text-xs">
-                  Tito Internet Private Limited,
+                  Titosoftwares Internet Private Limited,
                   <br />
                   Buildings Alyssa, Begonia &<br />
                   Clove Embassy Tech Village,
@@ -216,41 +216,9 @@ const Footer = () => {
 
           <div className="px-16 py-6 w-full bg-gray-500  flex justify-between items-center flex-wrap text-sm text-white">
             <div className="xs:w-full sm:w-full md:w-full lg:w-3/4  sm:flex justify-between items-center  text-sm text-white">
+             
               <a
-                href="https://seller.Tito.com/sell-online"
-                target="_blank"
-                rel="noreferrer"
-                className="flex items-center gap-2 text-white"
-              >
-                <span className="text-yellow-400">
-                  <WorkIcon sx={{ fontSize: "20px" }} />
-                </span>{" "}
-                Sell On Tito
-              </a>
-              <a
-                href="https://brands.Tito.com"
-                target="_blank"
-                rel="noreferrer"
-                className="flex items-center gap-2 text-white"
-              >
-                <span className="text-yellow-400">
-                  <StarsIcon sx={{ fontSize: "20px" }} />
-                </span>{" "}
-                Advertise
-              </a>
-              <a
-                href="https://www.Tito.com/the-gift-card-store"
-                rel="noreferrer"
-                target="_blank"
-                className="flex items-center gap-2 text-white"
-              >
-                <span className="text-yellow-400">
-                  <CardGiftcardIcon sx={{ fontSize: "20px" }} />
-                </span>{" "}
-                Gift Cards
-              </a>
-              <a
-                href="https://www.Tito.com/helpcentre"
+                href="https://www.Titosoftwares.com/helpcentre"
                 target="_blank"
                 rel="noreferrer"
                 className="flex items-center gap-2 text-white"
@@ -261,7 +229,7 @@ const Footer = () => {
                 Help Center
               </a>
 
-              <span>&copy; 2007-{new Date().getFullYear()} Tito.com</span>
+              <span>&copy; 2007-{new Date().getFullYear()} Titosoftwares.com</span>
             </div>
             <div className="xs:w-full sm:w-full md:w-full lg:w-1/4  sm:flex justify-center items-center  text-sm text-white">
               <img draggable="false" src={paymentMethods} alt="Card Payment" />

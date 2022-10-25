@@ -9,7 +9,7 @@ const Wishlist = () => {
 
   return (
     <>
-      <MetaData title="Wishlist | Tito" />
+      <MetaData title="Wishlist | Titosoftwares" />
 
       {/* <MinCategory /> */}
       <main className="w-full bg-gray-50 py-11">

@@ -13,18 +13,18 @@ const TopBarDark = ({ fluid }) => {
       <Container fluid={fluid}>
         <Row>
           <Col lg="12">
-            <marquee
+            {/* <marquee
               behavior="scroll"
               direction="left"
               onmouseover="this.stop();"
               onmouseout="this.start();"
               className="header-marquee header-contact w-full flex justify-center "
-            >
+            > */}
               <ul>
                 <li className="text-white">Welcome to Our online Shopping</li>
                 <li className="text-white">
                   <i className="fa fa-phone text-white" aria-hidden="true"></i>
-                  Call Us: +91 95093 27406
+                  Call Us: +91 95093 27406 
                 </li>
                 <a href="https://web.whatsapp.com/" target={"_blank"}>
                   <WhatsAppIcon
@@ -35,7 +35,7 @@ const TopBarDark = ({ fluid }) => {
                   />
                 </a>
               </ul>
-            </marquee>
+            {/* </marquee> */}
           </Col>
         </Row>
       </Container>

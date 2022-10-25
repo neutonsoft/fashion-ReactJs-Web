@@ -10,27 +10,27 @@ const SecondaryDropDownMenu = () => {
         {
             title: "Notification Preferences",
             icon: <NotificationsIcon sx={{ fontSize: "18px" }} />,
-            redirect: "https://www.Tito.com/communication-preferences/push",
+            redirect: "https://www.Titosoftwares.com/communication-preferences/push",
         },
         {
-            title: "Sell on Tito",
+            title: "Sell on Titosoftwares",
             icon: <BusinessCenterIcon sx={{ fontSize: "18px" }} />,
-            redirect: "https://seller.Tito.com/sell-online",
+            redirect: "https://seller.Titosoftwares.com/sell-online",
         },
         {
             title: "24x7 Customer Care",
             icon: <LiveHelpIcon sx={{ fontSize: "18px" }} />,
-            redirect: "https://www.Tito.com/helpcentre",
+            redirect: "https://www.Titosoftwares.com/helpcentre",
         },
         {
             title: "Advertise",
             icon: <TrendingUpIcon sx={{ fontSize: "18px" }} />,
-            redirect: "https://advertising.Tito.com",
+            redirect: "https://advertising.Titosoftwares.com",
         },
         {
             title: "Download App",
             icon: <DownloadIcon sx={{ fontSize: "18px" }} />,
-            redirect: "https://www.Tito.com/mobile-apps",
+            redirect: "https://www.Titosoftwares.com/mobile-apps",
         },
     ]
 

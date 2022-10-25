@@ -195,7 +195,7 @@ const Account = () => {
                     </p>
 
                     <h4 className="text-sm font-medium">
-                      When will my Tito account be updated with the new email
+                      When will my Titosoftwares account be updated with the new email
                       address (or mobile number)?
                     </h4>
                     <p className="text-sm">
@@ -204,7 +204,7 @@ const Account = () => {
                     </p>
 
                     <h4 className="text-sm font-medium">
-                      What happens to my existing Tito account when I update my
+                      What happens to my existing Titosoftwares account when I update my
                       email address (or mobile number)?
                     </h4>
                     <p className="text-sm">
@@ -219,7 +219,7 @@ const Account = () => {
                       address?
                     </h4>
                     <p className="text-sm">
-                      Tito has a 'single sign-on' policy. Any changes will
+                      Titosoftwares has a 'single sign-on' policy. Any changes will
                       reflect in your Seller account also.
                     </p>
                   </div>

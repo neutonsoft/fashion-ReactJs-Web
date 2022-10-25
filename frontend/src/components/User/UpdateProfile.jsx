@@ -70,7 +70,7 @@ const UpdateProfile = () => {
 
   return (
     <>
-      <MetaData title="Update Profile | Tito" />
+      <MetaData title="Update Profile | Titosoftwares" />
 
       {loading && <BackdropLoader />}
       <main className="w-full bg-gray-50 py-11">

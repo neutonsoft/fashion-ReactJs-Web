@@ -62,7 +62,7 @@ const UpdatePassword = () => {
 
   return (
     <>
-      <MetaData title="Password Update | Tito" />
+      <MetaData title="Password Update | Titosoftwares" />
 
       {loading && <BackdropLoader />}
       <main className="w-full bg-gray-50 py-11">

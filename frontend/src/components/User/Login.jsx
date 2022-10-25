@@ -39,7 +39,7 @@ const Login = () => {
 
   return (
     <>
-      <MetaData title="Login | Tito" />
+      <MetaData title="Login | Titosoftwares" />
 
       {loading && <BackdropLoader />}
       <main className="w-full bg-gray-50 py-11">
@@ -86,7 +86,7 @@ const Login = () => {
                     <p className="text-xs text-primary-grey text-left">
                       By continuing, you agree to SuruchiParakh's{" "}
                       <a
-                        href="https://www.Tito.com/pages/terms"
+                        href="https://www.Titosoftwares.com/pages/terms"
                         className="text-primary-blue"
                       >
                         {" "}
@@ -94,7 +94,7 @@ const Login = () => {
                       </a>{" "}
                       and{" "}
                       <a
-                        href="https://www.Tito.com/pages/privacypolicy"
+                        href="https://www.Titosoftwares.com/pages/privacypolicy"
                         className="text-primary-blue"
                       >
                         {" "}
@@ -123,7 +123,7 @@ const Login = () => {
                 to="/register"
                 className="font-medium text-sm text-primary-blue"
               >
-                New to Tito? Create an account
+                New to Titosoftwares? Create an account
               </Link>
             </div>
             {/* <!-- edit info container --> */}

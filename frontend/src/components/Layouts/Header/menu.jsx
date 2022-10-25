@@ -128,8 +128,8 @@ export const MENUITEMS = [
       },
     ],
   },
-  { path: "/about-us", title: "About_Us", type: "link", children: [] },
-  { path: "/contact", title: "Contact", type: "link", children: [] },
+  { path: "/about-us", title: "About Us", type: "link", children: [] },
+  { path: "/contact", title: "Contact Us", type: "link", children: [] },
 ];
 
 export const MENUITEMS_OLD = [

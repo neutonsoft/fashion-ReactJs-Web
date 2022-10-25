@@ -222,7 +222,7 @@ const UpdateProduct = () => {
 
   return (
     <>
-      <MetaData title="Admin: Update Product | Tito" />
+      <MetaData title="Admin: Update Product | Titosoftwares" />
 
       {loading && <BackdropLoader />}
       {updateLoading && <BackdropLoader />}

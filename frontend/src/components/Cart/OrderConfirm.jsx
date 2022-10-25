@@ -12,7 +12,7 @@ const OrderConfirm = () => {
 
   return (
     <>
-      <MetaData title="Tito: Order Confirmation" />
+      <MetaData title="Titosoftwares: Order Confirmation" />
 
       <main className="w-full bg-gray-50 py-11">
         {/* <!-- row --> */}
