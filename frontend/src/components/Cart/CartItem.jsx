@@ -13,24 +13,25 @@ const CartItem = ({
   cuttedPrice,
   image,
   stock,
-  quantity,
+  quantity: selectedQuantity,
+  size,
   inCart,
 }) => {
   const dispatch = useDispatch();
   const { enqueueSnackbar } = useSnackbar();
 
-  const increaseQuantity = (id, quantity, stock) => {
-    const newQty = quantity + 1;
-    if (quantity >= stock) {
+  const increaseQuantity = (id, quantity, selectedQuantity) => {
+    const newQty = selectedQuantity + 1;
+    if (selectedQuantity >= quantity) {
       enqueueSnackbar("Maximum Order Quantity", { variant: "warning" });
       return;
     }
     dispatch(addItemsToCart(id, newQty));
   };
 
-  const decreaseQuantity = (id, quantity) => {
-    const newQty = quantity - 1;
-    if (quantity <= 1) return;
+  const decreaseQuantity = (id, quantity, selectedQuantity) => {
+    const newQty = selectedQuantity - 1;
+    if (selectedQuantity <= 1) return;
     dispatch(addItemsToCart(id, newQty));
   };
 
@@ -80,7 +81,7 @@ const CartItem = ({
               <p className="text-sm">
                 Delivery by {getDeliveryDate()} |{" "}
                 <span className="text-primary-green">Free</span>{" "}
-                <span className="line-through">₹{quantity * 40}</span>
+                <span className="line-through">₹{selectedQuantity * 40}</span>
               </p>
               <span className="text-xs text-gray-500">
                 7 Days Replacement Policy
@@ -91,9 +92,9 @@ const CartItem = ({
 
           {/* <!-- price desc --> */}
           <div className="flex items-baseline gap-2 text-xl font-medium">
-            <span>₹{(price * quantity).toLocaleString()}</span>
+            <span>₹{(price * selectedQuantity).toLocaleString()}</span>
             <span className="text-sm text-gray-500 line-through font-normal">
-              ₹{(cuttedPrice * quantity).toLocaleString()}
+              ₹{(cuttedPrice * selectedQuantity).toLocaleString()}
             </span>
             <span className="text-sm text-primary-green">
               {getDiscount(price, cuttedPrice)}%&nbsp;off
@@ -109,18 +110,22 @@ const CartItem = ({
         {/* <!-- quantity --> */}
         <div className="flex gap-1 items-center">
           <span
-            onClick={() => decreaseQuantity(product, quantity)}
+            onClick={() =>
+              decreaseQuantity(product, product.quantity, selectedQuantity)
+            }
             className="w-7 h-7 text-3xl font-light bg-gray-50 rounded-full border flex items-center justify-center cursor-pointer"
           >
             -
           </span>
           <input
             className="w-11 border outline-none text-center rounded-sm py-0.5 text-gray-700 font-medium text-sm qtyInput"
-            value={quantity}
+            value={selectedQuantity}
             disabled
           />
           <span
-            onClick={() => increaseQuantity(product, quantity, stock)}
+            onClick={() =>
+              increaseQuantity(product, product.quantity, selectedQuantity)
+            }
             className="w-7 h-7 text-xl font-light bg-gray-50 rounded-full border flex items-center justify-center cursor-pointer"
           >
             +

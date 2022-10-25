@@ -50,7 +50,7 @@ const DetailsWithPrice = ({ item, stickyClass }) => {
       enqueueSnackbar("Add quantity", { variant: "warning" });
       return;
     }
-    dispatch(addItemsToCart(productId));
+    dispatch(addItemsToCart(productId, quantity));
     enqueueSnackbar("Product Added To Cart", { variant: "success" });
   };
 
