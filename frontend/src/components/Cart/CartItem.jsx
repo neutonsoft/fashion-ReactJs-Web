@@ -13,7 +13,8 @@ const CartItem = ({
   cuttedPrice,
   image,
   stock,
-  quantity: selectedQuantity,
+  quantity,
+  selectedQuantity,
   size,
   inCart,
 }) => {
@@ -111,7 +112,7 @@ const CartItem = ({
         <div className="flex gap-1 items-center">
           <span
             onClick={() =>
-              decreaseQuantity(product, product.quantity, selectedQuantity)
+              decreaseQuantity(product, quantity, selectedQuantity)
             }
             className="w-7 h-7 text-3xl font-light bg-gray-50 rounded-full border flex items-center justify-center cursor-pointer"
           >
@@ -124,7 +125,7 @@ const CartItem = ({
           />
           <span
             onClick={() =>
-              increaseQuantity(product, product.quantity, selectedQuantity)
+              increaseQuantity(product, quantity, selectedQuantity)
             }
             className="w-7 h-7 text-xl font-light bg-gray-50 rounded-full border flex items-center justify-center cursor-pointer"
           >
