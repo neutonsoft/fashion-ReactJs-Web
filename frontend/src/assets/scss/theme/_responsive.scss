@@ -18,6 +18,10 @@ body {
     }
   }
 }
+.logo-responsive {
+  width: 135px;
+  height: 70px;
+}
 @media (max-width: 1199px) {
   .logo-responsive {
     width: 110px;
