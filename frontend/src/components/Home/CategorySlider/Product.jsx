@@ -85,9 +85,9 @@ const Product = (props) => {
           >
             <div className="front">
               <Media
-                style={{
-                  minHeight: "437px",
-                }}
+                // style={{
+                //   minHeight: "437px",
+                // }}
                 src={`${image ? image : images[0].url}`}
                 className="img-fluid "
                 alt=""
@@ -96,9 +96,9 @@ const Product = (props) => {
             {images[1] ? (
               <div className="back">
                 <Media
-                  style={{
-                    minHeight: "437px",
-                  }}
+                  // style={{
+                  //   minHeight: "437px",
+                  // }}
                   src={`${image ? image : images[1].url}`}
                   className="img-fluid m-auto"
                   alt=""

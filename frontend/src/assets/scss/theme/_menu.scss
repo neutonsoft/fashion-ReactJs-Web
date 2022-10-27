@@ -2021,11 +2021,11 @@ header {
   }
 }
 @media (max-width: 991px) {
-  .top-header {
-    .header-contact {
-      display: none;
-    }
-  }
+  // .top-header {
+  //   .header-contact {
+  //     display: none;
+  //   }
+  // }
 }
 @media (min-width: 578px) {
   .main-menu {
@@ -2059,9 +2059,9 @@ header {
   }
 }
 @media (max-width: 577px) {
-  .top-header {
-    height: 0;
-  }
+  // .top-header {
+  //   height: 0;
+  // }
   .main-nav-center {
     .toggle-nav {
       right: 15px;

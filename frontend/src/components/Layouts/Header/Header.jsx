@@ -49,18 +49,11 @@ const Header = () => {
       <header className="sticky-header fixed">
         {/* <div className="mobile-fix-option"></div> */}
         <TopBarDark />
-        <Container>
+        <div className="ml-1 mr-5">
           <Row className="flex justify-between">
             <Col xs="6" className="flex justify-start">
               <div className="flex">
-                <Link
-                  className=""
-                  style={{
-                    width: "135px",
-                    height: "70px",
-                  }}
-                  to={"/"}
-                >
+                <Link className="logo-responsive" to={"/"}>
                   <img
                     draggable="false"
                     className="max-w-full object-contain"
@@ -186,7 +179,7 @@ const Header = () => {
               </div>
             </Col>
           </Row>
-        </Container>
+        </div>
       </header>{" "}
       <SearchOverlay />
       <div className="sticky-header"></div>

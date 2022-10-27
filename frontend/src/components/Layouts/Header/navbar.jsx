@@ -92,16 +92,12 @@ const NavBar = ({ navClose, setNavClose, closeNav, openNav }) => {
 
   const openMblNav = (event) => {
     if (event.target.classList.contains("sub-arrow")) return;
-
     if (event.target.nextElementSibling.classList.contains("opensubmenu"))
       event.target.nextElementSibling.classList.remove("opensubmenu");
     else {
       document.querySelectorAll(".nav-submenu").forEach(function (value) {
         value.classList.remove("opensubmenu");
       });
-      document
-        .querySelector(".mega-menu-container")
-        .classList.remove("opensubmenu");
       event.target.nextElementSibling.classList.add("opensubmenu");
     }
   };

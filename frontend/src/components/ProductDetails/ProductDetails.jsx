@@ -97,50 +97,6 @@ const ProductDetails = () => {
   };
 
   const productId = params.id;
-  const itemInWishlist = wishlistItems.some((i) => i.product === productId);
-
-  const addToWishlistHandler = () => {
-    if (itemInWishlist) {
-      dispatch(removeFromWishlist(productId));
-      enqueueSnackbar("Remove From Wishlist", { variant: "success" });
-    } else {
-      dispatch(addToWishlist(productId));
-      enqueueSnackbar("Added To Wishlist", { variant: "success" });
-    }
-  };
-
-  // const reviewSubmitHandler = () => {
-  //   if (rating === 0 || !comment.trim()) {
-  //     enqueueSnackbar("Empty Review", { variant: "error" });
-  //     return;
-  //   }
-  //   const formData = new FormData();
-  //   formData.set("rating", rating);
-  //   formData.set("comment", comment);
-  //   formData.set("productId", productId);
-  //   dispatch(newReview(formData));
-  //   setOpen(false);
-  // };
-
-  const addToCartHandler = () => {
-    dispatch(addItemsToCart(productId));
-    enqueueSnackbar("Product Added To Cart", { variant: "success" });
-  };
-
-  const handleDialogClose = () => {
-    setOpen(!open);
-  };
-
-  const itemInCart = cartItems.some((i) => i.product === productId);
-
-  const goToCart = () => {
-    navigate("/cart");
-  };
-
-  const buyNow = () => {
-    addToCartHandler();
-    navigate("/shipping");
-  };
 
   useEffect(() => {
     if (error) {
@@ -176,15 +132,6 @@ const ProductDetails = () => {
     }
   }, [product]);
 
-  // useEffect(() => {
-  //   let track = document.getElementsByClassName("slick-track")[0];
-  //   console.log(track.childNodes[0], "track");
-  //   let node = null
-  //   track.childNodes.forEach((x) =>{
-  //    if(x.classList.includes("slick-current")) node=x}
-  //   );
-  //   console.log(node, "node");
-  // }, []);
   const { nav1, nav2 } = state;
   const filterClick = () => {
     document.getElementById("filter").style.left = "-15px";

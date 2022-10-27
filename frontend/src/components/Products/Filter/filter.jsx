@@ -32,7 +32,6 @@ const FilterPage = ({ sidebarView, closeSidebar }) => {
 
   const location = useLocation();
   const [category, setCategory] = useState("");
-  console.log(location, "location");
   const [occasion, setOccasion] = useState("");
   const [price, setPrice] = useState([0, 200000]);
   const [priceMove, setPriceMove] = useState(false);
@@ -86,6 +85,11 @@ const FilterPage = ({ sidebarView, closeSidebar }) => {
     setSelectedColor("");
     setSelectedSize([]);
   };
+  useEffect(() => {
+    if (location.search.length === 0) {
+      clearFilters();
+    }
+  }, [location]);
   return (
     <>
       <Col
