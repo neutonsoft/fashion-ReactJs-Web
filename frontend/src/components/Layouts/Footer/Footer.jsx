@@ -161,7 +161,7 @@ const Footer = () => {
                   Rajasthan, 333026, India
                   <br />
                   <br />
-                  For Collaboration: suruchiparakh@gmail.com
+                  For Collaboration: ankitachaudhary@gmail.com
                   <br />
                   Sales & PR: ankitachaudhary.ac@gmail.com
                   <br />
