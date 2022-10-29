@@ -15,7 +15,7 @@ const MasterBanner = ({ img, title, desc, link, classes, btn, btnClass }) => {
           <Row>
             <Col>
               <div className="slider-contain">
-                <div className="flex flex-col">
+                <div className="flex flex-col mt-52">
                   <h4 className="text-gray-100">{title}</h4>
                   <h1 className="text-white">{desc}</h1>
                   <Link to={link} className={"button-details"}>

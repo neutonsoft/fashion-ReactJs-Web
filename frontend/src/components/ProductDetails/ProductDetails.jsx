@@ -77,6 +77,7 @@ const ProductDetails = () => {
   };
   var productsnav = {
     infinite: false,
+    vertical: true,
     slidesToShow: 3,
     swipeToSlide: true,
     arrows: false,
@@ -152,33 +153,23 @@ const ProductDetails = () => {
             <div className="collection-wrapper">
               <Container>
                 <Row>
-                  <Col sm="3" className="collection-filter" id="filter">
-                    {/* <Filter /> */}
+                  {/* <Col sm="3" className="collection-filter" id="filter">
+                    <Filter />
                     <Service />
-                    {/* <!-- side-bar single product slider start --> */}
+                    <!-- side-bar single product slider start -->
                     <NewProduct />
-                    {/* <!-- side-bar single product slider end --> */}
-                  </Col>
-                  <Col lg="9" sm="12" xs="12">
+                    <!-- side-bar single product slider end -->
+                  </Col> */}
+                  <Col lg="12" sm="12" xs="12">
                     <Container fluid={true}>
-                      <Row>
-                        <Col lg="6" className="product-thumbnail">
-                          {/* <Slider
-                            {...products}
-                            asNavFor={nav2}
-                            ref={(slider) => (slider1.current = slider)}
-                            className="product-slick"
-                          >
-                            {Object.keys(product).length &&
-                              product.images.map((vari, index) => (
-                                <div key={index}>
-                                  <ImageZoom image={vari} />
-                                </div>
-                              ))}
-                          </Slider> */}
-                          <div>
-                            <ImageZoom image={active} />
-                          </div>
+                      <Row className="pt-4">
+                        <Col
+                          lg="2"
+                          md="2"
+                          sm="4"
+                          xs="4"
+                          className="product-thumbnail"
+                        >
                           <Slider
                             className="slider-nav"
                             {...productsnav}
@@ -202,7 +193,31 @@ const ProductDetails = () => {
                               : ""}
                           </Slider>
                         </Col>
-                        <Col lg="6" className="rtl-text">
+                        <Col
+                          lg="4"
+                          md="4"
+                          sm="7"
+                          xs="7"
+                          className="product-thumbnail lg:mx-5"
+                        >
+                          {/* <Slider
+                            {...products}
+                            asNavFor={nav2}
+                            ref={(slider) => (slider1.current = slider)}
+                            className="product-slick"
+                          >
+                            {Object.keys(product).length &&
+                              product.images.map((vari, index) => (
+                                <div key={index}>
+                                  <ImageZoom image={vari} />
+                                </div>
+                              ))}
+                          </Slider> */}
+                          <div>
+                            <ImageZoom image={active} />
+                          </div>
+                        </Col>
+                        <Col lg="5" md="5" sm="12" xs="12" className="rtl-text">
                           <DetailsWithPrice
                             item={product}
                             changeColorVar={changeColorVar}

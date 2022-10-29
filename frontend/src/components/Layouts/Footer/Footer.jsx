@@ -5,6 +5,7 @@ import CardGiftcardIcon from "@mui/icons-material/CardGiftcard";
 import HelpIcon from "@mui/icons-material/Help";
 import paymentMethods from "../../../assets/images/payment-methods.svg";
 import { useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const footerLinks = [
   {
@@ -12,11 +13,11 @@ const footerLinks = [
     links: [
       {
         name: "Contact Us",
-        redirect: "https://www.Titosoftwares.com/helpcentre",
+        link: "/contact",
       },
       {
         name: "About Us",
-        redirect: "https://www.Titosoftwares.com/about-us",
+        link: "/about-us",
       },
       {
         name: "Careers",
@@ -126,17 +127,27 @@ const Footer = () => {
                   <h2 className="text-black text-sm mb-2 uppercase">
                     {el.title}
                   </h2>
-                  {el.links.map((item, i) => (
-                    <a
-                      href={item.redirect}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="hover:underline text-primary-grey text-xs"
-                      key={i}
-                    >
-                      {item.name}
-                    </a>
-                  ))}
+                  {el.links.map((item, i) => {
+                    return item?.link ? (
+                      <Link
+                        className="hover:underline text-primary-grey text-xs"
+                        key={i}
+                        to={`${item.link}`}
+                      >
+                        {item.name}
+                      </Link>
+                    ) : (
+                      <a
+                        href={item.redirect}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="hover:underline text-primary-grey text-xs"
+                        key={i}
+                      >
+                        {item.name}
+                      </a>
+                    );
+                  })}
                 </div>
               ))}
               <div className="w-full ">
@@ -216,7 +227,6 @@ const Footer = () => {
 
           <div className="px-16 py-6 w-full bg-gray-500  flex justify-between items-center flex-wrap text-sm text-white">
             <div className="xs:w-full sm:w-full md:w-full lg:w-3/4  sm:flex justify-between items-center  text-sm text-white">
-             
               <a
                 href="https://www.Titosoftwares.com/helpcentre"
                 target="_blank"
@@ -229,7 +239,9 @@ const Footer = () => {
                 Help Center
               </a>
 
-              <span>&copy; 2007-{new Date().getFullYear()} Titosoftwares.com</span>
+              <span>
+                &copy; 2007-{new Date().getFullYear()} Titosoftwares.com
+              </span>
             </div>
             <div className="xs:w-full sm:w-full md:w-full lg:w-1/4  sm:flex justify-center items-center  text-sm text-white">
               <img draggable="false" src={paymentMethods} alt="Card Payment" />

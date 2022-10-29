@@ -133,7 +133,7 @@ const DetailsWithPrice = ({ item, stickyClass }) => {
         <div className="product-description border-product">
           {product?.size && product?.size.length ? (
             <div>
-              <h6 className="product-title size-text">
+              <h6 className="product-title size-text ">
                 select size
                 <span>
                   <a
@@ -200,7 +200,7 @@ const DetailsWithPrice = ({ item, stickyClass }) => {
             ""
           )}
           {/* <span className="instock-cls">{product?.stock}</span> */}
-          <h6 className="product-title">quantity</h6>
+          <h6 className="product-title ">quantity</h6>
           <div className="qty-box">
             <div className="input-group">
               <span className="input-group-prepend">
@@ -213,13 +213,14 @@ const DetailsWithPrice = ({ item, stickyClass }) => {
                   data-type="minus"
                   data-field=""
                 >
-                  <i className="fa fa-angle-left"></i>
+                  <i className="fa fa-minus  text-gray-500 "></i>
                 </button>
               </span>
               <Input
                 type="text"
                 name="quantity"
                 value={quantity}
+                disabled
                 onChange={(e) => setQuantity(e.target.value)}
                 className="form-control input-number"
               />
@@ -234,7 +235,7 @@ const DetailsWithPrice = ({ item, stickyClass }) => {
                   data-type="plus"
                   data-field=""
                 >
-                  <i className="fa fa-angle-right"></i>
+                  <i className="fa fa-plus   text-gray-500"></i>
                 </button>
               </span>
             </div>
@@ -244,7 +245,7 @@ const DetailsWithPrice = ({ item, stickyClass }) => {
           {product.stock > 0 && (
             <button
               onClick={itemInCart ? goToCart : addToCartHandler}
-              className="p-2 w-1/2 flex items-center justify-center gap-2 text-white bg-primary-yellow rounded-sm shadow hover:shadow-lg"
+              className="white-button p-2 w-1/2 flex items-center justify-center gap-2"
             >
               <ShoppingCartIcon />
               {itemInCart ? "GO TO CART" : "ADD TO CART"}
@@ -254,20 +255,25 @@ const DetailsWithPrice = ({ item, stickyClass }) => {
             onClick={buyNow}
             disabled={product.stock < 1 ? true : false}
             className={
-              product.stock < 1
-                ? "p-2 w-full flex items-center justify-center gap-2 text-white bg-red-600 cursor-not-allowed rounded-sm shadow hover:shadow-lg"
-                : "p-2 w-1/2 flex items-center justify-center gap-2 text-white bg-primary-orange rounded-sm shadow hover:shadow-lg"
+              "black-button p-2 w-1/2 flex items-center justify-center gap-2 "
             }
           >
             <FlashOnIcon />
             {product.stock < 1 ? "OUT OF STOCK" : "BUY NOW"}
           </button>
         </div>
-        <ProductTab product={product} />
-        {/* <div className="border-product">
-          <h6 className="product-title">product details</h6>
+        {/* <ProductTab product={product} /> */}
+        <div className="border-product">
+          <h6 className="product-title ">product Description</h6>
           <p>{product.description}</p>
-        </div> */}
+        </div>
+        <div className="border-product">
+          <h6 className="product-title ">Shipping Information</h6>
+          <p>
+            This product is READY TO SHIP and will be shipped to you within 7
+            working days.
+          </p>
+        </div>
         {/* <div className="border-product">
           <h6 className="product-title">share it</h6>
           <div className="product-icon">
