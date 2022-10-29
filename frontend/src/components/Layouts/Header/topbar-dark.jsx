@@ -22,7 +22,10 @@ const TopBarDark = ({ fluid }) => {
                   <i className="fa fa-phone text-white" aria-hidden="true"></i>
                   Call Us: +91 95093 27406
                 </li>
-                <a href="https://web.whatsapp.com/" target={"_blank"}>
+                <a
+                  href="https://api.whatsapp.com/send?phone=+919509327406&text=Hi!%20Could%20you%20help%20me%20with%20a%20few%20queries!"
+                  target={"_blank"}
+                >
                   <WhatsAppIcon
                     sx={{
                       color: "green",

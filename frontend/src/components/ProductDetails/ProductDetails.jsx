@@ -60,6 +60,7 @@ const ProductDetails = () => {
   const { wishlistItems } = useSelector((state) => state.wishlist);
 
   const [open, setOpen] = useState(false);
+  const [showDetails, setShowDetails] = useState(true);
   const [active, setActive] = useState(null);
   const [viewAll, setViewAll] = useState(false);
   const [rating, setRating] = useState(0);
@@ -213,15 +214,20 @@ const ProductDetails = () => {
                                 </div>
                               ))}
                           </Slider> */}
-                          <div>
+                          <div
+                            onMouseOver={() => setShowDetails(false)}
+                            onMouseLeave={() => setShowDetails(true)}
+                          >
                             <ImageZoom image={active} />
                           </div>
                         </Col>
                         <Col lg="5" md="5" sm="12" xs="12" className="rtl-text">
-                          <DetailsWithPrice
-                            item={product}
-                            changeColorVar={changeColorVar}
-                          />
+                          {showDetails && (
+                            <DetailsWithPrice
+                              item={product}
+                              changeColorVar={changeColorVar}
+                            />
+                          )}
                         </Col>
                       </Row>
                     </Container>
