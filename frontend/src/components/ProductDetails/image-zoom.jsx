@@ -5,7 +5,7 @@ import { Media } from "reactstrap";
 // import "react-medium-image-zoom/dist/styles.css";
 
 import ReactImageZoom from "react-image-zoom";
-import InnerImageZoom from "react-inner-image-zoom";
+// import InnerImageZoom from "react-inner-image-zoom";
 const ImageZoom = ({ image }) => {
   const props = {
     offset: { vertical: 0, horizontal: 20 },

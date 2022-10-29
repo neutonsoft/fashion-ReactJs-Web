@@ -62,6 +62,12 @@ const ProductsList = ({ openSidebar, noSidebar }) => {
     if (location.search.length === 0) {
       clearFilters();
     }
+    if (
+      location.search.includes("newArrivals") ||
+      location.search.includes("readyToShip")
+    ) {
+      clearFilters();
+    }
   }, [location]);
   useEffect(() => {
     if (error) {
