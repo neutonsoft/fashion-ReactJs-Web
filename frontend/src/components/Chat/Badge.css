@@ -1,0 +1,29 @@
+.chat-badge {
+  position: fixed;
+  right: 15px;
+  width: 64px;
+  height: 64px;
+  border-radius: 32px;
+  background-color: #b89b5e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.chat-badge:hover {
+  box-shadow: 0 0 100px;
+}
+
+.chat-envelope {
+  background-color: #ffffff;
+  width: 34px;
+  height: 28px;
+  border-radius: 4px;
+}
+
+.chat-envelope-top {
+  fill: none;
+  stroke: #b89b5e;
+  stroke-width: 3;
+}

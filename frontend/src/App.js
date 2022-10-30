@@ -39,6 +39,7 @@ import ReviewsTable from "./components/Admin/ReviewsTable";
 import Wishlist from "./components/Wishlist/Wishlist";
 import NotFound from "./components/NotFound";
 import SearchBar from "./components/SearchBar/Search";
+import Chat from "./components/Chat";
 import "./assets/scss/app.scss";
 
 function App() {
@@ -309,6 +310,7 @@ function App() {
 
         <Route path="*" element={<NotFound />}></Route>
       </Routes>
+      <Chat />
       <Footer />
     </>
   );
