@@ -5,6 +5,7 @@ const cookieParser = require("cookie-parser");
 const fileUpload = require("express-fileupload");
 const errorMiddleware = require("./middlewares/error");
 var cors = require("cors");
+const { StreamChat } = require("stream-chat");
 
 const app = express();
 app.use(cors());
@@ -35,10 +36,36 @@ __dirname = path.resolve();
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "/frontend/build")));
 
+  app.get("/api/v1/chat_token", async (req, res) => {
+    const serverClient = StreamChat.getInstance(
+      "xxyvqq925edc",
+      "fk2z8wp6kxnhd4fnafd5mqp7rcn6nztr9ub8j9fv8qhsrz6vnrm8qv3c5qzgpmw2"
+    );
+    const userId = "user_" + Math.floor(Math.random() * 100000);
+    await serverClient.upsertUser({
+      id: userId,
+      role: "user",
+    });
+    const token = await serverClient.createToken(userId);
+    res.send({ user_id: userId, user_token: token });
+  });
   app.get("*", (req, res) => {
     res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"));
   });
 } else {
+  app.get("/api/v1/chat_token", async (req, res) => {
+    const serverClient = StreamChat.getInstance(
+      "xxyvqq925edc",
+      "fk2z8wp6kxnhd4fnafd5mqp7rcn6nztr9ub8j9fv8qhsrz6vnrm8qv3c5qzgpmw2"
+    );
+    const userId = "user_" + Math.floor(Math.random() * 100000);
+    const userData = await serverClient.upsertUser({
+      id: userId,
+      role: "admin",
+    });
+    const token = await serverClient.createToken(userId);
+    res.send({ user_id: userId, user_token: token });
+  });
   app.get("/", (req, res) => {
     res.send("Server is Running! 🚀");
   });

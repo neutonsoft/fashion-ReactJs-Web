@@ -1,132 +1,118 @@
-import React, { Component, Fragment } from "react";
-import { getFullTime } from "./strings";
+import React from "react";
+import { StreamChat } from "stream-chat";
+import {
+  Chat,
+  Channel,
+  ChannelHeader,
+  MessageInput,
+  MessageList,
+  Thread,
+  Window,
+} from "stream-chat-react";
+import moment from "moment";
+import "stream-chat-react/dist/css/v2/index.css";
 import "./Chat.css";
+import { useEffect } from "react";
+import axios from "axios";
+import { useState } from "react";
+import { useSelector } from "react-redux";
 
-class Chat extends Component {
-  state = {
-    loading: false,
-    loadingMessages: false,
-    userId: null,
-    inputValue: "",
-    messages: [],
-  };
+const App = ({ onClose }) => {
+  const [channel, setChannel] = useState(null);
+  const [chatClient, setClient] = useState(null);
+  const [user, setUser] = useState({
+    user_id: null,
+    user_token: null,
+    channel: null,
+  });
+  const { isAuthenticated } = useSelector((state) => state.user);
 
-  socket = null;
+  useEffect(() => {
+    let user_id = null;
+    let user_token = null;
+    let channel = null;
+    const getUserInfo = async () => {
+      user_id = localStorage.getItem("fashion_chat_user_id");
+      user_token = localStorage.getItem("fashion_chat_user_token");
+      channel = localStorage.getItem("fashion_chat_channel");
+      if (!user_id && !user_token) {
+        const { data } = await axios.get("/api/v1/chat_token");
+        user_id = data.user_id;
+        user_token = data.user_token;
+        localStorage.setItem("fashion_chat_user_id", user_id);
+        localStorage.setItem("fashion_chat_user_token", user_token);
+        localStorage.setItem("fashion_chat_channel", "channel_" + user_id);
+      }
+      if (user_id && user_token)
+        setUser({
+          user_id,
+          user_token,
+          channel,
+        });
+    };
+    getUserInfo();
+  }, []);
+  useEffect(() => {
+    if (user.user_id && user.user_token) {
+      const { user_id, user_token } = user;
+      const chatClient = StreamChat.getInstance("xxyvqq925edc");
+      const adminToken =
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiYWRtaW4xIn0.KHYPsv8zoP-Lie-i5UrDIvu7hLcwxGaJEEBNgse_80g";
 
-  async componentDidMount() {
-    this.setState({ loading: true });
-  }
+      const admin_id = "admin1";
+      isAuthenticated === true
+        ? chatClient.connectUser(
+            {
+              id: admin_id,
+              name: "admin1",
+              image: `https://getstream.io/random_png/?id=${admin_id}&name=admin1`,
+            },
+            adminToken
+          )
+        : chatClient.connectUser(
+            {
+              id: user_id,
+              name: user_id,
+              image: `https://getstream.io/random_png/?id=${user_id}&name=${user_id}`,
+            },
+            user_token
+          );
 
-  onSend = () => {
-    this.setState({ inputValue: "" });
-  };
-
-  onChange = (e) => {
-    e.preventDefault();
-    this.setState({ inputValue: e.target.value });
-  };
-
-  onKeyDown = (e) => {
-    if (e.key === "Enter") {
-      this.onSend();
+      const channel = chatClient.channel("messaging", user.channel, {
+        image: "https://www.drupal.org/files/project-images/react.png",
+        name: "Talk about React",
+        members: [admin_id, user_id],
+      });
+      setClient(chatClient);
+      setChannel(channel);
     }
-  };
-
-  renderSpinner = (...text) => (
-    <div
-      className="chat-content chat-no-messages-content"
-      style={{ textAlign: "center" }}
-    >
-      <div className="chat-loader" />
-      <div>
-        {text.map((el, index) => (
-          <Fragment key={index}>
-            {el}
-            <br />
-          </Fragment>
-        ))}
-      </div>
-    </div>
-  );
-
-  renderNoContent = () => (
-    <div className="chat-content chat-no-messages-content">
-      <div className="chat-no-messages">
-        Write your request and we will answer as soon as possible
-      </div>
-    </div>
-  );
-
-  renderMessages = () => (
-    <div className="chat-content">
-      {this.state.messages.length === 0 && (
-        <div className="chat-no-messages">
-          Write your request and we will answer as soon as possible
-        </div>
-      )}
-      {this.state.messages.map(({ content, time, user_id }, index) => (
-        <div
-          key={index}
-          className={`chat-message ${
-            this.state.userId === user_id
-              ? "chat-my-message"
-              : "chat-consultant-message"
-          }`}
-        >
-          <p>{content}</p>
-          <p className="chat-message-time">{getFullTime(time)}</p>
-        </div>
-      ))}
-      <br />
-    </div>
-  );
-
-  render() {
-    return (
-      <div className="chat-container">
-        <div className="chat-header">
-          <div />
-          <div className="chat-title">Online chat</div>
-          <div className="chat-close" onClick={this.props.onClose}>
-            <svg>
-              <line className="chat-close-line" x1="0" y1="0" x2="10" y2="10" />
-              <line className="chat-close-line" x1="0" y1="10" x2="10" y2="0" />
-            </svg>
-          </div>
-        </div>
-        {(() => {
-          if (this.state.error) {
-            return this.renderSpinner("Error", this.state.error, "Retrying");
-          }
-          if (this.state.loading) {
-            return this.renderSpinner();
-          }
-          if (this.state.loadingMessages) {
-            return this.renderSpinner();
-          }
-
-          if (this.state.messages.length === 0) {
-            return this.renderNoContent();
-          }
-          return this.renderMessages();
-        })()}
-        <div className="chat-input">
-          <input
-            className="chat-input-field"
-            value={this.state.inputValue}
-            onChange={this.onChange}
-            onKeyDown={this.onKeyDown}
-          />
-          <svg className="chat-input-send" onClick={this.onSend}>
-            <polyline
-              className="chat-input-send-line"
-              points="0,2 25,12.5 0,23 5,12.5 0,2"
-            />
+  }, [user]);
+  return (
+    <div className="chat-container">
+      <div className="chat-header" onClick={() => onClose()}>
+        <div />
+        <div className="chat-title">Online chat</div>
+        <div className="chat-close">
+          <svg>
+            <line className="chat-close-line" x1="0" y1="0" x2="10" y2="10" />
+            <line className="chat-close-line" x1="0" y1="10" x2="10" y2="0" />
           </svg>
         </div>
       </div>
-    );
-  }
-}
+      {chatClient && channel && (
+        <Chat client={chatClient} theme="str-chat__theme-light">
+          <Channel channel={channel}>
+            <Window>
+              <ChannelHeader />
+              <MessageList />
+              <MessageInput />
+            </Window>
+            <Thread />
+          </Channel>
+        </Chat>
+      )}
+    </div>
+  );
+};
 
-export default Chat;
+export default App;
