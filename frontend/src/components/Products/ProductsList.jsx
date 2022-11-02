@@ -69,6 +69,7 @@ const ProductsList = ({ openSidebar, noSidebar }) => {
       clearFilters();
     }
   }, [location]);
+
   useEffect(() => {
     if (error) {
       enqueueSnackbar(error, { variant: "error" });

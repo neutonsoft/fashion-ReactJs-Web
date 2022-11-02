@@ -89,6 +89,12 @@ const FilterPage = ({ sidebarView, closeSidebar }) => {
     if (location.search.length === 0) {
       clearFilters();
     }
+    if (
+      location.search.includes("newArrivals") ||
+      location.search.includes("readyToShip")
+    ) {
+      clearFilters();
+    }
   }, [location]);
   return (
     <>
