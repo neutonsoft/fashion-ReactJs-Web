@@ -1,0 +1,43 @@
+name: CICD pipeline
+
+on:
+  push:
+    paths:
+      - "backend/**"
+    branches: ["main"]
+
+jobs:
+  deploy_code:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout the code
+        uses: actions/checkout@v3
+
+      - name: setup nodejs version
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18.x"
+
+      - name: install packages
+        working-directory: ./backend
+        run: npm install
+
+      - name: deploy to aws ec2
+        uses: easingthemes/ssh-deploy@v2.1.5
+        env:
+          SSH_PRIVATE_KEY: ${{secrets.EC2_SSH_KEY}}
+          SOURCE: "backend/"
+          REMOTE_HOST: ${{secrets.EC2_HOST}}
+          REMOTE_USER: "ubuntu"
+          TARGET: "/home/ubuntu/fashionbackend"
+
+      - name: restart backend with pm2
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ubuntu
+          key: ${{ secrets.EC2_SSH_KEY }}
+          script: |
+            cd /home/ubuntu/fashionbackend
+            npm install
+            pm2 restart backend || pm2 start server.js --name backend
