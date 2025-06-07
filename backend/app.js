@@ -71,7 +71,7 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
-// error middlewares
+// error middleware
 app.use(errorMiddleware);
 
 module.exports = app;
