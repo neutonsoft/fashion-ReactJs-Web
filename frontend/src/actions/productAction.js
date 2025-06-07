@@ -48,7 +48,7 @@ export const getProducts =
     try {
       dispatch({ type: ALL_PRODUCTS_REQUEST });
 
-      let url = `/api/v1/products?keyword=${keyword}&price[gte]=${price[0]}&price[lte]=${price[1]}&page=${currentPage}`;
+      let url = `https://fashion.api.elitemanors.com/api/v1/products?keyword=${keyword}&price[gte]=${price[0]}&price[lte]=${price[1]}&page=${currentPage}`;
       if (category) {
         url = url + `&category=${category}`;
       }
@@ -76,7 +76,7 @@ export const getSimilarProducts = (category) => async (dispatch) => {
   try {
     dispatch({ type: ALL_PRODUCTS_REQUEST });
 
-    const { data } = await axios.get(`/api/v1/products?category=${category}`);
+    const { data } = await axios.get(`https://fashion.api.elitemanors.com/api/v1/products?category=${category}`);
 
     dispatch({
       type: ALL_PRODUCTS_SUCCESS,
@@ -95,7 +95,7 @@ export const getProductDetails = (id) => async (dispatch) => {
   try {
     dispatch({ type: PRODUCT_DETAILS_REQUEST });
 
-    const { data } = await axios.get(`/api/v1/product/${id}`);
+    const { data } = await axios.get(`https://fashion.api.elitemanors.com/api/v1/product/${id}`);
 
     dispatch({
       type: PRODUCT_DETAILS_SUCCESS,
@@ -114,7 +114,7 @@ export const newReview = (reviewData) => async (dispatch) => {
   try {
     dispatch({ type: NEW_REVIEW_REQUEST });
     const config = { header: { "Content-Type": "application/json" } };
-    const { data } = await axios.put("/api/v1/review", reviewData, config);
+    const { data } = await axios.put("https://fashion.api.elitemanors.com/api/v1/review", reviewData, config);
 
     dispatch({
       type: NEW_REVIEW_SUCCESS,
@@ -133,7 +133,7 @@ export const getSliderProducts = () => async (dispatch) => {
   try {
     dispatch({ type: SLIDER_PRODUCTS_REQUEST });
 
-    const { data } = await axios.get("/api/v1/products/all");
+    const { data } = await axios.get("https://fashion.api.elitemanors.com/api/v1/products/all");
 
     dispatch({
       type: SLIDER_PRODUCTS_SUCCESS,
@@ -152,7 +152,7 @@ export const getAdminProducts = () => async (dispatch) => {
   try {
     dispatch({ type: ADMIN_PRODUCTS_REQUEST });
 
-    const { data } = await axios.get("/api/v1/admin/products");
+    const { data } = await axios.get("https://fashion.api.elitemanors.com/api/v1/admin/products");
 
     dispatch({
       type: ADMIN_PRODUCTS_SUCCESS,
@@ -172,7 +172,7 @@ export const createProduct = (productData) => async (dispatch) => {
     dispatch({ type: NEW_PRODUCT_REQUEST });
     const config = { header: { "Content-Type": "application/json" } };
     const { data } = await axios.post(
-      "/api/v1/admin/product/new",
+      "https://fashion.api.elitemanors.com/api/v1/admin/product/new",
       productData,
       config
     );
@@ -196,7 +196,7 @@ export const updateProduct = (id, productData) => async (dispatch) => {
     const config = { header: { "Content-Type": "application/json" } };
     console.log(productData, "data");
     const { data } = await axios.put(
-      `/api/v1/admin/product/${id}`,
+      `https://fashion.api.elitemanors.com/api/v1/admin/product/${id}`,
       productData,
       config
     );
@@ -217,7 +217,7 @@ export const updateProduct = (id, productData) => async (dispatch) => {
 export const deleteProduct = (id) => async (dispatch) => {
   try {
     dispatch({ type: DELETE_PRODUCT_REQUEST });
-    const { data } = await axios.delete(`/api/v1/admin/product/${id}`);
+    const { data } = await axios.delete(`https://fashion.api.elitemanors.com/api/v1/admin/product/${id}`);
 
     dispatch({
       type: DELETE_PRODUCT_SUCCESS,
@@ -235,7 +235,7 @@ export const deleteProduct = (id) => async (dispatch) => {
 export const getAllReviews = (id) => async (dispatch) => {
   try {
     dispatch({ type: ALL_REVIEWS_REQUEST });
-    const { data } = await axios.get(`/api/v1/admin/reviews?id=${id}`);
+    const { data } = await axios.get(`https://fashion.api.elitemanors.com/api/v1/admin/reviews?id=${id}`);
 
     dispatch({
       type: ALL_REVIEWS_SUCCESS,
@@ -254,7 +254,7 @@ export const deleteReview = (reviewId, productId) => async (dispatch) => {
   try {
     dispatch({ type: DELETE_REVIEW_REQUEST });
     const { data } = await axios.delete(
-      `/api/v1/admin/reviews?id=${reviewId}&productId=${productId}`
+      `https://fashion.api.elitemanors.com/api/v1/admin/reviews?id=${reviewId}&productId=${productId}`
     );
 
     dispatch({
