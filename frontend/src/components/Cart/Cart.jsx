@@ -17,7 +17,7 @@ const Cart = () => {
 
   return (
     <>
-      <MetaData title="Shopping Cart | Titosoftwares" />
+      <MetaData title="Shopping Cart | Neutonsoft" />
       <main className="w-full bg-gray-50 py-11">
         <section className="section-b-space ratio_asos">
           {/* <!-- row --> */}

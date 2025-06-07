@@ -175,7 +175,7 @@ const NewProduct = () => {
 
   return (
     <>
-      <MetaData title="Admin: New Product | Titosoftwares" />
+      <MetaData title="Admin: New Product | Neutonsoft" />
 
       {loading && <BackdropLoader />}
       <form

@@ -97,7 +97,7 @@ const MainData = () => {
 
     return (
         <>
-            <MetaData title="Admin Dashboard | Titosoftwares" />
+            <MetaData title="Admin Dashboard | Neutonsoft" />
 
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-6">
                 <div className="flex flex-col bg-purple-600 text-white gap-2 rounded-xl shadow-lg hover:shadow-xl p-6">

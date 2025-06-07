@@ -72,7 +72,7 @@ const UpdateUser = () => {
 
     return (
         <>
-            <MetaData title="Admin: Update User | Titosoftwares" />
+            <MetaData title="Admin: Update User | Neutonsoft" />
 
             {updateLoading && <BackdropLoader />}
 
