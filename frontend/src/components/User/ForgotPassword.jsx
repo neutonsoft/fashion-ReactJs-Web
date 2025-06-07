@@ -72,9 +72,9 @@ const ForgotPassword = () => {
                   {/* <!-- button container --> */}
                   <div className="flex flex-col gap-2.5 mt-2 mb-32">
                     <p className="text-xs text-primary-grey text-left">
-                      By continuing, you agree to Titosoftwares's{" "}
+                      By continuing, you agree to Neutonsoft's{" "}
                       <a
-                        href="https://www.Titosoftwares.com/pages/terms"
+                        href="https://www.Neutonsoft.com/pages/terms"
                         className="text-primary-blue"
                       >
                         {" "}
@@ -82,7 +82,7 @@ const ForgotPassword = () => {
                       </a>{" "}
                       and{" "}
                       <a
-                        href="https://www.Titosoftwares.com/pages/privacypolicy"
+                        href="https://www.Neutonsoft.com/pages/privacypolicy"
                         className="text-primary-blue"
                       >
                         {" "}
@@ -105,7 +105,7 @@ const ForgotPassword = () => {
                 to="/register"
                 className="font-medium text-sm text-primary-blue"
               >
-                New to Titosoftwares? Create an account
+                New to Neutonsoft? Create an account
               </Link>
             </div>
             {/* <!-- edit info container --> */}

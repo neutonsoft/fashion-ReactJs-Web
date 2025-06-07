@@ -10,27 +10,27 @@ const SecondaryDropDownMenu = () => {
         {
             title: "Notification Preferences",
             icon: <NotificationsIcon sx={{ fontSize: "18px" }} />,
-            redirect: "https://www.Titosoftwares.com/communication-preferences/push",
+            redirect: "https://www.Neutonsoft.com/communication-preferences/push",
         },
         {
-            title: "Sell on Titosoftwares",
+            title: "Sell on Neutonsoft",
             icon: <BusinessCenterIcon sx={{ fontSize: "18px" }} />,
-            redirect: "https://seller.Titosoftwares.com/sell-online",
+            redirect: "https://seller.Neutonsoft.com/sell-online",
         },
         {
             title: "24x7 Customer Care",
             icon: <LiveHelpIcon sx={{ fontSize: "18px" }} />,
-            redirect: "https://www.Titosoftwares.com/helpcentre",
+            redirect: "https://www.Neutonsoft.com/helpcentre",
         },
         {
             title: "Advertise",
             icon: <TrendingUpIcon sx={{ fontSize: "18px" }} />,
-            redirect: "https://advertising.Titosoftwares.com",
+            redirect: "https://advertising.Neutonsoft.com",
         },
         {
             title: "Download App",
             icon: <DownloadIcon sx={{ fontSize: "18px" }} />,
-            redirect: "https://www.Titosoftwares.com/mobile-apps",
+            redirect: "https://www.Neutonsoft.com/mobile-apps",
         },
     ]
 

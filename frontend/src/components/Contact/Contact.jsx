@@ -48,7 +48,7 @@ const ContactDetail = ({ img, title, desc1, desc2 }) => {
 const Contact = () => {
   return (
     <>
-      <MetaData title="Contact | Titosoftwares" />
+      <MetaData title="Contact | Neutonsoft" />
       {/* <MinCategory /> */}
       {/* <section className="contact-page section-b-space"> */}
       <main className="contact-page w-full  py-11">

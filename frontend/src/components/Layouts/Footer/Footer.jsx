@@ -21,11 +21,11 @@ const footerLinks = [
       },
       {
         name: "Careers",
-        redirect: "https://www.Titosoftwarescareers.com",
+        redirect: "https://www.Neutonsoftcareers.com",
       },
       {
         name: "Stories",
-        redirect: "https://stories.Titosoftwares.com",
+        redirect: "https://stories.Neutonsoft.com",
       },
     ],
   },
@@ -34,21 +34,21 @@ const footerLinks = [
     links: [
       {
         name: "Payments",
-        redirect: "https://www.Titosoftwares.com/pages/payments",
+        redirect: "https://www.Neutonsoft.com/pages/payments",
       },
       {
         name: "Shipping",
-        redirect: "https://www.Titosoftwares.com/pages/shipping",
+        redirect: "https://www.Neutonsoft.com/pages/shipping",
       },
       {
         name: "Cancellation & Returns",
         redirect:
-          "https://www.Titosoftwares.com/helpcentre?catalog=55c9c6edb000002e002c1701&view=CATALOG",
+          "https://www.Neutonsoft.com/helpcentre?catalog=55c9c6edb000002e002c1701&view=CATALOG",
       },
       {
         name: "FAQ",
         redirect:
-          "https://www.Titosoftwares.com/helpcentre?catalog=55c9c8e2b0000023002c1702&view=CATALOG",
+          "https://www.Neutonsoft.com/helpcentre?catalog=55c9c8e2b0000023002c1702&view=CATALOG",
       },
     ],
   },
@@ -57,27 +57,27 @@ const footerLinks = [
     links: [
       {
         name: "Return Policy",
-        redirect: "https://www.Titosoftwares.com/pages/returnpolicy",
+        redirect: "https://www.Neutonsoft.com/pages/returnpolicy",
       },
       {
         name: "Terms Of Use",
-        redirect: "https://www.Titosoftwares.com/pages/terms",
+        redirect: "https://www.Neutonsoft.com/pages/terms",
       },
       {
         name: "Security",
-        redirect: "https://www.Titosoftwares.com/pages/paymentsecurity",
+        redirect: "https://www.Neutonsoft.com/pages/paymentsecurity",
       },
       {
         name: "Privacy",
-        redirect: "https://www.Titosoftwares.com/pages/privacypolicy",
+        redirect: "https://www.Neutonsoft.com/pages/privacypolicy",
       },
       {
         name: "Sitemap",
-        redirect: "https://www.Titosoftwares.com/sitemap",
+        redirect: "https://www.Neutonsoft.com/sitemap",
       },
       {
         name: "EPR Compliance",
-        redirect: "https://www.Titosoftwares.com/pages/ewaste-compliance-tnc",
+        redirect: "https://www.Neutonsoft.com/pages/ewaste-compliance-tnc",
       },
     ],
   },
@@ -86,15 +86,15 @@ const footerLinks = [
     links: [
       {
         name: "Facebook",
-        redirect: "https://www.facebook.com/Titosoftwares",
+        redirect: "https://www.facebook.com/Neutonsoft",
       },
       {
         name: "Twitter",
-        redirect: "https://twitter.com/Titosoftwares",
+        redirect: "https://twitter.com/Neutonsoft",
       },
       {
         name: "YouTube",
-        redirect: "https://www.youtube.com/Titosoftwares",
+        redirect: "https://www.youtube.com/Neutonsoft",
       },
     ],
   },
@@ -181,7 +181,7 @@ const Footer = () => {
               <div className="w-full sm:w-1/2">
                 <h2 className="text-black text-sm">Mail Us:</h2>
                 <p className="mt-2 leading-5 text-primary-grey text-xs">
-                  Titosoftwares Internet Private Limited,
+                  Neutonsoft Internet Private Limited,
                   <br />
                   Buildings Alyssa, Begonia &<br />
                   Clove Embassy Tech Village,
@@ -228,7 +228,7 @@ const Footer = () => {
           <div className="px-16 py-6 w-full bg-gray-500  flex justify-between items-center flex-wrap text-sm text-white">
             <div className="xs:w-full sm:w-full md:w-full lg:w-3/4  sm:flex justify-end items-center  text-sm text-white">
               {/* <a
-                href="https://www.Titosoftwares.com/helpcentre"
+                href="https://www.Neutonsoft.com/helpcentre"
                 target="_blank"
                 rel="noreferrer"
                 className="flex items-center gap-2 text-white"

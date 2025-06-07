@@ -120,7 +120,7 @@ const OrderTable = () => {
 
     return (
         <>
-            <MetaData title="Admin Orders | Titosoftwares" />
+            <MetaData title="Admin Orders | Neutonsoft" />
 
             {loading && <BackdropLoader />}
 
