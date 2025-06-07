@@ -26,17 +26,17 @@ const product = require("./routes/productRoute");
 const order = require("./routes/orderRoute");
 const payment = require("./routes/paymentRoute");
 
-app.use("https://fashion.api.elitemanors.com/api/v1", user);
-app.use("https://fashion.api.elitemanors.com/api/v1", product);
-app.use("https://fashion.api.elitemanors.com/api/v1", order);
-app.use("https://fashion.api.elitemanors.com/api/v1", payment);
+app.use("/api/v1", user);
+app.use("/api/v1", product);
+app.use("/api/v1", order);
+app.use("/api/v1", payment);
 
 // deployment
 __dirname = path.resolve();
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "/frontend/build")));
 
-  app.get("https://fashion.api.elitemanors.com/api/v1/chat_token", async (req, res) => {
+  app.get("/api/v1/chat_token", async (req, res) => {
     const serverClient = StreamChat.getInstance(
       "xxyvqq925edc",
       "fk2z8wp6kxnhd4fnafd5mqp7rcn6nztr9ub8j9fv8qhsrz6vnrm8qv3c5qzgpmw2"
@@ -53,7 +53,7 @@ if (process.env.NODE_ENV === "production") {
     res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"));
   });
 } else {
-  app.get("https://fashion.api.elitemanors.com/api/v1/chat_token", async (req, res) => {
+  app.get("/api/v1/chat_token", async (req, res) => {
     const serverClient = StreamChat.getInstance(
       "xxyvqq925edc",
       "fk2z8wp6kxnhd4fnafd5mqp7rcn6nztr9ub8j9fv8qhsrz6vnrm8qv3c5qzgpmw2"
