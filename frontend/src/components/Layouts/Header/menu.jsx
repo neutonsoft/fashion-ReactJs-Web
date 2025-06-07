@@ -6,13 +6,7 @@ export const MENUITEMS = [
     children: [],
   },
   {
-    title: "Products",
-    type: "link",
-    path: "/products",
-    children: [],
-  },
-  {
-    title: "Shop by occasion",
+    title: "Shop",
     type: "sub",
     children: [
       {
@@ -53,7 +47,7 @@ export const MENUITEMS = [
     ],
   },
   {
-    title: "categories",
+    title: "Collection",
     type: "sub",
     children: [
       {

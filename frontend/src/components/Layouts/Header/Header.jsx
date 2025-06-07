@@ -48,34 +48,34 @@ const Header = () => {
     <>
       <header className="sticky-header fixed">
         {/* <div className="mobile-fix-option"></div> */}
-        <TopBarDark />
+        {/* <TopBarDark /> */}
         <div className="ml-1 mr-5">
-          <Row className="flex justify-between">
-            <Col xs="6" className="flex justify-start">
-              <div className="flex">
-                <Link className="logo-responsive" to={"/"}>
-                  <img
+          <Row className="flex justify-between items-center">
+            <Col xs="3" className="flex justify-start">
+              <Link className="logo-responsive" to={"/"}>
+                {/* <img
                     draggable="false"
                     className="max-w-full object-contain"
                     src={logo}
                     alt="Ankita Chananaia"
+                  /> */}
+                <div className="text-white text-2xl">Ankita Chananaia</div>
+              </Link>
+            </Col>
+            <Col xs="6">
+              <div className="main-menu w-full">
+                <div className="menu-right pull-right">
+                  <NavBar
+                    navClose={navClose}
+                    setNavClose={setNavClose}
+                    closeNav={closeNav}
+                    openNav={openNav}
                   />
-                </Link>
+                </div>
               </div>
             </Col>
-            <Col xs="6" className="flex justify-end">
+            <Col xs="3" className="flex justify-end">
               <div className="flex items-center justify-center h-full  gap-0.5 sm:gap-7 relative">
-                <a
-                  className="userDropDown flex items-center text-black font-medium gap-1 cursor-pointer"
-                  onClick={() => openSearch()}
-                >
-                  <SearchIcon
-                    sx={{
-                      color: "#C3AF74",
-                      fontSize: "30px",
-                    }}
-                  />
-                </a>
                 <Link
                   to="/wishlist"
                   className="flex items-center text-gray font-medium gap-2 relative"
@@ -165,24 +165,10 @@ const Header = () => {
               </div>
             </Col>
           </Row>
-          <Row>
-            <Col xs="12">
-              <div className="main-menu w-full">
-                <div className="menu-right pull-right">
-                  <NavBar
-                    navClose={navClose}
-                    setNavClose={setNavClose}
-                    closeNav={closeNav}
-                    openNav={openNav}
-                  />
-                </div>
-              </div>
-            </Col>
-          </Row>
         </div>
       </header>{" "}
       <SearchOverlay />
-      <div className="sticky-header"></div>
+      <div className="sticky-header-dummy"></div>
     </>
   );
 };

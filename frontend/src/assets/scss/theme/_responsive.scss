@@ -19,8 +19,11 @@ body {
   }
 }
 .logo-responsive {
-  width: 135px;
-  height: 70px;
+  // width: 135px;
+  // height: 70px;
+  padding-left: 20px;
+  position: relative;
+  top: 20;
 }
 @media (max-width: 1199px) {
   .logo-responsive {
