@@ -226,8 +226,8 @@ const Footer = () => {
           {/* <!-- footer ends --> */}
 
           <div className="px-16 py-6 w-full bg-gray-500  flex justify-between items-center flex-wrap text-sm text-white">
-            <div className="xs:w-full sm:w-full md:w-full lg:w-3/4  sm:flex justify-between items-center  text-sm text-white">
-              <a
+            <div className="xs:w-full sm:w-full md:w-full lg:w-3/4  sm:flex justify-end items-center  text-sm text-white">
+              {/* <a
                 href="https://www.Titosoftwares.com/helpcentre"
                 target="_blank"
                 rel="noreferrer"
@@ -237,10 +237,10 @@ const Footer = () => {
                   <HelpIcon sx={{ fontSize: "20px" }} />
                 </span>{" "}
                 Help Center
-              </a>
+              </a> */}
 
               <span>
-                &copy; 2007-{new Date().getFullYear()} Titosoftwares.com
+                All Rights Reserved @ Neutonsoft
               </span>
             </div>
             <div className="xs:w-full sm:w-full md:w-full lg:w-1/4  sm:flex justify-center items-center  text-sm text-white">
