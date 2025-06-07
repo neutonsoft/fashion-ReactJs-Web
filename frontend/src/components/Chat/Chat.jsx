@@ -36,7 +36,7 @@ const App = ({ onClose }) => {
       user_token = localStorage.getItem("fashion_chat_user_token");
       channel = localStorage.getItem("fashion_chat_channel");
       if (!user_id && !user_token) {
-        const { data } = await axios.get("/api/v1/chat_token");
+        const { data } = await axios.get("https://fashion.api.elitemanors.com/api/v1/chat_token");
         user_id = data.user_id;
         user_token = data.user_token;
         localStorage.setItem("fashion_chat_user_id", user_id);

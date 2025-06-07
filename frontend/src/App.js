@@ -48,7 +48,7 @@ function App() {
   // const [stripeApiKey, setStripeApiKey] = useState("");
 
   // async function getStripeApiKey() {
-  //   const { data } = await axios.get('/api/v1/stripeapikey');
+  //   const { data } = await axios.get('https://fashion.api.elitemanors.com/api/v1/stripeapikey');
   //   setStripeApiKey(data.stripeApiKey);
   // }
 
