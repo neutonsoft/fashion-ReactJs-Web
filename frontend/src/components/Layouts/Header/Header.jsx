@@ -51,7 +51,7 @@ const Header = () => {
         {/* <TopBarDark /> */}
         <div className="ml-1 mr-5">
           <Row className="flex justify-between items-center">
-            <Col xs="3" className="flex justify-start">
+            <Col xs="2" className="flex justify-start">
               <Link className="logo-responsive" to={"/"}>
                 {/* <img
                     draggable="false"
@@ -59,10 +59,10 @@ const Header = () => {
                     src={logo}
                     alt="Ankita Chananaia"
                   /> */}
-                <div className="text-white text-2xl">Ankita Chananaia</div>
+                <div className="text-white text-2xl w-[220px]">Ankita Chananaia</div>
               </Link>
             </Col>
-            <Col xs="6">
+            <Col xs="8">
               <div className="main-menu w-full">
                 <div className="menu-right pull-right">
                   <NavBar
@@ -74,7 +74,7 @@ const Header = () => {
                 </div>
               </div>
             </Col>
-            <Col xs="3" className="flex justify-end">
+            <Col xs="2" className="flex justify-end">
               <div className="flex items-center justify-center h-full  gap-0.5 sm:gap-7 relative">
                 <Link
                   to="/wishlist"
